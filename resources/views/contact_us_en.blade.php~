@@ -114,9 +114,7 @@
                     <div class="feedback">
                         <h1>FEEDBACK AND INQUIRIES</h1>
                         <span>
-                            @if(isset($contactUsPageData[0]->feed_back_en))
                             {{$contactUsPageData[0]->feed_back_en}}
-                            @endif
                         </span>
                     </div>
                     <form class="form-horizontal">
@@ -195,30 +193,22 @@ google.maps.event.addDomListener(window, 'load', init_map);</script>
 
                         <h2>Showroon,Parts and Service center</h2>
                         <ul>
-                            <li>Address : @if(isset($contactUsPageData[0]->address_en)){{$contactUsPageData[0]->address_en}} @endif,</li>
-                            <li>P.O.Box : @if(isset($contactUsPageData[0]->po_box_en)){{$contactUsPageData[0]->po_box_en}} @endif</li>
-                            <li>Tel Office :@if(isset($contactUsPageData[0]->telephone)) {{$contactUsPageData[0]->telephone}} @endif</li>
+                            <li>Address : {{$contactUsPageData[0]->address_en}},</li>
+                            <li>P.O.Box : {{$contactUsPageData[0]->po_box_en}}</li>
+                            <li>Tel Office :{{$contactUsPageData[0]->telephone}}</li>
                         </ul>
 
                         <h2>OPENING HOURS</h2>
                         <h3>SHOWROOM</h3>
                         <ul>
-                            <li>
-                                @if(isset($contactUsPageData[0]->showroom_openning_hours))
-                                {{$contactUsPageData[0]->showroom_openning_hours}}
-                                @endif
-                            </li>
+                            <li>{{$contactUsPageData[0]->showroom_openning_hours}}</li>
                             
                            
                         </ul>
 
                         <h3>SERVICE AND PARTS</h3>
                         <ul>
-                            <li>
-                                @if(isset($contactUsPageData[0]->servuce_and_parts_openning_hours))
-                                {{$contactUsPageData[0]->servuce_and_parts_openning_hours}}
-                                @endif
-                            </li>
+                            <li>{{$contactUsPageData[0]->servuce_and_parts_openning_hours}}</li>
                         </ul>
                     </div>
                 </div>
@@ -243,18 +233,14 @@ google.maps.event.addDomListener(window, 'load', init_map);</script>
                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 			<ul class="addressList">
 				<li>Al-Zayani Trading Company</li>
-				<li>
-                                    @if(isset($contactUsData[0]->address_en))
-                                    {{$contactUsData[0]->address_en}}
-                                    @endif
-                                </li>
-				<li>P.O.Box:@if(isset($contactUsData[0]->po_box_en)) {{$contactUsData[0]->po_box_en}} @endif</li>
+				<li>{{$contactUsData[0]->address_en}}</li>
+				<li>P.O.Box: {{$contactUsData[0]->po_box_en}}</li>
 			</ul>
 		</div>
 		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 			<ul class="contactList">
-				<li><a href="mailto:info@al-zayani.com" class="email">@if(isset($contactUsData[0]->email)) {{$contactUsData[0]->email}} @endif</a> </li>
-				<li><a href="tel:+965 180 8010" class="phone">@if(isset($contactUsData[0]->mobile)) {{$contactUsData[0]->mobile}} @endif</a> </li>
+				<li><a href="mailto:info@al-zayani.com" class="email">{{$contactUsData[0]->email}}</a> </li>
+				<li><a href="tel:+965 180 8010" class="phone">{{$contactUsData[0]->mobile}}</a> </li>
 			</ul>
 		</div>
                     <div class=" col-lg-3 col-md-3 col-sm-6 col-xs-12">
