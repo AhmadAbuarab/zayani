@@ -64,7 +64,7 @@ class HomeController extends Controller {
     }
 
     public function addCarModelMain(request $request) {
-        if (isset($request->file('slider_img')) && $request->file('slider_img') != '') {
+        if ($request->file('slider_img') != '') {
             $imageName = $request->file('slider_img')->getClientOriginalName();
             $request->file('slider_img')->move(
                     base_path() . '/public/sliders/', $imageName
