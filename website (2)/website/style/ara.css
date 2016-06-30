@@ -1,0 +1,567 @@
+	html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+div{
+		direction:rtl;
+
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+@charset "utf-8";
+
+@font-face{font-family: 'ara'; src: url('ara_fonts_2015/ara-Reg.eot'); }
+@font-face{font-family: 'ara'; src: url('ara_fonts_2015/ara-Reg.ttf'); }
+@font-face{font-family: 'ara Bold'; src: url('ara_fonts_2015/ara-Bold.eot'); }
+@font-face{font-family: 'ara Bold'; src: url('ara_fonts_2015/ara-Bold.ttf'); }
+ 
+*{
+	font-family: 'ara' !important;
+}
+
+body{
+	background-color:#DBDCDD;
+}
+
+
+
+/* hedaer css */
+.top_area{
+	background-color:#C5C7C9;
+	height:15px;
+}
+.navbar-default{
+	background:transparent;
+	border-color:transparent;
+}
+.mainLogo {
+    height: 41px;
+    display: block;
+    margin-top: 10px;
+
+}
+/*.navbar-header {
+    float: left;
+}*/
+@media (max-width: 768px) {
+
+	.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+		background-color:rgba(255, 255, 255, 1);
+		margin-top: 20px;
+	}
+	.navbar-toggle{
+		background-color:rgba(255, 255, 255, 0.7);
+	}
+	.mainLogo {
+	    height: 41px;
+	    display: block;
+	    margin-top: 5px;
+	    margin-right:10px;
+	    float: left;
+	}
+	.navbar-collapse{
+		position: absolute;
+	    width: 100%;
+	    background-color: rgb(255, 255, 255);
+	}
+}
+/* end header css  */
+
+
+
+
+/* slider css */
+.fill {
+    width: 100%;
+    height: 550px;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    border-bottom:2px solid #16599A;
+}
+.carousel-indicators {
+    position: absolute;
+    top: 22px;
+    left: 1%;
+    z-index: 15;
+    width: 10%;
+    padding-right: 0;
+    margin-right: -30%;
+    text-align: center;
+    list-style: none;
+    right:auto;
+    height:30px;
+}
+.carousel-caption{
+    width: 85%;
+    left: auto;
+    right: auto;
+    padding-right: 15%;
+    height:350px;
+}
+.carousel-caption h1{
+	font-size: 50px;
+    float: right;
+    font-weight:bold;
+}
+.sliderButton{
+	position:absolute;
+	right:20%;
+	bottom: 0;
+}
+.sliderTitle{
+	float:right;
+}
+.fa{
+		font-family:"FontAwesome" !important;
+
+}
+.sliderTitle span {
+    float: right;
+    clear: right;
+    font-size: 14px;
+    margin-top: 5px;
+}
+@media (max-width: 768px) {
+	.carousel-indicators {
+		display:none;
+	}
+
+}
+/* end slider css */
+
+
+
+/* car section css */
+.carModel{
+	height:230px;
+	margin-top: 20px;
+}
+.carModel img{
+	width:100%;
+}
+.carModel h1 {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+	    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1a2c57+1,2989d8+50,1a2c57+100 */
+	background: rgb(26,44,87); /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  rgba(26,44,87,1) 1%, rgba(41,137,216,1) 50%, rgba(26,44,87,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg,  rgba(26,44,87,1) 1%,rgba(41,137,216,1) 50%,rgba(26,44,87,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg,  rgba(26,44,87,1) 1%,rgba(41,137,216,1) 50%,rgba(26,44,87,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a2c57', endColorstr='#1a2c57',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+.carModel h1 a{
+	color:#fff;
+	text-decoration:none;
+	cursor:pointer;
+}
+.carModel a button, .carModel select{
+	margin-top: 10px;
+}
+.carModel > .form-control{
+width:81%;
+float:right;
+}
+
+@media (max-width: 768px) {
+	.carModel > .form-control {
+	    width: 80%;
+	    float: right;
+	}
+}
+/* end car section css */
+
+
+
+
+/* css footer */
+footer{
+	background: #C6C6C6;
+    padding: 30px 0px 0px 0px;
+    width: 100%;
+    float: right;
+    margin-top: 30px;
+}
+.map img{
+	width:100%;
+}
+.footerTitle h1{
+	font-size:20px;
+	font-weight:bold;
+	color:#999;
+	padding-bottom:10px;
+}
+.addressList, .contactList{
+	width:100%;
+}
+ul.addressList{
+	font-size:14px;
+	color:#000;
+	padding-right:30px;
+	position:relative;
+}
+ul.addressList:after{
+	content:"\f041";
+	position:absolute;
+	right:0;
+	top:0;
+	font-family:"FontAwesome";
+	color:#999;
+	font-size:25px;
+
+}
+ul.addressList li{
+	margin-bottom:10px;
+}
+ul.contactList li a{
+	font-size:14px;
+	color:#000;
+	padding-right:35px;
+}
+ul.contactList li a:hover{
+	color:#999;
+	text-decoration:none;
+
+}
+ul.contactList li{
+	margin-bottom:20px;
+}
+li a.email{
+	position:relative;
+}
+li a.email:after{
+	content:"\f0e0";
+	position:absolute;
+	right:0;
+	top:0;
+	font-family:"FontAwesome";
+	color:#999;
+	font-size:25px;
+}
+li a.phone{
+	position:relative;
+}
+.fa{
+	font-family:"FontAwesome" !important;
+}
+li a.phone:after{
+	content:"\f095";
+	position:absolute;
+	right:0;
+	top:0;
+	font-family:"FontAwesome";
+	color:#999;
+	font-size:25px;
+}
+.subscribe label{
+	margin-bottom: 10px;
+	color:#999;
+	font-weight:bold;
+}
+.subscribe input{
+	width:83%;
+	float:right;
+}
+.subscribe button{
+	float:left;
+	width:16%;
+}
+
+.logoFotter{
+	opacity:.5;
+	padding-bottom: 10px;
+	text-align: center;
+}
+.logoFotter img {
+    width: 49%;
+}
+.copyRight{
+    text-align: center;
+    color: #fff;
+    background: rgb(26,44,87);
+    background: -moz-linear-gradient(-45deg, rgba(26,44,87,1) 1%, rgba(41,137,216,1) 50%, rgba(26,44,87,1) 100%);
+    background: -webkit-linear-gradient(-45deg, rgba(26,44,87,1) 1%,rgba(41,137,216,1) 50%,rgba(26,44,87,1) 100%);
+    background: linear-gradient(135deg, rgba(26,44,87,1) 1%,rgba(41,137,216,1) 50%,rgba(26,44,87,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a2c57', endColorstr='#1a2c57',GradientType=1 );
+    height: auto;
+    line-height: normal;
+    font-size: 12px;
+    padding-top:10px;
+    padding-bottom: 10px;
+}
+/* end css footer */
+
+
+
+/* inner pages */
+.fill_inner {
+    width: 100%;
+    height: 250px;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    border-bottom:2px solid #16599A;
+}
+.pagePath{
+	font-size:12px;
+	color:#999;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+.valueCarText{
+	margin-top:20px;
+}
+.valueCarText h1{
+	font-size:25px;
+	font-weight:bold;
+	color: #124c8a;
+}
+.valueCarText span{
+	margin-top:10px;
+	font-size:14px;
+	display:block;
+	line-height:normal;
+}
+.form-horizontal{
+	margin-top:20px;
+}
+.form-horizontal .form-group {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.form-group label{
+	margin-bottom:5px;
+}
+.Specification_title{
+	height:40px;
+	line-height:40px;
+}
+.Specification_title h1{
+	font-size:20px;
+	font-weight:bold;
+}
+button[type="submit"]{
+	float:left;
+	margin-bottom:20px;
+}
+
+.selectCar img{
+	width:100%;
+}
+.selectCar h1{
+	font-size:22px;
+	margin-top:10px;
+	color: #124c8a;
+
+}
+
+.offer{
+	background-color:#fff;
+	margin-top: 20px;
+	display:table;
+	border-bottom:15px solid #124c8a;
+    width: 100%;
+   	min-height: 480px;
+
+
+}
+.offer img{
+	width:100%;
+	min-height: 270px;
+}
+.offer h1{
+	font-size:22px;
+	font-weight:bold;
+	text-align:right;
+	padding-right:5%;
+	display:block;
+	padding: 15px;
+	color: #124c8a;
+
+}
+.offer ul{
+	padding:5px 15px;
+}
+.offer ul li{
+	margin-bottom:5px;
+	color:#999;
+}
+.offer button{
+	float:left;
+	clear:left;
+	margin-left:10px;
+	margin-bottom:10px;
+	display:block;
+}
+.offer a{
+	color:#fff;
+	text-decoration:none;
+}
+.thumb{
+	background-color: #fff;
+    width: 100%;
+    height: auto;
+    cursor:pointer;
+}
+.thumb img{
+	width:100%;
+	background-color:#fff;
+}
+.item img{
+	width:100%;
+}
+.details h1{
+	font-size:25px;
+	font-weight:bold;
+	color: #124c8a;
+	margin-top:10px;
+
+}
+.details ul{
+	margin-top:10px;
+}
+.details ul li{
+	margin-top:5px;
+	width:100%;
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-right:10px;
+}
+.details ul li:nth-child(odd){
+	background-color:#efefef;
+}
+small{
+	font-size:80%;
+}
+.detailsButton{
+	margin-top:20px;
+}
+
+.detailsButton .btn-primary{
+	width:100%;
+	margin-bottom:10px;
+}
+ a.detailsButton{
+	color:#fff;
+	text-decoration:n;
+}
+
+
+/* contact us css */
+.addressInfo h1{
+	margin-bottom:20px;
+	font-size:20px;
+	font-weight:bold;
+	color: #124c8a;
+	margin-top:20px;
+
+}
+.addressInfo h2{
+	margin-bottom:10px;
+	font-size:18px;
+	font-weight:bold;
+	color: #124c8a;
+	margin-top:10px;
+
+}
+.addressInfo li{
+	margin-bottom:10px;
+	font-size:13px;
+	font-weight:normal;
+	margin-top:10px;
+
+}
+.addressInfo h3{
+	margin-bottom:10px;
+	font-size:15px;
+	font-weight:bold;
+	color: #666;
+	margin-top:10px;
+
+}
+.feedback h1{
+	margin-bottom:20px;
+	font-size:20px;
+	font-weight:bold;
+	color: #124c8a;
+	margin-top:20px;
+}
+.feedback span{
+	line-height:normal;
+	font-size:13px;
+	color:#333;
+	padding: 0 10px;
+	display:block;
+}
+/* end contact us css */
+
+/*404 page css*/
+		.page404{
+			background-color: rgba(255,255,255,.5);
+			width: 100%;
+			height: 300px;
+			text-align: center;
+			padding: 20px;
+			margin-top: 100px;
+			border-top: 2px solid #124c8a;
+			border-bottom: 2px solid #124c8a;
+				}
+		.page404 h1{
+			font-size: 9.5em;
+			font-weight: bold;
+			color: #124c8a;
+		}
+		.page404 span{
+			font-size: 1.5em;
+			margin-top: 20px;
+			display: block;
+			color: #124c8a;
+			line-height: normal;
+		}
+
+/* end 404 page css*/
+
