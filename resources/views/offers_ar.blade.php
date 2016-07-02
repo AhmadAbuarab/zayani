@@ -37,7 +37,7 @@
 						<ul class="nav navbar-nav">
                                     <li><a href="{{ URL::to("ar") }}">الرئيسية</a></li>
                                     <li class=" menu-large">
-                                        <a href="#"> Al-zayani.com</a>
+                                        <a href="http://www.al-zayani.com"> Al-zayani.com</a>
                                     </li>
                                     <li class=" menu-large">
                                         <a href="{{ URL::to("ar/contact_us") }}">اتصل بنا</a>					

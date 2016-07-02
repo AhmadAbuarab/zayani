@@ -2,22 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/var/www/html/zayani/database/migrations/2016_06_10_204152_create_contact_us_table.php</file>
-            <file>file:/var/www/html/zayani/resources/views/offers_ar.blade.php</file>
-            <file>file:/var/www/html/zayani/resources/views/valuecar_en.blade.php</file>
-            <file>file:/var/www/html/zayani/resources/views/details_en.blade.php</file>
-            <file>file:/var/www/html/zayani/resources/views/contact_us_en.blade.php</file>
-            <file>file:/var/www/html/zayani/resources/views/details_ar.blade.php</file>
-            <file>file:/var/www/html/zayani/resources/views/enquiry_ar.blade.php</file>
-            <file>file:/var/www/html/zayani/resources/views/contact_us_ar.blade.php</file>
-            <file>file:/var/www/html/zayani/app/Http/Controllers/SiteController.php</file>
-            <file>file:/var/www/html/zayani/resources/views/offers_en.blade.php</file>
-            <file>file:/var/www/html/zayani/resources/views/valuecar_ar.blade.php</file>
-            <file>file:/var/www/html/zayani/resources/views/main_ar.blade.php</file>
-            <file>file:/var/www/html/zayani/resources/views/main.blade.php</file>
-            <file>file:/var/www/html/zayani/app/Http/routes.php</file>
-            <file>file:/var/www/html/zayani/resources/views/enquiry_en.blade.php</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

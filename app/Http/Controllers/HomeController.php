@@ -94,19 +94,13 @@ class HomeController extends Controller {
     public function addCar(request $request) {
         $imageName = $request->file('upload_main_car_image')->getClientOriginalName();
         $request->file('upload_main_car_image')->move(
-                base_path() . '/public/carimages/', $imageName
-        );
-
-        $imageSliderName = $request->file('upload_slider_car_image')->getClientOriginalName();
-        $request->file('upload_slider_car_image')->move(
-                base_path() . '/public/carimagesSlider/', $imageSliderName
+                base_path() . '/carimages/', $imageName
         );
 
         cars::create([
             'name_ar' => $request->input('name_arabic'),
             'name_en' => $request->input('name_english'),
-            'main_img' => '/public/carimages/' . $imageName,
-            'slider_img' => '/public/carimagesSlider/' . $imageSliderName
+            'main_img' => '/public/carimages/' . $imageName
         ]);
         return back();
     }

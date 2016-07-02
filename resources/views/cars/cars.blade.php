@@ -75,10 +75,6 @@ $(document).ready(function () {
                     {!! Form::file('upload_main_car_image') !!}
                 </div>
 
-                <div class="form-group">
-                    {!! Form::label('upload_slider_car_image') !!} 
-                    {!! Form::file('upload_slider_car_image') !!}
-                </div>
             </div>
 
             <div class="box-footer">

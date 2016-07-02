@@ -37,7 +37,7 @@
 						<ul class="nav navbar-nav">
                                     <li><a href="{{ URL::to("ar") }}">الرئيسية</a></li>
                                     <li class=" menu-large">
-                                        <a href="#"> Al-zayani.com</a>
+                                        <a href="http://www.al-zayani.com"> Al-zayani.com</a>
                                     </li>
                                     <li class=" menu-large">
                                        <a href="{{ URL::to("ar/contact_us") }}">اتصل بنا</a>				
@@ -99,7 +99,7 @@
 	<div class="row">
 		<div class="col-md-12 col-sm-12 col-xs-12">
 			<div class="pagePath">
-				<span>الرئيسية / جاكوار / F PACE</span>
+				
 			</div>
 		</div>
 		<div class="col-md-12 col-sm-12 col-xs-12">
@@ -113,15 +113,11 @@
 	<div class="col-md-6 col-sm-6 col-xs-12">
 	<div class="feedback">
 		<h1>ردود الفعل والاستفسارات</h1>
-		<span>وفي الزياني ونحن نهدف إلى تقديم تجربة متميزة للعملاء في كل مركز صالة العرض والخدمة التي تزورها، من تحقيق عملائنا الأولي عن طريق الحق إلى الرعاية ما بعد البيع الشاملة.
-
-لضمان واصلنا التركيز على تلبية احتياجات عملائنا ونحن نهدف إلى مسح كل العملاء واستخدام هذه الملاحظات لتوجيه التدريب المستمر والتطوير فرق صفقة لدينا.
-
-كل عضو من أعضاء فريق الزياني يأخذ رضا العملاء على محمل الجد، ونحن نفخر على جودة الخدمة التي نقدمها لعملائنا. إذا كنت تشعر أننا لم تتحقق التوقعات الخاصة بك، نود أن نعرف حتى نتمكن من جعل الأمور في نصابها الصحيح بالنسبة لك.
-
-يرجى تعبئة نموذج الملاحظات أدناه مع أي تعليقات على تجربتك ولدينا مركز خدمة العملاء سوف نتصل بك في غضون 24 ساعة خلال ساعات العمل العادية.
-
-</span>
+		<span>
+                            @if(isset($contactUsPageData[0]->feed_back_ar))
+                            {{$contactUsPageData[0]->feed_back_ar}}
+                            @endif
+                        </span>
 		</div>
 		<form class="form-horizontal">
 
@@ -189,22 +185,28 @@
 
 				<h2>معرض، قطع غيار و مركز الخدمة</h2>
 				<ul>
-					<li>العنوان: الراي المنطقة الصناعية 4 الطريق الدائري،</li>
-					<li>ص.ب: الصفاة ص. مربع 41-13001، الكويت</li>
-					<li>هاتف المكتب :+965 1808010</li>
+					<li>العنوان: @if(isset($contactUsPageData[0]->address_ar)){{$contactUsPageData[0]->address_ar}} @endif,،</li>
+					<li>ص.ب:@if(isset($contactUsPageData[0]->po_box_ar)){{$contactUsPageData[0]->po_box_ar}} @endif</li>
+					<li>هاتف المكتب :@if(isset($contactUsPageData[0]->telephone)) {{$contactUsPageData[0]->telephone}} @endif</li>
 				</ul>
 
 				<h2>ساعات العمل</h2>
 				<h3>صالة عرض</h3>
 				<ul>
-					<li>من السبت إلى الخميس: 8:30 حتي 01:00 / 16:30 حتي 08:00</li>
-					<li>الجمعة: مغلق</li>
+					<li>
+                                @if(isset($contactUsPageData[0]->showroom_openning_hours))
+                                {{$contactUsPageData[0]->showroom_openning_hours}}
+                                @endif
+                            </li>
 				</ul>
 
 				<h3>الخدمة وقطع الغيار</h3>
 				<ul>
-					<li>من السبت إلى الخميس: 8:00 حتي 07:00</li>
-					<li>الجمعة: مغلق</li>
+					 <li>
+                                @if(isset($contactUsPageData[0]->servuce_and_parts_openning_hours))
+                                {{$contactUsPageData[0]->servuce_and_parts_openning_hours}}
+                                @endif
+                            </li>
 				</ul>
 </div>
 		</div>
@@ -246,15 +248,15 @@
 
 		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 			<ul class="contactList">
-				<li><a href="mailto:info@al-zayani.com" class="email">{{$contactUsData[0]->email}}</a> </li>
-				<li><a href="tel:+965 180 8010" class="phone">{{$contactUsData[0]->mobile}}</a> </li>
+				<li><a href="mailto:info@al-zayani.com" class="email">@if(isset($contactUsData[0]->email)) {{$contactUsData[0]->email}} @endif</a> </li>
+				<li><a href="tel:+965 180 8010" class="phone">@if(isset($contactUsData[0]->mobile)) {{$contactUsData[0]->mobile}} @endif</a> </li>
 			</ul>
 		</div>
 		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
 			<ul class="addressList">
 				<li>شركة الزياني التجارية</li>
-				<li><li>{{$contactUsData[0]->address_ar}}</li>
-				<li>{{$contactUsData[0]->po_box_ar}}</li>
+				<li><li>@if(isset($contactUsData[0]->address_ar)) {{$contactUsData[0]->address_ar}} @endif</li>
+				<li>@if(isset($contactUsData[0]->po_box_ar)) {{$contactUsData[0]->po_box_ar}} @endif</li>
 			</ul>
 		</div>
 

@@ -37,7 +37,7 @@
                                 <ul class="nav navbar-nav">
                                     <li><a href="{{ URL::to("en") }}">Home</a></li>
                                     <li class="dropdown menu-large">
-                                        <a href="#"> Al-zayani.com</a>
+                                        <a href="http://www.al-zayani.com"> Al-zayani.com</a>
                                     </li>
                                     <li class="dropdown menu-large">
                                         <a href="{{ URL::to("en/contact_us") }}">Contact Us</a>				
@@ -99,7 +99,6 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="pagePath">
-                        <span>HOME / JAGUAR / F PACE</span>
                     </div>
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12">
