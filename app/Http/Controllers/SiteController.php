@@ -77,28 +77,29 @@ class SiteController extends Controller {
         return back();
     }
 
-    public function enquiry(request $request) {
+    public function enquiry(request $request, $id ) {
+        $carsModelData = DB::table('cars_model')->select('*')->where('id', '=', $id)->get();
         if ($this->lang == 'ar') {
             $contactUsData = DB::table('contact_us')->select('feed_back_ar', 'address_ar', 'po_box_ar', 'telephone', 'showroom_openning_hours', 'servuce_and_parts_openning_hours', 'email', 'mobile')->get();
-            return view('enquiry_ar', compact('contactUsData'));
+            return view('enquiry_ar', compact('contactUsData','carsModelData'));
         } else {
             $contactUsData = DB::table('contact_us')->select('feed_back_en', 'address_en', 'po_box_en', 'telephone', 'showroom_openning_hours', 'servuce_and_parts_openning_hours', 'email', 'mobile')->get();
-            return view('enquiry_en', compact('contactUsData'));
+            return view('enquiry_en', compact('contactUsData','carsModelData'));
         }
     }
 
-    public function valuecar(request $request) {
-
+    public function valuecar(request $request, $id) {
+        $carsModelData = DB::table('cars_model')->select('*')->where('id', '=', $id)->get();
         if ($this->lang == 'ar') {
             $carsBran = car_brand::lists('name_ar', 'id');
             $carsBran->prepend('اختيار', 'اختيار');
             $contactUsData = DB::table('contact_us')->select('feed_back_ar', 'address_ar', 'po_box_ar', 'telephone', 'showroom_openning_hours', 'servuce_and_parts_openning_hours', 'email', 'mobile')->get();
-            return view('valuecar_ar', compact('contactUsData', 'carsBran'));
+            return view('valuecar_ar', compact('contactUsData', 'carsBran','carsModelData'));
         } else {
             $carsBran = car_brand::lists('name_en', 'id');
             $carsBran->prepend('Select', 'Select');
             $contactUsData = DB::table('contact_us')->select('feed_back_en', 'address_en', 'po_box_en', 'telephone', 'showroom_openning_hours', 'servuce_and_parts_openning_hours', 'email', 'mobile')->get();
-            return view('valuecar_en', compact('contactUsData', 'carsBran'));
+            return view('valuecar_en', compact('contactUsData', 'carsBran','carsModelData'));
         }
     }
 

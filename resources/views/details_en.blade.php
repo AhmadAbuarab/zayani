@@ -59,16 +59,9 @@
         <div id="carousel2" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="{{URL::asset('assets/img/slider_1.png') }}">
-                </div>
-                <div class="item">
-                    <img src="{{URL::asset('assets/img/slider_1.png') }}">
-                </div>
-                <div class="item">
-                    <img src="{{URL::asset('assets/img/slider_1.png') }}">
-                </div>
-                <div class="item">
-                    <img src="{{URL::asset('assets/img/slider_1.png') }}">
+                    @if(isset($carsModelData[0]->img_slider))
+                    <img src="{{URL::asset($carsModelData[0]->img_slider) }}">
+                    @endif
                 </div>
             </div>
         </div> 
@@ -136,10 +129,10 @@
 		<div class="detailsButton">
 			<div class="row">
 				<div class="col-md-6 col-sm-6 col-xs-12">
-				 <a href="{{ URL::to("en/enquiry") }}"><button class="btn btn-primary ">  ENQUIRY / TEST DRIVE  </button></a>
+				 <a href="{{ URL::to("en/enquiry/".$carsModelData[0]->id) }}"><button class="btn btn-primary ">  ENQUIRY / TEST DRIVE  </button></a>
 				</div>
 				<div class="col-md-6 col-sm-6 col-xs-12">
-				 <a href="{{ URL::to("en/valuecar") }}"><button class="btn btn-primary ">  VALUE YOUR CAR </button></a> 
+				 <a href="{{ URL::to("en/valuecar/".$carsModelData[0]->id) }}"><button class="btn btn-primary ">  VALUE YOUR CAR </button></a> 
 				</div>
 			</div>
 		</div>

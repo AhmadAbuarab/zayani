@@ -270,10 +270,11 @@ class ComposerStaticInit73399e470fd523e247ce3dd7aa809333
     );
 
     public static $classMap = array (
+        'AddImgToCarmodeloffer' => __DIR__ . '/../..' . '/database/migrations/2016_07_02_214013_add_img_to_carmodeloffer.php',
         'CreateCarBrandModelTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_29_194318_create_car_brand_model_table.php',
         'CreateCarBrandTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_29_194235_create_car_brand_table.php',
         'CreateCarModelMainTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_10_204228_create_car_model_main_table.php',
-        'CreateCarOffersImagesTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_29_210631_create_car_offers_images_table.php',
+        'CreateCarOffersImagesTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_29_194317_create_car_offers_images_table.php',
         'CreateCarsModelImgsTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_10_204448_create_cars_model_imgs_table.php',
         'CreateCarsModelOtherDetailsTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_10_204244_create_cars_model_other_details_table.php',
         'CreateCarsModelTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_10_204230_create_cars_model_table.php',

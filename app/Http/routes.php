@@ -73,10 +73,10 @@ Route::post('ar/getCarBrandModel', 'SiteController@getCarBrandModel');
 Route::get('/en/details/{id}', 'SiteController@details');
 Route::get('/ar/details/{id}', 'SiteController@details');
 
-Route::get('/en/enquiry', 'SiteController@enquiry');
-Route::get('/ar/enquiry', 'SiteController@enquiry');
-Route::get('/en/valuecar', 'SiteController@valuecar');
-Route::get('/ar/valuecar', 'SiteController@valuecar');
+Route::get('/en/enquiry/{id}', 'SiteController@enquiry');
+Route::get('/ar/enquiry/{id}', 'SiteController@enquiry');
+Route::get('/en/valuecar/{id}', 'SiteController@valuecar');
+Route::get('/ar/valuecar/{id}', 'SiteController@valuecar');
 
 
 Route::get('/en/contact_us', 'SiteController@contact_us');

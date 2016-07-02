@@ -6,10 +6,11 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddImgToCarmodeloffer' => $baseDir . '/database/migrations/2016_07_02_214013_add_img_to_carmodeloffer.php',
     'CreateCarBrandModelTable' => $baseDir . '/database/migrations/2016_06_29_194318_create_car_brand_model_table.php',
     'CreateCarBrandTable' => $baseDir . '/database/migrations/2016_06_29_194235_create_car_brand_table.php',
     'CreateCarModelMainTable' => $baseDir . '/database/migrations/2016_06_10_204228_create_car_model_main_table.php',
-    'CreateCarOffersImagesTable' => $baseDir . '/database/migrations/2016_06_29_210631_create_car_offers_images_table.php',
+    'CreateCarOffersImagesTable' => $baseDir . '/database/migrations/2016_06_29_194317_create_car_offers_images_table.php',
     'CreateCarsModelImgsTable' => $baseDir . '/database/migrations/2016_06_10_204448_create_cars_model_imgs_table.php',
     'CreateCarsModelOtherDetailsTable' => $baseDir . '/database/migrations/2016_06_10_204244_create_cars_model_other_details_table.php',
     'CreateCarsModelTable' => $baseDir . '/database/migrations/2016_06_10_204230_create_cars_model_table.php',
