@@ -61,25 +61,37 @@
 
                 <!-- Wrapper for Slides -->
                 <div class="carousel-inner">
+                    @if(isset($carsModelMan))
+                    <?php $count = 0; ?>
+                    @foreach($carsModelMan as $car)
+                    @if($count == 0 && $car->slider_img!='')
                     <div class="item active">
                         <!-- Set the first background image using inline CSS below. -->
-                        <div class="fill_inner" style="background-image:url({{URL::asset('assets/img/slider_inner_1.png') }});"></div>
-
+                        <div class="fill" style="background-image:url({{URL::asset($car->slider_img)}});"></div>
                         <div class="carousel-caption">
+                            <!--                 	<div class="sliderTitle">
+                                                <h1>F-PACE</h1>
+                                                <span>ABOVE ALL, IT'S A JAGUAR</span>
+                                                </div> -->
+                            <a href="{{ URL::to("ar/offers/".$car->id) }}"><button class="btn btn-primary sliderButton">More <i class="fa fa-chevron-right" aria-hidden="true"></i></button></a>
+
                         </div>
                     </div>
+                    <?php $count++; ?>
+                    @elseif($count !=0 && $car->slider_img!='')
+
                     <div class="item">
                         <!-- Set the second background image using inline CSS below. -->
-                        <div class="fill_inner" style="background-image:url({{URL::asset('assets/img/slider_inner_1.png') }});"></div>
+                        <div class="fill" style="background-image:url({{URL::asset($car->slider_img)}});"></div>
                         <div class="carousel-caption">
+                            <a href="{{ URL::to("en/offers/".$car->id) }}"><button class="btn btn-primary sliderButton">More <i class="fa fa-chevron-right" aria-hidden="true"></i></button></a>
                         </div>
                     </div>
-                    <div class="item">
-                        <!-- Set the third background image using inline CSS below. -->
-                        <div class="fill_inner" style="background-image:url({{URL::asset('assets/img/slider_inner_1.png') }});"></div>
-                        <div class="carousel-caption">
-                        </div>
-                    </div>
+
+                    @endif
+                    @endforeach
+                    @endif    
+
                 </div>
 
                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">
