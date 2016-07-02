@@ -100,8 +100,7 @@ class HomeController extends Controller {
         cars::create([
             'name_ar' => $request->input('name_arabic'),
             'name_en' => $request->input('name_english'),
-            'main_img' => '/public/carimages/' . $imageName,
-            'slider_img' => '/carimagesSlider/' . $imageSliderName
+            'main_img' => '/public/carimages/' . $imageName
         ]);
         return back();
     }
