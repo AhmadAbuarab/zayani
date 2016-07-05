@@ -59,60 +59,58 @@
         <!-- end header -->
         <!-- slider -->
         <div class="container-fulid">
-            <header id="myCarousel" class="carousel slide">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
+<header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
 
-                <!-- Wrapper for Slides -->
-
-                <div class="carousel-inner">
-                    <?php $count = 0; ?>
+        <!-- Wrapper for Slides -->
+         <?php $count=0; ?>
                     @if(isset($carsModel))
-                    @foreach($carsModel as $carMod)
-                    @if(isset($carMod->img_slider_slider) && $carMod->img_slider_slider !='')
-                    @if($count == 0)                
-                    <div class="item active">
-                        <!-- Set the first background image using inline CSS below. -->
-                        <div class="fill" style="background-image:url({{URL::asset($carMod->img_slider_slider) }});"></div>
+                        @foreach($carsModel as $carMod)
+                            @if(isset($carMod->img_slider_slider) && $carMod->img_slider_slider !='')
+                                @if($count == 0)
+        <div class="carousel-inner">
+            <div class="item active">
+                <!-- Set the first background image using inline CSS below. -->
+                <div class="fill" style="background-image:url({{URL::asset($carMod->img_slider_slider) }});"></div>
+                <div class="carousel-caption">
+<!--                 	<div class="sliderTitle">
+                    <h1>F-PACE</h1>
+                    <span>ABOVE ALL, IT'S A JAGUAR</span>
+                    </div> -->
+                    <button class="btn btn-primary sliderButton">More <i class="fa fa-chevron-right" aria-hidden="true"></i>
+</button>
 
-                        <div class="carousel-caption">
-                            <a href="{{ URL::to("ar/details/".$carMod->id) }}">  <button class="btn btn-primary sliderButton">More <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                                </button>
-                            </a>
-
-                        </div>
-                    </div>                
-                    @else
-                    <div class="item">
-                        <div class="fill" style="background-image:url({{URL::asset($carMod->img_slider_slider) }});"></div>
-
-                        <div class="carousel-caption">
-                            <a href="{{ URL::to("ar/details/".$carMod->id) }}">  <button class="btn btn-primary sliderButton">More <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                                </button>
-                            </a>
-                        </div>
-                    </div>    
-                    <?php $count++; ?>
-                    @endif
-                    @endif
-                    @endforeach
-                    @endif
-
-                </div>                
-
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                    <span class="icon-prev"></span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                    <span class="icon-next"></span>
-                </a>
-            </header>	
+                </div>
+            </div>
+            @else
+            <div class="item">
+                <!-- Set the second background image using inline CSS below. -->
+                <div class="fill" style="background-image:url({{URL::asset($carMod->img_slider_slider) }});"></div>
+                <div class="carousel-caption">
+                    <button class="btn btn-primary sliderButton">More <i class="fa fa-chevron-right" aria-hidden="true"></i>
+</button>
+                </div>
+            </div>
+            @endif
+            @endif
+            @endforeach
+            @endif
+            
         </div>
-        <!-- end slider -->
+
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    </header>	
+</div>
 
 
 
