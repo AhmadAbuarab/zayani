@@ -94,7 +94,7 @@
                         </div>
                     </div>
                     @endif
-                    <?php $cout++; ?>
+                    <?php $count++; ?>
                     @endif
                     @endforeach
                     @endif
