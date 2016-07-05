@@ -60,34 +60,50 @@
         <div class="container-fulid">
             <div id="carousel2" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
+                    @if(isset($offerImages))
+                    <?php $count = 0; ?>
+                    @foreach($offerImages as $offerImage)
+                    @if($offerImage->path_slider !='')
+                    @if($count == 0)
                     <div class="item active">
-                    @if(isset($carsModelData[0]->img_slider))
-                    <img src="{{URL::asset($carsModelData[0]->img_slider) }}">
+                        <img src="{{URL::asset($offerImage->path_slider) }}">
+                    </div>
+                    @else
+                    <div class="item">
+                        <img src="{{URL::asset($offerImage->path_slider) }}">
+                    </div>
+                    <?php $count++; ?>
+                    @endif
+                    @endif
+                    @endforeach
                     @endif
                 </div>
-                </div>
             </div> 
+
+
+
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="pagePath">
-                        </div>
                     </div>
                     <div class="clearfix">
                         <div id="thumbcarousel" class="carousel slide" data-interval="false">
                             <div class="carousel-inner">
                                 <div class="item active">
                                     @if(isset($offerImages))
+                                    <?php $count=0; ?>
                                     @foreach($offerImages as $offerImage)
-                                    <div data-target="#carousel2" data-slide-to="3"  class="col-md-3 col-sm-3 col-xs-3">
+                                    @if($offerImage->path != '')
+                                    <div  data-target="#carousel2" data-slide-to="{{$count}}" class="col-md-3 col-sm-3 col-xs-3">
 
-                                        <div  class="thumb">
+                                        <div class="thumb">
                                             <img src="{{URL::asset($offerImage->path) }}">
                                         </div>
-                                    </div>
+                                    </div>  
+                                    <?php $count++; ?>
+                                    @endif
                                     @endforeach
                                     @endif
-
 
                                 </div><!-- /item -->
                             </div><!-- /carousel-inner -->

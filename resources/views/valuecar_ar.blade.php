@@ -58,31 +58,61 @@
         <!-- end header -->
         <!-- slider -->
         <div class="container-fulid">
-            <header id="myCarousel" class="carousel slide">
-                <!-- Indicators -->
-
-                <!-- Wrapper for Slides -->
+            <div id="carousel2" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
+                    @if(isset($offerImages))
+                    <?php $count = 0; ?>
+                    @foreach($offerImages as $offerImage)
+                    @if($offerImage->path_slider !='')
+                    @if($count == 0)
                     <div class="item active">
-                        <!-- Set the first background image using inline CSS below. -->
-                        <div class="fill_inner" style="background-image:url({{URL::asset($carsModelData[0]->img_slider) }});"></div>
-                        <div class="carousel-caption">
-                        </div>
+                        <img src="{{URL::asset($offerImage->path_slider) }}">
                     </div>
-                    
-                    
+                    @else
+                    <div class="item">
+                        <img src="{{URL::asset($offerImage->path_slider) }}">
+                    </div>
+                    <?php $count++; ?>
+                    @endif
+                    @endif
+                    @endforeach
+                    @endif
                 </div>
+            </div> 
 
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                    <span class="icon-next"></span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                    <span class="icon-prev"></span>
-                </a>
-            </header>	
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                    </div>
+                    <div class="clearfix">
+                        <div id="thumbcarousel" class="carousel slide" data-interval="false">
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    @if(isset($offerImages))
+                                    <?php $count=0; ?>
+                                    @foreach($offerImages as $offerImage)
+                                    @if($offerImage->path != '')
+                                    <div  data-target="#carousel2" data-slide-to="{{$count}}" class="col-md-3 col-sm-3 col-xs-3">
+
+                                        <div class="thumb">
+                                            <img src="{{URL::asset($offerImage->path) }}">
+                                        </div>
+                                    </div>  
+                                    <?php $count++; ?>
+                                    @endif
+                                    @endforeach
+                                    @endif
+
+                                </div><!-- /item -->
+                            </div><!-- /carousel-inner -->
+
+                        </div> <!-- /thumbcarousel -->
+                    </div><!-- /clearfix -->
+                </div>
+            </div>
         </div>
-        <!-- end slider -->
-
 
 
         <!-- car section -->

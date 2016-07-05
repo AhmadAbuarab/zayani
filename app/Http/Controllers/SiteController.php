@@ -33,26 +33,25 @@ class SiteController extends Controller {
     public function index() {
         if ($this->lang == 'ar') {
             $cars = DB::table('cars')->select('id', 'name_ar', 'slider_img', 'main_img')->get();
-            $carsModelMan = DB::table('car_model_main')->select('id', 'car_id', 'car_model_main_name_ar','slider_img')->get();
+            $carsModelMan = DB::table('car_model_main')->select('id', 'car_id', 'car_model_main_name_ar', 'slider_img')->get();
             $contactUsData = DB::table('contact_us')->select('feed_back_ar', 'address_ar', 'po_box_ar', 'telephone', 'showroom_openning_hours', 'servuce_and_parts_openning_hours', 'email', 'mobile')->get();
             return view('main_ar', compact('contactUsData', 'cars', 'carsModelMan'));
         } else {
             $cars = DB::table('cars')->select('id', 'name_en', 'slider_img', 'main_img')->get();
-            $carsModelMan = DB::table('car_model_main')->select('id', 'car_id', 'car_model_main_name_en','slider_img')->get();
+            $carsModelMan = DB::table('car_model_main')->select('id', 'car_id', 'car_model_main_name_en', 'slider_img')->get();
             $contactUsData = DB::table('contact_us')->select('feed_back_en', 'address_en', 'po_box_en', 'telephone', 'showroom_openning_hours', 'servuce_and_parts_openning_hours', 'email', 'mobile')->get();
             return view('main', compact('contactUsData', 'cars', 'carsModelMan'));
         }
     }
 
     public function offers(request $request, $id) {
-        $carsModel = DB::table('cars_model')->select('id', 'car_id', 'car_model_id', 'name_ar', 'name_en', 'img_slider')->where('car_model_id', '=', $id)->get();
+        $carsModel = DB::table('cars_model')->select('id', 'car_id', 'car_model_id', 'name_ar', 'name_en', 'img_slider', 'img_slider_slider')->where('car_model_id', '=', $id)->get();
         if ($carsModel) {
             if ($this->lang == 'ar') {
                 $carsModelDetails = DB::table('cars_model_other_details_model')->select('id', 'car_id', 'car_model_id', 'detail_ar')->get();
                 $contactUsData = DB::table('contact_us')->select('feed_back_ar', 'address_ar', 'po_box_ar', 'telephone', 'showroom_openning_hours', 'servuce_and_parts_openning_hours', 'email', 'mobile')->get();
                 return view('offers_ar', compact('contactUsData', 'carsModel', 'carsModelDetails'));
             } else {
-                $carsModel = DB::table('cars_model')->select('id', 'car_id', 'car_model_id', 'name_ar', 'name_en', 'img_slider')->where('car_model_id', '=', $id)->get();
                 $carsModelDetails = DB::table('cars_model_other_details_model')->select('id', 'car_id', 'car_model_id', 'detail_en')->get();
                 $contactUsData = DB::table('contact_us')->select('feed_back_en', 'address_en', 'po_box_en', 'telephone', 'showroom_openning_hours', 'servuce_and_parts_openning_hours', 'email', 'mobile')->get();
                 return view('offers_en', compact('contactUsData', 'carsModel', 'carsModelDetails'));
@@ -63,7 +62,6 @@ class SiteController extends Controller {
 
     public function details(request $request, $id) {
         $offerImages = DB::table('car_offers_images')->select('*')->where('car_offer_id', '=', $id)->get();
-//        var_dump($id); die();
         $carsModelData = DB::table('cars_model')->select('*')->where('id', '=', $id)->get();
         if ($carsModelData) {
             if ($this->lang == 'ar') {
@@ -77,43 +75,45 @@ class SiteController extends Controller {
         return back();
     }
 
-    public function enquiry(request $request, $id ) {
+    public function enquiry(request $request, $id) {
+        $offerImages = DB::table('car_offers_images')->select('*')->where('car_offer_id', '=', $id)->get();
         $carsModelData = DB::table('cars_model')->select('*')->where('id', '=', $id)->get();
         if ($this->lang == 'ar') {
             $contactUsData = DB::table('contact_us')->select('feed_back_ar', 'address_ar', 'po_box_ar', 'telephone', 'showroom_openning_hours', 'servuce_and_parts_openning_hours', 'email', 'mobile')->get();
-            return view('enquiry_ar', compact('contactUsData','carsModelData'));
+            return view('enquiry_ar', compact('contactUsData', 'carsModelData','offerImages'));
         } else {
             $contactUsData = DB::table('contact_us')->select('feed_back_en', 'address_en', 'po_box_en', 'telephone', 'showroom_openning_hours', 'servuce_and_parts_openning_hours', 'email', 'mobile')->get();
-            return view('enquiry_en', compact('contactUsData','carsModelData'));
+            return view('enquiry_en', compact('contactUsData', 'carsModelData','offerImages'));
         }
     }
 
     public function valuecar(request $request, $id) {
+        $offerImages = DB::table('car_offers_images')->select('*')->where('car_offer_id', '=', $id)->get();
         $carsModelData = DB::table('cars_model')->select('*')->where('id', '=', $id)->get();
         if ($this->lang == 'ar') {
             $carsBran = car_brand::lists('name_ar', 'id');
             $carsBran->prepend('اختيار', 'اختيار');
             $contactUsData = DB::table('contact_us')->select('feed_back_ar', 'address_ar', 'po_box_ar', 'telephone', 'showroom_openning_hours', 'servuce_and_parts_openning_hours', 'email', 'mobile')->get();
-            return view('valuecar_ar', compact('contactUsData', 'carsBran','carsModelData'));
+            return view('valuecar_ar', compact('contactUsData', 'carsBran', 'carsModelData','offerImages'));
         } else {
             $carsBran = car_brand::lists('name_en', 'id');
             $carsBran->prepend('Select', 'Select');
             $contactUsData = DB::table('contact_us')->select('feed_back_en', 'address_en', 'po_box_en', 'telephone', 'showroom_openning_hours', 'servuce_and_parts_openning_hours', 'email', 'mobile')->get();
-            return view('valuecar_en', compact('contactUsData', 'carsBran','carsModelData'));
+            return view('valuecar_en', compact('contactUsData', 'carsBran', 'carsModelData','offerImages'));
         }
     }
 
     public function contact_us(request $request) {
-        $carsModelMan = DB::table('car_model_main')->select('id', 'car_id', 'car_model_main_name_ar','slider_img')->get();
+        $carsModelMan = DB::table('car_model_main')->select('id', 'car_id', 'car_model_main_name_ar', 'slider_img')->get();
 
         if ($this->lang == 'ar') {
             $contactUsData = DB::table('contact_us')->select('feed_back_ar', 'address_ar', 'po_box_ar', 'telephone', 'showroom_openning_hours', 'servuce_and_parts_openning_hours', 'email', 'mobile')->get();
             $contactUsPageData = DB::table('contact_us')->select('feed_back_ar', 'address_ar', 'po_box_ar', 'telephone', 'showroom_openning_hours', 'servuce_and_parts_openning_hours', 'email', 'mobile')->get();
-            return view('contact_us_ar', compact('contactUsPageData', 'contactUsData','carsModelMan'));
+            return view('contact_us_ar', compact('contactUsPageData', 'contactUsData', 'carsModelMan'));
         } else {
             $contactUsData = DB::table('contact_us')->select('feed_back_en', 'address_en', 'po_box_en', 'telephone', 'showroom_openning_hours', 'servuce_and_parts_openning_hours', 'email', 'mobile')->get();
             $contactUsPageData = DB::table('contact_us')->select('feed_back_en', 'address_en', 'po_box_en', 'telephone', 'showroom_openning_hours', 'servuce_and_parts_openning_hours', 'email', 'mobile')->get();
-            return view('contact_us_en', compact('contactUsPageData', 'contactUsData','carsModelMan'));
+            return view('contact_us_en', compact('contactUsPageData', 'contactUsData', 'carsModelMan'));
         }
     }
 
