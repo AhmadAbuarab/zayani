@@ -66,10 +66,10 @@
 
                 <!-- Wrapper for Slides -->
                 <div class="carousel-inner">
+                                <?php $count=0; ?>
                     @if(isset($carsModel))
                         @foreach($carsModel as $carMod)
                             @if(isset($carMod->img_slider_slider) && $carMod->img_slider_slider !='')
-                                <?php $count=0; ?>
                                 @if($count == 0)
                                     <div class="item active">
                                        <!-- Set the first background image using inline CSS below. -->

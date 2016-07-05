@@ -54,6 +54,8 @@
             </div>
         </div>
 
+
+
         <!-- end header -->
         <!-- slider -->
         <div class="container-fulid">
@@ -66,40 +68,40 @@
                 </ol>
 
                 <!-- Wrapper for Slides -->
-               
+
                 <div class="carousel-inner">
+                    <?php $count = 0; ?>
                     @if(isset($carsModel))
-                        @foreach($carsModel as $carMod)
-                            @if(isset($carMod->img_slider_slider) && $carMod->img_slider_slider !='')
-                                <?php $count=0; ?>
-                                @if($count == 0)                
-                                <div class="item active">
-                                    <!-- Set the first background image using inline CSS below. -->
-                                    <div class="fill" style="background-image:url({{URL::asset($carMod->img_slider_slider) }});"></div>
+                    @foreach($carsModel as $carMod)
+                    @if(isset($carMod->img_slider_slider) && $carMod->img_slider_slider !='')
+                    @if($count == 0)                
+                    <div class="item active">
+                        <!-- Set the first background image using inline CSS below. -->
+                        <div class="fill" style="background-image:url({{URL::asset($carMod->img_slider_slider) }});"></div>
 
-                                    <div class="carousel-caption">
-                                        <a href="{{ URL::to("ar/details/".$carMod->id) }}">  <button class="btn btn-primary sliderButton">More <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                                        </button>
-                                            </a>
+                        <div class="carousel-caption">
+                            <a href="{{ URL::to("ar/details/".$carMod->id) }}">  <button class="btn btn-primary sliderButton">More <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                </button>
+                            </a>
 
-                                    </div>
-                                </div>                
-                                 @else
-                                    <div class="item">
-                                       <div class="fill" style="background-image:url({{URL::asset($carMod->img_slider_slider) }});"></div>
+                        </div>
+                    </div>                
+                    @else
+                    <div class="item">
+                        <div class="fill" style="background-image:url({{URL::asset($carMod->img_slider_slider) }});"></div>
 
-                                       <div class="carousel-caption">
-                                         <a href="{{ URL::to("ar/details/".$carMod->id) }}">  <button class="btn btn-primary sliderButton">More <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                                           </button>
-                                         </a>
-                                       </div>
-                                   </div>    
-                                 <?php $count++; ?>
-                                @endif
-                            @endif
-                        @endforeach
+                        <div class="carousel-caption">
+                            <a href="{{ URL::to("ar/details/".$carMod->id) }}">  <button class="btn btn-primary sliderButton">More <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                </button>
+                            </a>
+                        </div>
+                    </div>    
+                    <?php $count++; ?>
                     @endif
-             
+                    @endif
+                    @endforeach
+                    @endif
+
                 </div>                
 
                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">
