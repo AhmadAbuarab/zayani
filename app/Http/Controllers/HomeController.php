@@ -92,20 +92,31 @@ class HomeController extends Controller {
     }
 
     public function addCar(request $request) {
-        $imageName = $request->file('upload_main_car_image')->getClientOriginalName();
-        $request->file('upload_main_car_image')->move(
-                base_path() . '/public/carimages/', $imageName
-        );
+        if ($request->file('upload_main_car_image') != '') {
+            $imageName = $request->file('upload_main_car_image')->getClientOriginalName();
+            $request->file('upload_main_car_image')->move(
+                    base_path() . '/public/carimages/', $imageName
+            );
 
-        cars::create([
-            'name_ar' => $request->input('name_arabic'),
-            'name_en' => $request->input('name_english'),
-            'main_img' => '/carimages/' . $imageName,
-        ]);
-        return back();
+            cars::create([
+                'name_ar' => $request->input('name_arabic'),
+                'name_en' => $request->input('name_english'),
+                'main_img' => '/carimages/' . $imageName,
+            ]);
+            return back();
+        } else {
+            cars::create([
+                'name_ar' => $request->input('name_arabic'),
+                'name_en' => $request->input('name_english')
+            ]);
+            return back();
+        }
     }
 
     public function deleteCar(request $request) {
+        cars_model::where('car_id', $request->input('carId'))->delete();
+        car_model_main::where('car_id', $request->input('carId'))->delete();
+        cars_model_other_details_model::where('car_id', $request->input('carId'))->delete();
         cars::where('id', $request->input('carId'))->delete();
         return json_decode('1');
     }
@@ -169,28 +180,86 @@ class HomeController extends Controller {
         $request->file('upload_car_model_offer_image')->move(
                 base_path() . '/public/carmodelofferimg/', $imageName
         );
-        $carsModelinsert = cars_model::create([
-                    'car_id' => $request->input('carId'),
-                    'car_model_id' => $request->input('car_model'),
-                    'name_ar' => $request->input('name_arabic'),
-                    'name_en' => $request->input('name_english'),
-                    'engine' => $request->input('engine'),
-                    'fuel_type' => $request->input('fuel_type'),
-                    'model_year' => $request->input('model_year'),
-                    'paint_colour' => $request->input('paint_colour'),
-                    'interior_color' => $request->input('interior_color'),
-                    'body_style' => $request->input('body_style'),
-                    'mileage' => $request->input('mileage'),
-                    'num_of_doors' => $request->input('num_of_doors'),
-                    'power' => $request->input('power'),
-                    'hand_of_drive' => $request->input('hand_of_drive'),
-                    'torque' => $request->input('torque'),
-                    'maximum_speed' => $request->input('maximum_speed'),
-                    'acceleration' => $request->input('acceleration'),
-                    'transmission' => $request->input('transmission'),
-                    'price' => $request->input('price'),
-                    'img_slider' => 'carmodelofferimg/' . $imageName
-        ]);
+
+        $imageName2 = $request->file('upload_car_model_offer_image_slider')->getClientOriginalName();
+        $request->file('upload_car_model_offer_image_slider')->move(
+                base_path() . '/public/carmodelofferimgslider/', $imageName
+        );
+        if ($request->file('upload_car_model_offer_image') != '' && $request->file('upload_car_model_offer_image_slider') != '') {
+            $carsModelinsert = cars_model::create([
+                        'car_id' => $request->input('carId'),
+                        'car_model_id' => $request->input('car_model'),
+                        'name_ar' => $request->input('name_arabic'),
+                        'name_en' => $request->input('name_english'),
+                        'engine' => $request->input('engine'),
+                        'fuel_type' => $request->input('fuel_type'),
+                        'model_year' => $request->input('model_year'),
+                        'paint_colour' => $request->input('paint_colour'),
+                        'interior_color' => $request->input('interior_color'),
+                        'body_style' => $request->input('body_style'),
+                        'mileage' => $request->input('mileage'),
+                        'num_of_doors' => $request->input('num_of_doors'),
+                        'power' => $request->input('power'),
+                        'hand_of_drive' => $request->input('hand_of_drive'),
+                        'torque' => $request->input('torque'),
+                        'maximum_speed' => $request->input('maximum_speed'),
+                        'acceleration' => $request->input('acceleration'),
+                        'transmission' => $request->input('transmission'),
+                        'price' => $request->input('price'),
+                        'img_slider' => 'carmodelofferimg/' . $imageName,
+                        'img_slider_slider ' => 'carmodelofferimg/' . $imageName2
+            ]);
+        } else if ($request->file('upload_car_model_offer_image') != '') {
+            $carsModelinsert = cars_model::create([
+                        'car_id' => $request->input('carId'),
+                        'car_model_id' => $request->input('car_model'),
+                        'name_ar' => $request->input('name_arabic'),
+                        'name_en' => $request->input('name_english'),
+                        'engine' => $request->input('engine'),
+                        'fuel_type' => $request->input('fuel_type'),
+                        'model_year' => $request->input('model_year'),
+                        'paint_colour' => $request->input('paint_colour'),
+                        'interior_color' => $request->input('interior_color'),
+                        'body_style' => $request->input('body_style'),
+                        'mileage' => $request->input('mileage'),
+                        'num_of_doors' => $request->input('num_of_doors'),
+                        'power' => $request->input('power'),
+                        'hand_of_drive' => $request->input('hand_of_drive'),
+                        'torque' => $request->input('torque'),
+                        'maximum_speed' => $request->input('maximum_speed'),
+                        'acceleration' => $request->input('acceleration'),
+                        'transmission' => $request->input('transmission'),
+                        'price' => $request->input('price'),
+                        'img_slider' => 'carmodelofferimg/' . $imageName
+            ]);
+        } else if ($request->file('upload_car_model_offer_image_slider') != '') {
+            $carsModelinsert = cars_model::create([
+                        'car_id' => $request->input('carId'),
+                        'car_model_id' => $request->input('car_model'),
+                        'name_ar' => $request->input('name_arabic'),
+                        'name_en' => $request->input('name_english'),
+                        'engine' => $request->input('engine'),
+                        'fuel_type' => $request->input('fuel_type'),
+                        'model_year' => $request->input('model_year'),
+                        'paint_colour' => $request->input('paint_colour'),
+                        'interior_color' => $request->input('interior_color'),
+                        'body_style' => $request->input('body_style'),
+                        'mileage' => $request->input('mileage'),
+                        'num_of_doors' => $request->input('num_of_doors'),
+                        'power' => $request->input('power'),
+                        'hand_of_drive' => $request->input('hand_of_drive'),
+                        'torque' => $request->input('torque'),
+                        'maximum_speed' => $request->input('maximum_speed'),
+                        'acceleration' => $request->input('acceleration'),
+                        'transmission' => $request->input('transmission'),
+                        'price' => $request->input('price'),
+                        'img_slider_slider ' => 'carmodelofferimg/' . $imageName2
+            ]);
+        }
+
+
+
+
         $lastId = $carsModelinsert->id;
 
         $details_arabic = explode(",", $request->input('details_arabic'));

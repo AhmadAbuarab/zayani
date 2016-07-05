@@ -274,6 +274,11 @@ $(document).ready(function () {
                     {!! Form::file('upload_car_model_offer_image') !!}
                 </div>
 
+                <div class="form-group col-xs-6">
+                    {!! Form::label('upload_car_model_offer_image_slider') !!} 
+                    {!! Form::file('upload_car_model_offer_image_slider') !!}
+                </div>
+
 
                  <div class="form-group col-xs-12">
                     {!! Form::label('details_arabic') !!} 

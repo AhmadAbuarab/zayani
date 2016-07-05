@@ -32,6 +32,21 @@
                                 <a href="#" class="mainLogo"><img src="{{URL::asset('assets/img/logo.png') }}"></a>
 
                             </div>
+                            
+                            <div class="navbar-collapse collapse navbar-right">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="{{ URL::to("ar") }}">الرئيسية</a></li>
+                                    <li class=" menu-large">
+                                        <a href="http://www.al-zayani.com"> Al-zayani.com</a>
+                                    </li>
+                                    <li class=" menu-large">
+                                        <a href="{{ URL::to("ar/contact_us") }}">اتصل بنا</a>					
+                                    </li>
+                                    <li class="menu-large">
+                                        <a href="{{ URL::to("en") }}">English</a>					
+                                    </li>
+                                </ul>
+                            </div>
 
                             
                         </div>
