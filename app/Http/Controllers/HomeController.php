@@ -176,17 +176,17 @@ class HomeController extends Controller {
 
     public function addCarModel(request $request) {
 
-        $imageName = $request->file('upload_car_model_offer_image')->getClientOriginalName();
-        $request->file('upload_car_model_offer_image')->move(
-                base_path() . '/public/carmodelofferimg/', $imageName
-        );
-
-        $imageName2 = $request->file('upload_car_model_offer_image_slider')->getClientOriginalName();
-        $request->file('upload_car_model_offer_image_slider')->move(
-                base_path() . '/public/carmodelofferimgslider/', $imageName2
-        );
         if ($request->file('upload_car_model_offer_image') != '' && $request->file('upload_car_model_offer_image_slider') != '') {
 
+            $imageName = $request->file('upload_car_model_offer_image')->getClientOriginalName();
+            $request->file('upload_car_model_offer_image')->move(
+                    base_path() . '/public/carmodelofferimg/', $imageName
+            );
+
+            $imageName2 = $request->file('upload_car_model_offer_image_slider')->getClientOriginalName();
+            $request->file('upload_car_model_offer_image_slider')->move(
+                    base_path() . '/public/carmodelofferimgslider/', $imageName2
+            );
             $carsModelinsert = cars_model::create([
                         'car_id' => $request->input('carId'),
                         'car_model_id' => $request->input('car_model'),
@@ -208,9 +208,13 @@ class HomeController extends Controller {
                         'transmission' => $request->input('transmission'),
                         'price' => $request->input('price'),
                         'img_slider' => 'carmodelofferimg/' . $imageName,
-                        'img_slider_slider ' => 'carmodelofferimgslider/' . $imageName2
+                        'img_slider_slider' => 'carmodelofferimgslider/' . $imageName2
             ]);
         } else if ($request->file('upload_car_model_offer_image') != '') {
+            $imageName = $request->file('upload_car_model_offer_image')->getClientOriginalName();
+            $request->file('upload_car_model_offer_image')->move(
+                    base_path() . '/public/carmodelofferimg/', $imageName
+            );
 
             $carsModelinsert = cars_model::create([
                         'car_id' => $request->input('carId'),
@@ -235,7 +239,10 @@ class HomeController extends Controller {
                         'img_slider' => 'carmodelofferimg/' . $imageName
             ]);
         } else if ($request->file('upload_car_model_offer_image_slider') != '') {
-
+            $imageName2 = $request->file('upload_car_model_offer_image_slider')->getClientOriginalName();
+            $request->file('upload_car_model_offer_image_slider')->move(
+                    base_path() . '/public/carmodelofferimgslider/', $imageName2
+            );
             $carsModelinsert = cars_model::create([
                         'car_id' => $request->input('carId'),
                         'car_model_id' => $request->input('car_model'),
@@ -256,7 +263,7 @@ class HomeController extends Controller {
                         'acceleration' => $request->input('acceleration'),
                         'transmission' => $request->input('transmission'),
                         'price' => $request->input('price'),
-                        'img_slider_slider ' => 'carmodelofferimgslider/' . $imageName2
+                        'img_slider_slider' => 'carmodelofferimgslider/' . $imageName2
             ]);
         }
 

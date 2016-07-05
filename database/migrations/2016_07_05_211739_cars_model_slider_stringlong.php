@@ -12,7 +12,7 @@ class CarsModelSliderStringlong extends Migration {
      */
     public function up() {
         Schema::table('cars_model', function (Blueprint $table) {
-            $table->string('img_slider_slider',255)->nullable();
+            $table->string('img_slider_slider',255)->nullable()->change();
         });
     }
 
