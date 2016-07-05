@@ -119,7 +119,7 @@
 	<div class="row">
 		<div class="col-md-12 col-sm-12 col-xs-12">
 			<div class="pagePath">
-				<span>HOME / JAGUAR / F PACE</span>
+				
 			</div>
 		</div>
 		<div class="col-md-12 col-sm-12 col-xs-12">
