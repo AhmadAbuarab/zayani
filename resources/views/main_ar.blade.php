@@ -82,10 +82,7 @@
                         <!-- Set the first background image using inline CSS below. -->
                         <div class="fill" style="background-image:url({{URL::asset($car->slider_img)}});"></div>
                         <div class="carousel-caption">
-                            <!--                 	<div class="sliderTitle">
-                                                <h1>F-PACE</h1>
-                                                <span>ABOVE ALL, IT'S A JAGUAR</span>
-                                                </div> -->
+
                             <a href="{{ URL::to("ar/offers/".$car->id) }}"><button class="btn btn-primary sliderButton">المزيد <i class="fa fa-chevron-right" aria-hidden="true"></i></button></a>
 
                         </div>
@@ -135,7 +132,7 @@
              @foreach($cars as $car)
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="carModel">
-                        <img src="{{URL::asset('assets/img/jaguar_1.png') }}">
+                        <img src="{{URL::asset($car->main_img) }}">
                         <h1>{{$car->name_ar}}</h1>
                         <select name="carModelId" class="form-control" class="carModelId">
                             <option value="0">إختار الموديل</option>
