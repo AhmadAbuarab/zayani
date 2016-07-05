@@ -56,33 +56,47 @@
         <!-- end header -->
         <!-- slider -->
         <div class="container-fulid">
-            <div id="carousel2" class="carousel slide" data-ride="carousel">
+            <header id="myCarousel" class="carousel slide">
+                <!-- Indicators -->
+
+                <!-- Wrapper for Slides -->
                 <div class="carousel-inner">
                     @if(isset($offerImages))
                     <?php $count = 0; ?>
                     @foreach($offerImages as $offerImage)
                     @if($offerImage->path_slider !='')
                     @if($count == 0)
+
                     <div class="item active">
-                        <img src="{{URL::asset($offerImage->path_slider) }}">
+                        <!-- Set the first background image using inline CSS below. -->
+                        <div class="fill_inner" style="background-image:url({{URL::asset($offerImage->path_slider) }});"></div>
+                        <div class="carousel-caption">
+                        </div>
                     </div>
                     @else
+
                     <div class="item">
-                        <img src="{{URL::asset($offerImage->path_slider) }}">
+                        <!-- Set the second background image using inline CSS below. -->
+                        <div class="fill_inner" style="background-image:url({{URL::asset($offerImage->path_slider) }});"></div>
+                        <div class="carousel-caption">
+                        </div>
                     </div>
-                    <?php $count++; ?>
                     @endif
+                    <?php $count++; ?>
                     @endif
                     @endforeach
                     @endif
+
                 </div>
-            </div> 
 
-
-
-            
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="icon-prev"></span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="icon-next"></span>
+                </a>
+            </header>	
         </div>
-
 
 
         <!-- car section -->
