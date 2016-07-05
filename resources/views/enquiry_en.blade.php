@@ -187,7 +187,7 @@
 				<img src="{{URL::asset($carsModelData[0]->img_slider) }}" alt="">
                                 @endif
                                 @if(isset($carsModelData[0]->name_en))
-				<h1>$carsModelData[0]->name_en</h1>
+				<h1>{{$carsModelData[0]->name_en}}</h1>
                                 @endif
 			</div>
 

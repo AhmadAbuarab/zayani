@@ -134,7 +134,7 @@
                                 @endif
                                 @endif
                                 @if(isset($carsModelData[0]->name_en))
-				<h1>$carsModelData[0]->name_ar</h1>
+				<h1>{{$carsModelData[0]->name_ar}}</h1>
                                 @endif
                     </div>
 
