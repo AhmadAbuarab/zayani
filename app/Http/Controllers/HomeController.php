@@ -186,8 +186,7 @@ class HomeController extends Controller {
                 base_path() . '/public/carmodelofferimgslider/', $imageName2
         );
         if ($request->file('upload_car_model_offer_image') != '' && $request->file('upload_car_model_offer_image_slider') != '') {
-            var_dump('xxxxxxxxx');
-            die();
+
             $carsModelinsert = cars_model::create([
                         'car_id' => $request->input('carId'),
                         'car_model_id' => $request->input('car_model'),
@@ -212,8 +211,7 @@ class HomeController extends Controller {
                         'img_slider_slider ' => 'carmodelofferimgslider/' . $imageName2
             ]);
         } else if ($request->file('upload_car_model_offer_image') != '') {
-        var_dump('yyyyyyyyyy');
-        die();
+
             $carsModelinsert = cars_model::create([
                         'car_id' => $request->input('carId'),
                         'car_model_id' => $request->input('car_model'),
@@ -237,8 +235,7 @@ class HomeController extends Controller {
                         'img_slider' => 'carmodelofferimg/' . $imageName
             ]);
         } else if ($request->file('upload_car_model_offer_image_slider') != '') {
-            var_dump('zzzzzzzzz');
-            die();
+
             $carsModelinsert = cars_model::create([
                         'car_id' => $request->input('carId'),
                         'car_model_id' => $request->input('car_model'),
