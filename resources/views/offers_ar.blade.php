@@ -64,12 +64,12 @@
         </ol>
 
         <!-- Wrapper for Slides -->
+        <div class="carousel-inner">
          <?php $count=0; ?>
                     @if(isset($carsModel))
                         @foreach($carsModel as $carMod)
                             @if(isset($carMod->img_slider_slider) && $carMod->img_slider_slider !='')
                                 @if($count == 0)
-        <div class="carousel-inner">
             <div class="item active">
                 <!-- Set the first background image using inline CSS below. -->
                 <div class="fill" style="background-image:url({{URL::asset($carMod->img_slider_slider) }});"></div>
