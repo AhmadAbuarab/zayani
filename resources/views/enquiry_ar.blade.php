@@ -80,36 +80,7 @@
 
 
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                    </div>
-                    <div class="clearfix">
-                        <div id="thumbcarousel" class="carousel slide" data-interval="false">
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    @if(isset($offerImages))
-                                    <?php $count=0; ?>
-                                    @foreach($offerImages as $offerImage)
-                                    @if($offerImage->path != '')
-                                    <div  data-target="#carousel2" data-slide-to="{{$count}}" class="col-md-3 col-sm-3 col-xs-3">
-
-                                        <div class="thumb">
-                                            <img src="{{URL::asset($offerImage->path) }}">
-                                        </div>
-                                    </div>  
-                                    <?php $count++; ?>
-                                    @endif
-                                    @endforeach
-                                    @endif
-
-                                </div><!-- /item -->
-                            </div><!-- /carousel-inner -->
-
-                        </div> <!-- /thumbcarousel -->
-                    </div><!-- /clearfix -->
-                </div>
-            </div>
+            
         </div>
 
 
@@ -132,11 +103,10 @@
                                 @if(isset($carsModelData[0]->img_slider))
 				<img src="{{URL::asset($carsModelData[0]->img_slider) }}" alt="">
                                 @endif
-                                @endif
                                 @if(isset($carsModelData[0]->name_en))
-				<h1>{{$carsModelData[0]->name_ar}}</h1>
+				<h1>{{$carsModelData[0]->name_en}}</h1>
                                 @endif
-                    </div>
+			</div>
 
                 </div>
 

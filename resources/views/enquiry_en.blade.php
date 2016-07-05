@@ -80,36 +80,7 @@
 
 
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                    </div>
-                    <div class="clearfix">
-                        <div id="thumbcarousel" class="carousel slide" data-interval="false">
-                            <div class="carousel-inner">
-                                <div class="item active">
-                                    @if(isset($offerImages))
-                                    <?php $count=0; ?>
-                                    @foreach($offerImages as $offerImage)
-                                    @if($offerImage->path != '')
-                                    <div  data-target="#carousel2" data-slide-to="{{$count}}" class="col-md-3 col-sm-3 col-xs-3">
-
-                                        <div class="thumb">
-                                            <img src="{{URL::asset($offerImage->path) }}">
-                                        </div>
-                                    </div>  
-                                    <?php $count++; ?>
-                                    @endif
-                                    @endforeach
-                                    @endif
-
-                                </div><!-- /item -->
-                            </div><!-- /carousel-inner -->
-
-                        </div> <!-- /thumbcarousel -->
-                    </div><!-- /clearfix -->
-                </div>
-            </div>
+            
         </div>
 
 
@@ -124,7 +95,7 @@
 		</div>
 		<div class="col-md-12 col-sm-12 col-xs-12">
 			<div class="valueCarText">
-				<h1>ENQUIRY / TEST DRIVE</h1>
+				
 			</div>
 		</div>
 	</div>
