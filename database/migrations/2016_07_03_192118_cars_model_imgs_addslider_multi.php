@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddImgToCarmodeloffer extends Migration {
+class CarsModelImgsAddsliderMulti extends Migration {
 
     /**
      * Run the migrations.
@@ -11,8 +11,8 @@ class AddImgToCarmodeloffer extends Migration {
      * @return void
      */
     public function up() {
-        Schema::table('cars_model', function (Blueprint $table) {
-            $table->string('img_slider_slider');
+        Schema::table('car_offers_images', function (Blueprint $table) {
+            $table->string('path_slider');
         });
     }
 
@@ -22,7 +22,7 @@ class AddImgToCarmodeloffer extends Migration {
      * @return void
      */
     public function down() {
-        Schema::table('cars_model', function (Blueprint $table) {
+        Schema::table('car_offers_images', function (Blueprint $table) {
             //
         });
     }

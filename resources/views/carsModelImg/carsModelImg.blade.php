@@ -63,6 +63,11 @@ $(document).ready(function () {
                     {!! Form::label('upload_image') !!} 
                     {!! Form::file('upload_image') !!}
                 </div>
+                
+                <div class="form-group">
+                    {!! Form::label('upload_image_slider') !!} 
+                    {!! Form::file('upload_image_slider') !!}
+                </div>
 
             </div>
 

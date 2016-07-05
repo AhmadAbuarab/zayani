@@ -129,14 +129,37 @@ class HomeController extends Controller {
     }
 
     public function caroffermodelimg(request $request) {
-        $imageName = $request->file('upload_image')->getClientOriginalName();
-        $request->file('upload_image')->move(
-                base_path() . '/public/carmodeloffermultiimg/', $imageName
-        );
-        car_offers_images::create([
-            'car_offer_id' => $request->input('carId'),
-            'path' => 'carmodeloffermultiimg/' . $imageName
-        ]);
+
+        if ($request->file('upload_image') != '') {
+            $imageName = $request->file('upload_image')->getClientOriginalName();
+            $request->file('upload_image')->move(
+                    base_path() . '/public/carmodeloffermultiimg/', $imageName
+            );
+        }
+
+        if ($request->file('upload_image_slider') != '') {
+            $imageName2 = $request->file('upload_image_slider')->getClientOriginalName();
+            $request->file('upload_image_slider')->move(
+                    base_path() . '/public/carmodeloffermultiimgslider/', $imageName2
+            );
+        }
+        if ($request->file('upload_image_slider') != '' && $request->file('upload_image') != '') {
+            car_offers_images::create([
+                'car_offer_id' => $request->input('carId'),
+                'path' => 'carmodeloffermultiimg/' . $imageName,
+                'path_slider' => 'carmodeloffermultiimgslider/' . $imageName2
+            ]);
+        } else if ($request->file('upload_image_slider') != '') {
+            car_offers_images::create([
+                'car_offer_id' => $request->input('carId'),
+                'path_slider' => 'carmodeloffermultiimgslider/' . $imageName2
+            ]);
+        } else if ($request->file('upload_image') != '') {
+            car_offers_images::create([
+                'car_offer_id' => $request->input('carId'),
+                'path' => 'carmodeloffermultiimg/' . $imageName
+            ]);
+        }
         return back();
     }
 

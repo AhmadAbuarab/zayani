@@ -7,6 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddImgToCarmodeloffer' => $baseDir . '/database/migrations/2016_07_02_214013_add_img_to_carmodeloffer.php',
+    'CarsModelImgsAddslider' => $baseDir . '/database/migrations/2016_07_03_190732_cars_model_imgs_addslider.php',
+    'CarsModelImgsAddsliderMulti' => $baseDir . '/database/migrations/2016_07_03_192118_cars_model_imgs_addslider_multi.php',
     'CreateCarBrandModelTable' => $baseDir . '/database/migrations/2016_06_29_194318_create_car_brand_model_table.php',
     'CreateCarBrandTable' => $baseDir . '/database/migrations/2016_06_29_194235_create_car_brand_table.php',
     'CreateCarModelMainTable' => $baseDir . '/database/migrations/2016_06_10_204228_create_car_model_main_table.php',
