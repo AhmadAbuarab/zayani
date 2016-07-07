@@ -28,6 +28,7 @@ Route::post('deleteCarModelMain', 'HomeController@deleteCarModelMain');
 Route::post('deleteCarBrand', 'HomeController@deleteCarBrand');
 Route::post('deleteCarBrandModel', 'HomeController@deleteCarBrandModel');
 Route::post('deleteCarOffersImgs', 'HomeController@deleteCarOffersImgs');
+Route::post('deleteCarModelOffer', 'HomeController@deleteCarModelOffer');
 Route::post('carbrand/create', 'HomeController@addcarbrand');
 Route::post('carbrandmodel/create', 'HomeController@addcarbrandmodel');
 

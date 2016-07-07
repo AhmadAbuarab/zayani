@@ -14,6 +14,7 @@ use App\car_brand_model;
 use App\value_car;
 use App\test_drive;
 use App\car_offers_images;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller {
 
@@ -114,15 +115,25 @@ class HomeController extends Controller {
     }
 
     public function deleteCar(request $request) {
+        $carModelId = DB::table('cars_model')->select('id')->where('car_id', '=', $request->input('carId'))->get();
+        foreach ($carModelId as $car) {
+            car_offers_images::where('car_offer_id', $car->id)->delete();
+        }
+        cars_model_other_details_mode::where('car_id', $request->input('carId'))->delete();
         cars_model::where('car_id', $request->input('carId'))->delete();
         car_model_main::where('car_id', $request->input('carId'))->delete();
-        cars_model_other_details_model::where('car_id', $request->input('carId'))->delete();
         cars::where('id', $request->input('carId'))->delete();
         return json_decode('1');
     }
 
     public function deleteCarModelMain(request $request) {
         car_model_main::where('id', $request->input('carId'))->delete();
+        return json_decode('1');
+    }
+
+    public function deleteCarModelOffer(request $request) {
+        car_offers_images::where('car_offer_id', $request->input('carId'))->delete();
+        cars_model::where('car_model_id', $request->input('carId'))->delete();
         return json_decode('1');
     }
 

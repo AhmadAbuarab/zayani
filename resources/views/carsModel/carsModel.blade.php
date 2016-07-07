@@ -13,7 +13,7 @@
 <script type="text/javascript" language="javascript" src="{{ asset ("assets/dataTables/examples/resources/demo.js") }}"></script>
 <script>
 $(document).ready(function () {
- 
+
 
 
 
@@ -118,7 +118,24 @@ $(document).ready(function () {
     });
 
     $('.delete').click(function () {
-        alert(1);
+        var that = $(this);
+        var carId = $(this).parent().children().eq(0).val();
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: './deleteCarModelOffer',
+            beforeSend: function (xhr) {
+                var token = $('meta[name="csrf_token"]').attr('content');
+
+                if (token) {
+                    return xhr.setRequestHeader('X-CSRF-TOKEN', token);
+                }
+            },
+            data: {carId: carId},
+            success: function (data) {
+                that.parent().parent().html('');
+            }
+        })
     });
 
     $('#example a.edit').on('click', function (e) {
@@ -280,12 +297,12 @@ $(document).ready(function () {
                 </div>
 
 
-                 <div class="form-group col-xs-12">
+                <div class="form-group col-xs-12">
                     {!! Form::label('details_arabic') !!} 
                     {!! Form::text('details_arabic','',array('class' => 'form-control')) !!}
                 </div>
-                
-                 <div class="form-group col-xs-12">
+
+                <div class="form-group col-xs-12">
                     {!! Form::label('details_english') !!} 
                     {!! Form::text('details_english','',array('class' => 'form-control')) !!}
                 </div>
