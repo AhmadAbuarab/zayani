@@ -105,24 +105,24 @@
             <?php $count2 = 0; ?>
             @if(isset($offerImages))
             <div class="clearfix">
-            @foreach($offerImages as $offerImage)
-            @if($offerImage->path_slider !='')
                 <div id="thumbcarousel" class="carousel slide" data-interval="false">
                     <div class="carousel-inner">
                         <div class="item active">
+                            @foreach($offerImages as $offerImage)
+                            @if($offerImage->path_slider !='')
                             <div  data-target="#carousel2" data-slide-to="{{$count2}}" class="col-md-3 col-sm-3 col-xs-3">
 
                                 <div   class="thumb">
                                     <img src="{{URL::asset($offerImage->path)}}">
                                 </div>
                             </div>
+                            <?php $count2++; ?>
+                            @endif
+                            @endforeach
                         </div><!-- /item -->
                     </div><!-- /carousel-inner -->
 
                 </div> <!-- /thumbcarousel -->
-            <?php $count2++; ?>
-            @endif
-            @endforeach
             </div><!-- /clearfix -->
             @endif
 
