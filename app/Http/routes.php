@@ -66,8 +66,8 @@ Route::post('valuecaraddlog/create', 'SiteController@valuecaraddlog');
 
 Route::post('testcaraddlog/create', 'HomeController@testcaraddlog');
 
-Route::post('getCarBrandModel', 'SiteController@getCarBrandModel');
-Route::post('getCarBrandModel', 'SiteController@getCarBrandModel');
+Route::post('en/getCarBrandModel', 'SiteController@getCarBrandModel');
+Route::post('ar/getCarBrandModel', 'SiteController@getCarBrandModel');
 
 
 //Route::get('/en/details', 'SiteController@details');

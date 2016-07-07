@@ -127,9 +127,9 @@
 
             <?php $count2 = 0; ?>
             @if(isset($offerImages))
+            <div class="clearfix">
             @foreach($offerImages as $offerImage)
             @if($offerImage->path_slider !='')
-            <div class="clearfix">
                 <div id="thumbcarousel" class="carousel slide" data-interval="false">
                     <div class="carousel-inner">
                         <div class="item active">
@@ -143,10 +143,10 @@
                     </div><!-- /carousel-inner -->
 
                 </div> <!-- /thumbcarousel -->
-            </div><!-- /clearfix -->
             <?php $count2++; ?>
             @endif
             @endforeach
+            </div><!-- /clearfix -->
             @endif
 
         </div>
@@ -167,21 +167,21 @@
                             @endif
                         </h1>
                         <ul>
-                            <li><i class="fa fa-angle-right" aria-hidden="true"></i> Engine:<small>@if(isset($carsModelData[0]->engine)){{$carsModelData[0]->engine}} @endif</small></li>
-                            <li><i class="fa fa-angle-right" aria-hidden="true"></i> Fuel Type:<small>@if(isset($carsModelData[0]->fuel_type)){{$carsModelData[0]->fuel_type}} @endif</small></li>
-                            <li><i class="fa fa-angle-right" aria-hidden="true"></i> Model Year:<small>@if(isset($carsModelData[0]->model_year)){{$carsModelData[0]->model_year}} @endif</small></li>
-                            <li><i class="fa fa-angle-right" aria-hidden="true"></i> Paint Colour:<small>@if(isset($carsModelData[0]->paint_colour)){{$carsModelData[0]->paint_colour}} @endif</small></li>
-                            <li><i class="fa fa-angle-right" aria-hidden="true"></i> Interior Color:<small>@if(isset($carsModelData[0]->interior_color)){{$carsModelData[0]->interior_color}} @endif</small></li>
-                            <li><i class="fa fa-angle-right" aria-hidden="true"></i> Body Style:<small>@if(isset($carsModelData[0]->body_style)){{$carsModelData[0]->body_style}} @endif</small></li>
-                            <li><i class="fa fa-angle-right" aria-hidden="true"></i> Mileage:<small>@if(isset($carsModelData[0]->mileage)){{$carsModelData[0]->mileage}} @endif</small></li>
-                            <li><i class="fa fa-angle-right" aria-hidden="true"></i> No.of Doors:<small>@if(isset($carsModelData[0]->num_of_doors)){{$carsModelData[0]->num_of_doors}} @endif</small></li>
-                            <li><i class="fa fa-angle-right" aria-hidden="true"></i> Power:<small>@if(isset($carsModelData[0]->power)){{$carsModelData[0]->power}} @endif</small></li>
-                            <li><i class="fa fa-angle-right" aria-hidden="true"></i> Hand of Drive:<small>@if(isset($carsModelData[0]->hand_of_drive)){{$carsModelData[0]->hand_of_drive}} @endif</small></li>
-                            <li><i class="fa fa-angle-right" aria-hidden="true"></i> Torque:<small>@if(isset($carsModelData[0]->torque)){{$carsModelData[0]->torque}} @endif</small></li>
-                            <li><i class="fa fa-angle-right" aria-hidden="true"></i> Maximum Speed:<small>@if(isset($carsModelData[0]->maximum_speed)){{$carsModelData[0]->maximum_speed}} @endif</small></li>
-                            <li><i class="fa fa-angle-right" aria-hidden="true"></i> Acceleration:<small>@if(isset($carsModelData[0]->acceleration)){{$carsModelData[0]->acceleration}} @endif</small></li>
-                            <li><i class="fa fa-angle-right" aria-hidden="true"></i> Transmission:<small>@if(isset($carsModelData[0]->transmission)){{$carsModelData[0]->transmission}} @endif</small></li>
-                            <li><i class="fa fa-angle-right" aria-hidden="true"></i> Price:<small>@if(isset($carsModelData[0]->price)){{$carsModelData[0]->price}} @endif</small></li>
+                            @if(isset($carsModelData[0]->engine)&& $carsModelData[0]->engine!='')  <li><i class="fa fa-angle-right" aria-hidden="true"></i> Engine:<small>@if(isset($carsModelData[0]->engine)){{$carsModelData[0]->engine}} @endif</small></li>@endif
+                            @if(isset($carsModelData[0]->fuel_type) && $carsModelData[0]->fuel_type!='')<li><i class="fa fa-angle-right" aria-hidden="true"></i> Fuel Type:<small>@if(isset($carsModelData[0]->fuel_type)){{$carsModelData[0]->fuel_type}} @endif</small></li>@endif
+                            @if(isset($carsModelData[0]->model_year) && $carsModelData[0]->model_year!='')   <li><i class="fa fa-angle-right" aria-hidden="true"></i> Model Year:<small>@if(isset($carsModelData[0]->model_year)){{$carsModelData[0]->model_year}} @endif</small></li>@endif
+                            @if(isset($carsModelData[0]->paint_colour) && $carsModelData[0]->paint_colour!='')  <li><i class="fa fa-angle-right" aria-hidden="true"></i> Paint Colour:<small>@if(isset($carsModelData[0]->paint_colour)){{$carsModelData[0]->paint_colour}} @endif</small></li>@endif
+                            @if(isset($carsModelData[0]->interior_color) && $carsModelData[0]->interior_color!='')<li><i class="fa fa-angle-right" aria-hidden="true"></i> Interior Color:<small>@if(isset($carsModelData[0]->interior_color)){{$carsModelData[0]->interior_color}} @endif</small></li>@endif
+                            @if(isset($carsModelData[0]->body_style) && $carsModelData[0]->body_style!='')  <li><i class="fa fa-angle-right" aria-hidden="true"></i> Body Style:<small>@if(isset($carsModelData[0]->body_style)){{$carsModelData[0]->body_style}} @endif</small></li>@endif
+                            @if(isset($carsModelData[0]->mileage) && $carsModelData[0]->mileage!='')  <li><i class="fa fa-angle-right" aria-hidden="true"></i> Mileage:<small>@if(isset($carsModelData[0]->mileage)){{$carsModelData[0]->mileage}} @endif</small></li>@endif
+                            @if(isset($carsModelData[0]->num_of_doors) && $carsModelData[0]->num_of_doors!='')<li><i class="fa fa-angle-right" aria-hidden="true"></i> No.of Doors:<small>@if(isset($carsModelData[0]->num_of_doors)){{$carsModelData[0]->num_of_doors}} @endif</small></li>@endif
+                            @if(isset($carsModelData[0]->power) && $carsModelData[0]->power!='') <li><i class="fa fa-angle-right" aria-hidden="true"></i> Power:<small>@if(isset($carsModelData[0]->power)){{$carsModelData[0]->power}} @endif</small></li>@endif
+                            @if(isset($carsModelData[0]->hand_of_drive) && $carsModelData[0]->hand_of_drive!='')  <li><i class="fa fa-angle-right" aria-hidden="true"></i> Hand of Drive:<small>@if(isset($carsModelData[0]->hand_of_drive)){{$carsModelData[0]->hand_of_drive}} @endif</small></li>@endif
+                            @if(isset($carsModelData[0]->torque) && $carsModelData[0]->torque!='') <li><i class="fa fa-angle-right" aria-hidden="true"></i> Torque:<small>@if(isset($carsModelData[0]->torque)){{$carsModelData[0]->torque}} @endif</small></li>@endif
+                            @if(isset($carsModelData[0]->maximum_speed) && $carsModelData[0]->maximum_speed!='')  <li><i class="fa fa-angle-right" aria-hidden="true"></i> Maximum Speed:<small>@if(isset($carsModelData[0]->maximum_speed)){{$carsModelData[0]->maximum_speed}} @endif</small></li>@endif
+                            @if(isset($carsModelData[0]->acceleration) && $carsModelData[0]->acceleration!='') <li><i class="fa fa-angle-right" aria-hidden="true"></i> Acceleration:<small>@if(isset($carsModelData[0]->acceleration)){{$carsModelData[0]->acceleration}} @endif</small></li>@endif
+                            @if(isset($carsModelData[0]->transmission) && $carsModelData[0]->transmission!='')  <li><i class="fa fa-angle-right" aria-hidden="true"></i> Transmission:<small>@if(isset($carsModelData[0]->transmission)){{$carsModelData[0]->transmission}} @endif</small></li>@endif
+                            @if(isset($carsModelData[0]->price) && $carsModelData[0]->price) !='')  <li><i class="fa fa-angle-right" aria-hidden="true"></i> Price:<small>@if(isset($carsModelData[0]->price)){{$carsModelData[0]->price}} @endif</small></li>@endif
                         </ul>
                     </div>
                 </div>
