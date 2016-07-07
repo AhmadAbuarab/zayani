@@ -373,7 +373,7 @@ $(document).ready(function () {
 
                 <td><a class="edit" href="">Edit</a></td>
                 <td>
-                    <input type="hidden" value="{{$carModel->id}}" ><span class="delete">Delete</span></td>
+                    <input type="hidden" value="{{$carModel->id}}" ><a class="delete" href="">Delete</a></td>
                 <td><a class="save" href="./carsmodel">save</a></td>
             </tr>
             ...
