@@ -407,13 +407,13 @@ class HomeController extends Controller {
 
     public function testcaraddlog(request $request) {
         test_drive::create([
-            'car_model_offer_id' => $request->input(),
-            'first_name' => $request->input(),
-            'last_name' => $request->input(),
-            'email' => $request->input(),
-            'phone_number' => $request->input(),
-            'best_time_to_contact' => $request->input(),
-            'message' => $request->input()
+            'car_model_offer_id' => $request->input('id'),
+            'first_name' => $request->input('first_name'),
+            'last_name' => $request->input('last_name'),
+            'email' => $request->input('email'),
+            'phone_number' => $request->input('phone_number'),
+            'best_time_to_contact' => $request->input('best_time_to_contact'),
+            'message' => $request->input('message')
         ]);
         return back();
     }
