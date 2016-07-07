@@ -119,7 +119,7 @@ $(document).ready(function () {
 
     $('.delete').click(function () {
         var that = $(this);
-        var carId = $(this).parent().parent().children().eq(0).val();
+        var carId = $(this).parent().children().eq(0).val();
         $.ajax({
             type: "POST",
             dataType: "json",
@@ -372,7 +372,8 @@ $(document).ready(function () {
                 <td class="price">{{$carModel->price}}</td>
 
                 <td><a class="edit" href="">Edit</a></td>
-                <td><a class="delete" href="">Delete</a></td>
+                <td>
+                    <input type="hidden" value="{{$carModel->id}}" ><a class="delete" href="">Delete</a></td>
                 <td><a class="save" href="./carsmodel">save</a></td>
             </tr>
             ...
