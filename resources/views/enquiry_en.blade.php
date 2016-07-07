@@ -128,7 +128,6 @@
 
                 <div class="col-md-8 col-sm-6 col-xs-12">
 
-                    <form class="form-horizontal">
                          {!! Form::open(['url' => 'testcaraddlog/create']) !!}
                          <input name="id" type="hidden" value="{{$carsModelData[0]->id}}" >
                         <div class="col-md-6 col-sm-12 col-xs-12">
