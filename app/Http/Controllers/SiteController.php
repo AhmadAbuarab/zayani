@@ -80,10 +80,10 @@ class SiteController extends Controller {
         $carsModelData = DB::table('cars_model')->select('*')->where('id', '=', $id)->get();
         if ($this->lang == 'ar') {
             $contactUsData = DB::table('contact_us')->select('feed_back_ar', 'address_ar', 'po_box_ar', 'telephone', 'showroom_openning_hours', 'servuce_and_parts_openning_hours', 'email', 'mobile')->get();
-            return view('enquiry_ar', compact('contactUsData', 'carsModelData','offerImages'));
+            return view('enquiry_ar', compact('contactUsData', 'carsModelData', 'offerImages'));
         } else {
             $contactUsData = DB::table('contact_us')->select('feed_back_en', 'address_en', 'po_box_en', 'telephone', 'showroom_openning_hours', 'servuce_and_parts_openning_hours', 'email', 'mobile')->get();
-            return view('enquiry_en', compact('contactUsData', 'carsModelData','offerImages'));
+            return view('enquiry_en', compact('contactUsData', 'carsModelData', 'offerImages'));
         }
     }
 
@@ -94,12 +94,12 @@ class SiteController extends Controller {
             $carsBran = car_brand::lists('name_ar', 'id');
             $carsBran->prepend('اختيار', 'اختيار');
             $contactUsData = DB::table('contact_us')->select('feed_back_ar', 'address_ar', 'po_box_ar', 'telephone', 'showroom_openning_hours', 'servuce_and_parts_openning_hours', 'email', 'mobile')->get();
-            return view('valuecar_ar', compact('contactUsData', 'carsBran', 'carsModelData','offerImages'));
+            return view('valuecar_ar', compact('contactUsData', 'carsBran', 'carsModelData', 'offerImages'));
         } else {
             $carsBran = car_brand::lists('name_en', 'id');
             $carsBran->prepend('Select', 'Select');
             $contactUsData = DB::table('contact_us')->select('feed_back_en', 'address_en', 'po_box_en', 'telephone', 'showroom_openning_hours', 'servuce_and_parts_openning_hours', 'email', 'mobile')->get();
-            return view('valuecar_en', compact('contactUsData', 'carsBran', 'carsModelData','offerImages'));
+            return view('valuecar_en', compact('contactUsData', 'carsBran', 'carsModelData', 'offerImages'));
         }
     }
 
@@ -118,6 +118,11 @@ class SiteController extends Controller {
     }
 
     public function valuecaraddlog(request $request) {
+        $this->validate($request, [
+            'email' => 'required',
+            'first_name' => 'required',
+            'phone_number' => 'required',
+        ]);
         value_car::create([
             'brand_id' => $request->input('brand_id'),
             'model_id' => $request->input('model_id'),

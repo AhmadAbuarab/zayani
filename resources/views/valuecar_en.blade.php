@@ -120,25 +120,25 @@
             <div class="row">
                 <div class="form-horizontal">
                     {!! Form::open(['url' => 'valuecaraddlog/create']) !!}
-                    <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="col-md-4 col-sm-4 col-xs-12 {{ $errors->has('first_name') ? ' has-error' : '' }}">
                         <div class="form-group">
                             <label for="exampleInputName2">First Name</label>
                             <input type="text" name="first_name" class="form-control" id="exampleInputName2" placeholder="First Name">
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="col-md-4 col-sm-4 col-xs-12 {{ $errors->has('last_name') ? ' has-error' : '' }}">
                         <div class="form-group">
                             <label for="exampleInputName2">Last Name</label>
                             <input type="text" name="last_name" class="form-control" id="exampleInputName2" placeholder="Last Name">
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="col-md-4 col-sm-4 col-xs-12 {{ $errors->has('phone_number') ? ' has-error' : '' }}">
                         <div class="form-group">
                             <label for="exampleInputName2">Phone Number</label>
                             <input type="phone" name="phone_number" class="form-control" id="exampleInputName2" placeholder="Phone Number">
                         </div>
                     </div>
-                    <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="col-md-4 col-sm-4 col-xs-12 {{ $errors->has('email') ? ' has-error' : '' }}">
                         <div class="form-group">
                             <label for="exampleInputName2">Email</label>
                             <input type="email" name="email" class="form-control" id="exampleInputName2" placeholder="Email">

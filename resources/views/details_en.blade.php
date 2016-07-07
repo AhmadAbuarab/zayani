@@ -118,6 +118,37 @@
                     <span class="icon-next"></span>
                 </a>
             </header>	
+
+            <div class="pagePath">
+
+            </div>
+
+
+
+            <?php $count2 = 0; ?>
+            @if(isset($offerImages))
+            @foreach($offerImages as $offerImage)
+            @if($offerImage->path_slider !='')
+            <div class="clearfix">
+                <div id="thumbcarousel" class="carousel slide" data-interval="false">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div  data-target="#carousel2" data-slide-to="{{$count2}}" class="col-md-3 col-sm-3 col-xs-3">
+
+                                <div   class="thumb">
+                                    <img src="{{URL::asset($offerImage->path)}}">
+                                </div>
+                            </div>
+                        </div><!-- /item -->
+                    </div><!-- /carousel-inner -->
+
+                </div> <!-- /thumbcarousel -->
+            </div><!-- /clearfix -->
+            <?php $count2++; ?>
+            @endif
+            @endforeach
+            @endif
+
         </div>
         <!-- end slider -->
 
