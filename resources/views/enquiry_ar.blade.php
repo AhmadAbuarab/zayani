@@ -127,31 +127,33 @@
                 <div class="col-md-8 col-sm-6 col-xs-12">
 
                     <form class="form-horizontal">
+                        {!! Form::open(['url' => 'testcaraddlog/create']) !!}
+                        <input name="id" type="hidden" value="{{$carsModelData[0]->id}}" >
                         <div class="col-md-6 col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label for="exampleInputName2">الاسم الاخير</label>
-                                <input type="text" class="form-control" id="exampleInputName2" placeholder="الاسم الاخير">
+                                <input type="text" class="form-control" name="last_name" id="exampleInputName2" placeholder="الاسم الاخير">
                             </div>
                         </div>
 
                         <div class="col-md-6 col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label for="exampleInputName2">الاسم الاول</label>
-                                <input type="text" class="form-control" id="exampleInputName2" placeholder="الاسم الاول">
+                                <input type="text" name="first_name" class="form-control" id="exampleInputName2" placeholder="الاسم الاول">
                             </div>
                         </div>
 
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label for="exampleInputName2">البريد الالكتروني</label>
-                                <input type="email" class="form-control" id="exampleInputName2" placeholder="البريد الالكتروني">
+                                <input name="email" type="email" class="form-control" id="exampleInputName2" placeholder="البريد الالكتروني">
                             </div>
                         </div>
 
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label for="exampleInputName2">رقم الهاتف</label>
-                                <input type="phone" class="form-control" id="exampleInputName2" placeholder="رقم الهاتف">
+                                <input name="phone_number" type="phone" class="form-control" id="exampleInputName2" placeholder="رقم الهاتف">
                             </div>
                         </div>
 
@@ -159,14 +161,14 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label for="exampleInputName2">أفضل وقت للإتصال</label>
-                                <input type="text" class="form-control" id="exampleInputName2" placeholder="أفضل وقت للإتصال">
+                                <input type="text" name="best_time_to_contact" class="form-control" id="exampleInputName2" placeholder="أفضل وقت للإتصال">
                             </div>
                         </div>
 
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="form-group">
                                 <label for="message">الرسالة</label>
-                                <textarea class="form-control" rows="3"></textarea>
+                                <textarea name="message" class="form-control" rows="3"></textarea>
                             </div>
                         </div>
 

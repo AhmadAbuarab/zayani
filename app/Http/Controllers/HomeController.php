@@ -405,4 +405,17 @@ class HomeController extends Controller {
         return view('testdrivelog', compact('testdrivedata'));
     }
 
+    public function testcaraddlog(request $request) {
+        test_drive::create([
+            'car_model_offer_id' => $request->input(),
+            'first_name' => $request->input(),
+            'last_name' => $request->input(),
+            'email' => $request->input(),
+            'phone_number' => $request->input(),
+            'best_time_to_contact' => $request->input(),
+            'message' => $request->input()
+        ]);
+        return back();
+    }
+
 }

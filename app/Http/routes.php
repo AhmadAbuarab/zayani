@@ -63,6 +63,7 @@ Route::get('/en/offers/{id}', 'SiteController@offers');
 Route::get('/ar/offers/{id}', 'SiteController@offers');
 
 Route::post('valuecaraddlog/create', 'SiteController@valuecaraddlog');
+Route::post('testcaraddlog/create', 'SiteController@testcaraddlog');
 
 Route::post('en/getCarBrandModel', 'SiteController@getCarBrandModel');
 Route::post('ar/getCarBrandModel', 'SiteController@getCarBrandModel');
