@@ -363,7 +363,7 @@ $('.carousel').carousel({
                     $.ajax({
                         type: "POST",
                         dataType: "json",
-                        url: './getCarBrandModel',
+                        url: 'getCarBrandModel',
                         beforeSend: function (xhr) {
                             var token = $('meta[name="csrf_token"]').attr('content');
 
