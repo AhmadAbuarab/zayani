@@ -132,6 +132,7 @@ class HomeController extends Controller {
     }
 
     public function deleteCarModelOffer(request $request) {
+        car_offers_images::where('car_offer_id', $request->input('carId'))->delete();
         cars_model_other_details_mode::where('car_model_id', $request->input('carId'))->delete();
         cars_model::where('id', $request->input('carId'))->delete();
         return json_decode('1');
