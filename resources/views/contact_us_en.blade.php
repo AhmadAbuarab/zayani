@@ -193,23 +193,23 @@
                         <h1>ADDRESS INFORMATION</h1>
 
                         <script src="http://maps.googleapis.com/maps/api/js"></script>
-                        
+
                         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOeK-SPWVJsQ4Y2s5M2YD0Kbarhifg-44&callback=initMap">
-                    </script>
-                        
-                        
-                        
+                        </script>
+
+
+
                         <div style='overflow:hidden;height:200px;width:100%;'><div id='gmap_canvas' style='height:200px;width:100%;'></div><div><small><a href="http://embedgooglemaps.com">									embed google maps							</a></small></div><div><small><a href="https://privacypolicygenerator.info">privacy policy generator</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><script type='text/javascript'>function init_map() {
-    var myOptions = {zoom: 10, center: new google.maps.LatLng(29.31166, 47.48176599999999), mapTypeId: google.maps.MapTypeId.ROADMAP};
-    map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
-    marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(29.31166, 47.48176599999999)});
-    infowindow = new google.maps.InfoWindow({content: '<strong>Al-ZYANI</strong><br>Kuwait<br>'});
-    google.maps.event.addListener(marker, 'click', function () {
-        infowindow.open(map, marker);
-    });
-    infowindow.open(map, marker);
-}
-google.maps.event.addDomListener(window, 'load', init_map);</script>
+                                var myOptions = {zoom: 10, center: new google.maps.LatLng(29.31166, 47.48176599999999), mapTypeId: google.maps.MapTypeId.ROADMAP};
+                                map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+                                marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(29.31166, 47.48176599999999)});
+                                infowindow = new google.maps.InfoWindow({content: '<strong>Al-ZYANI</strong><br>Kuwait<br>'});
+                                google.maps.event.addListener(marker, 'click', function () {
+                                    infowindow.open(map, marker);
+                                });
+                                infowindow.open(map, marker);
+                            }
+                            google.maps.event.addDomListener(window, 'load', init_map);</script>
 
                         <h2>Showroon,Parts and Service center</h2>
                         <ul>
@@ -226,8 +226,8 @@ google.maps.event.addDomListener(window, 'load', init_map);</script>
                                 {{$contactUsPageData[0]->showroom_openning_hours}}
                                 @endif
                             </li>
-                            
-                           
+
+
                         </ul>
 
                         <h3>SERVICE AND PARTS</h3>
@@ -258,23 +258,23 @@ google.maps.event.addDomListener(window, 'load', init_map);</script>
                 </div>
                 <div class="row">
 
-                   <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-			<ul class="addressList">
-				<li>Al-Zayani Trading Company</li>
-				<li>
-                                    @if(isset($contactUsData[0]->address_en))
-                                    {{$contactUsData[0]->address_en}}
-                                    @endif
-                                </li>
-				<li>P.O.Box:@if(isset($contactUsData[0]->po_box_en)) {{$contactUsData[0]->po_box_en}} @endif</li>
-			</ul>
-		</div>
-		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-			<ul class="contactList">
-				<li><a href="mailto:info@al-zayani.com" class="email">@if(isset($contactUsData[0]->email)) {{$contactUsData[0]->email}} @endif</a> </li>
-				<li><a href="tel:+965 180 8010" class="phone">@if(isset($contactUsData[0]->mobile)) {{$contactUsData[0]->mobile}} @endif</a> </li>
-			</ul>
-		</div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <ul class="addressList">
+                            <li>Al-Zayani Trading Company</li>
+                            <li>
+                                @if(isset($contactUsData[0]->address_en))
+                                {{$contactUsData[0]->address_en}}
+                                @endif
+                            </li>
+                            <li>P.O.Box:@if(isset($contactUsData[0]->po_box_en)) {{$contactUsData[0]->po_box_en}} @endif</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <ul class="contactList">
+                            <li><a href="mailto:info@al-zayani.com" class="email">@if(isset($contactUsData[0]->email)) {{$contactUsData[0]->email}} @endif</a> </li>
+                            <li><a href="tel:+965 180 8010" class="phone">@if(isset($contactUsData[0]->mobile)) {{$contactUsData[0]->mobile}} @endif</a> </li>
+                        </ul>
+                    </div>
                     <div class=" col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="logoFotter">
                             <img src="{{URL::asset('assets/img/emtaz_logo.png') }}">
@@ -283,11 +283,11 @@ google.maps.event.addDomListener(window, 'load', init_map);</script>
                     <div class=" col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="subscribe">
                             {!! Form::open(['url' => 'subscribelog/create']) !!}
-                                <fieldset class="form-group">
-                                    <label for="subscribeNewsletter">Subscribe To Our Newsletter</label>
-                                    <input name="subemail" type="email" class="form-control" id="subscribeNewsletter" placeholder="Enter email">
-                                    <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                                </fieldset>
+                            <fieldset class="form-group">
+                                <label for="subscribeNewsletter">Subscribe To Our Newsletter</label>
+                                <input name="subemail" type="email" class="form-control" id="subscribeNewsletter" placeholder="Enter email">
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                            </fieldset>
 
                             </form>
 
@@ -304,10 +304,11 @@ google.maps.event.addDomListener(window, 'load', init_map);</script>
         <script src="{{ URL::asset('assets/js/jquery.min.js')}}"></script>
         <script type="text/javascript" src="{{ URL::asset('assets/js/bootstrap.js')}}"></script>
         <script>
-$('.carousel').carousel({
-interval: 5000 //changes the speed
-});
+                            $('.carousel').carousel({
+                                interval: 5000 //changes the speed
+                            });
 
         </script>
+        
     </body>
 </html>

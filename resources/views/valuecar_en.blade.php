@@ -56,7 +56,7 @@
         </div>
 
         <!-- end header -->
-       <!-- slider -->
+        <!-- slider -->
         <div class="container-fulid">
             <header id="myCarousel" class="carousel slide">
                 <!-- Indicators -->
@@ -135,7 +135,7 @@
                     <div class="col-md-4 col-sm-4 col-xs-12 {{ $errors->has('phone_number') ? ' has-error' : '' }}">
                         <div class="form-group">
                             <label for="exampleInputName2">Phone Number</label>
-                            <input type="phone" name="phone_number" class="form-control" id="exampleInputName2" placeholder="Phone Number">
+                            <input type="phone" name="phone_number" class="form-control phone_number" id="exampleInputName2" placeholder="Phone Number" value="+965 ">
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-12 {{ $errors->has('email') ? ' has-error' : '' }}">
@@ -332,11 +332,11 @@
                     <div class=" col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="subscribe">
                             {!! Form::open(['url' => 'subscribelog/create']) !!}
-                                <fieldset class="form-group">
-                                    <label for="subscribeNewsletter">Subscribe To Our Newsletter</label>
-                                    <input name="subemail" type="email" class="form-control" id="subscribeNewsletter" placeholder="Enter email">
-                                    <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                                </fieldset>
+                            <fieldset class="form-group">
+                                <label for="subscribeNewsletter">Subscribe To Our Newsletter</label>
+                                <input name="subemail" type="email" class="form-control" id="subscribeNewsletter" placeholder="Enter email">
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                            </fieldset>
 
                             </form>
 
@@ -361,6 +361,16 @@ $('.carousel').carousel({
 
         <script>
             $(document).ready(function () {
+                var readOnlyLength = $('.phone_number').val().length;
+
+                $('.phone_number').on('keypress, keydown', function (event) {
+                    if ((event.which != 37 && (event.which != 39))
+                            && ((this.selectionStart < readOnlyLength)
+                                    || ((this.selectionStart == readOnlyLength) && (event.which == 8)))) {
+                        return false;
+                    }
+                });
+
                 $('.brand_id').change(function () {
                     var str = '';
                     var brandId = $(this).val();

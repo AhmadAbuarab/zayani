@@ -123,7 +123,7 @@
                     <div class="col-md-4 col-sm-4 col-xs-12 {{ $errors->has('phone_number') ? ' has-error' : '' }}">
                         <div class="form-group">
                             <label for="exampleInputName2">رقم الهاتف</label>
-                            <input type="phone" name="phone_number" class="form-control" id="exampleInputName2" placeholder="رقم الهاتف">
+                            <input type="phone" name="phone_number" class="form-control phone_number" id="exampleInputName2" placeholder="رقم الهاتف">
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-12 {{ $errors->has('last_name') ? ' has-error' : '' }}">
@@ -291,12 +291,12 @@
                 <div class="row">
                     <div class=" col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="subscribe">
-                           {!! Form::open(['url' => 'subscribelog/create']) !!}
-                                <fieldset class="form-group">
-                                    <label for="subscribeNewsletter">اشترك في نشرتنا الإخبارية</label>
-                                    <input name="subemail" type="email" class="form-control" id="subscribeNewsletter" placeholder="أدخل إيميلك">
-                                    <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                                </fieldset>
+                            {!! Form::open(['url' => 'subscribelog/create']) !!}
+                            <fieldset class="form-group">
+                                <label for="subscribeNewsletter">اشترك في نشرتنا الإخبارية</label>
+                                <input name="subemail" type="email" class="form-control" id="subscribeNewsletter" placeholder="أدخل إيميلك">
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                            </fieldset>
 
                             </form>
 
@@ -357,6 +357,16 @@ $('.carousel').carousel({
 
         <script>
             $(document).ready(function () {
+                var readOnlyLength = $('.phone_number').val().length;
+
+                $('.phone_number').on('keypress, keydown', function (event) {
+                    if ((event.which != 37 && (event.which != 39))
+                            && ((this.selectionStart < readOnlyLength)
+                                    || ((this.selectionStart == readOnlyLength) && (event.which == 8)))) {
+                        return false;
+                    }
+                });
+
                 $('.brand_id').change(function () {
                     var str = '';
                     var brandId = $(this).val();
