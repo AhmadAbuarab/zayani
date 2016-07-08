@@ -8,7 +8,6 @@ $baseDir = dirname($vendorDir);
 return array(
     'AddImgToCarmodeloffer' => $baseDir . '/database/migrations/2016_07_02_214013_add_img_to_carmodeloffer.php',
     'CarsModelImgsAddsliderMulti' => $baseDir . '/database/migrations/2016_07_03_192118_cars_model_imgs_addslider_multi.php',
-    'CarsModelSliderStringlong' => $baseDir . '/database/migrations/2016_07_05_211739_cars_model_slider_stringlong.php',
     'CreateCarBrandModelTable' => $baseDir . '/database/migrations/2016_06_29_194318_create_car_brand_model_table.php',
     'CreateCarBrandTable' => $baseDir . '/database/migrations/2016_06_29_194235_create_car_brand_table.php',
     'CreateCarModelMainTable' => $baseDir . '/database/migrations/2016_06_10_204228_create_car_model_main_table.php',
@@ -19,6 +18,7 @@ return array(
     'CreateCarsTable' => $baseDir . '/database/migrations/2016_06_10_204212_create_cars_table.php',
     'CreateContactUsTable' => $baseDir . '/database/migrations/2016_06_10_204152_create_contact_us_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+    'CreateSubscriberTable' => $baseDir . '/database/migrations/2016_07_08_000032_create_subscriber_table.php',
     'CreateTestDriveTable' => $baseDir . '/database/migrations/2016_06_29_192436_create_test_drive_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'CreateValueCarTable' => $baseDir . '/database/migrations/2016_06_29_194319_create_value_car_table.php',

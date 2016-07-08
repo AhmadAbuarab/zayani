@@ -198,10 +198,10 @@
                 <div class="row">
                     <div class=" col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="subscribe">
-                            <form >
+                            {!! Form::open(['url' => 'subscribelog/create']) !!}
                                 <fieldset class="form-group">
                                     <label for="subscribeNewsletter">اشترك في نشرتنا الإخبارية</label>
-                                    <input type="email" class="form-control" id="subscribeNewsletter" placeholder="أدخل إيميلك">
+                                    <input name="subemail" type="email" class="form-control" id="subscribeNewsletter" placeholder="أدخل إيميلك">
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
                                 </fieldset>
 

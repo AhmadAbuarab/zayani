@@ -99,6 +99,10 @@
                             <a href="{{url('testdrivelog')}}"><span>Received Test Drive </span> <i class="fa fa-angle-left pull-right"></i></a>
 
                         </li>
+                          <li class="treeview">
+                            <a href="{{url('subscriber')}}"><span>Subscribers </span> <i class="fa fa-angle-left pull-right"></i></a>
+
+                        </li>
                         
                         
                          

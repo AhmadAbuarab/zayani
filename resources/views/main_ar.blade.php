@@ -124,7 +124,7 @@
 		<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 			<div class="carModel">
 				<img src="{{URL::asset('assets/img/value_your_car_1.png')}}">
-				<h1><a href="{{ URL::to("ar/valuecar") }}"> قيمة سيارتاك</a></h1>
+				<h1><a href="{{ URL::to("ar/valuecar") }}"> قيمة سيارتك</a></h1>
 			</div>
 		</div>
             
@@ -182,10 +182,10 @@
 		<div class="row">
 		<div class=" col-lg-3 col-md-3 col-sm-6 col-xs-12">
 			<div class="subscribe">
-			<form >
+			{!! Form::open(['url' => 'subscribelog/create']) !!}
 			  <fieldset class="form-group">
 			    <label for="subscribeNewsletter">اشترك في نشرتنا الإخبارية</label>
-			    <input type="email" class="form-control" id="subscribeNewsletter" placeholder="أدخل إيميلك">
+			    <input name="subemail" type="email" class="form-control" id="subscribeNewsletter" placeholder="أدخل إيميلك">
 			     <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
 			  </fieldset>
 

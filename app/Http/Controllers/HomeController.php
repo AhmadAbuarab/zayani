@@ -15,6 +15,7 @@ use App\value_car;
 use App\test_drive;
 use App\car_offers_images;
 use Illuminate\Support\Facades\DB;
+use App\subscriber;
 
 class HomeController extends Controller {
 
@@ -414,6 +415,18 @@ class HomeController extends Controller {
             'phone_number' => $request->input('phone_number'),
             'best_time_to_contact' => $request->input('best_time_to_contact'),
             'message' => $request->input('message')
+        ]);
+        return back();
+    }
+
+    public function subscriberlog() {
+        $subscriberData = subscriber::get();
+        return view('subscriber.subscriber', compact('subscriberData'));
+    }
+
+    public function addsubscribelog(request $request) {
+        subscriber::create([
+            'email' => $request->input('subemail')
         ]);
         return back();
     }

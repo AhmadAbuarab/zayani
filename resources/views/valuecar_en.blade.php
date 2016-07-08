@@ -331,10 +331,10 @@
                     </div>
                     <div class=" col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="subscribe">
-                            <form >
+                            {!! Form::open(['url' => 'subscribelog/create']) !!}
                                 <fieldset class="form-group">
                                     <label for="subscribeNewsletter">Subscribe To Our Newsletter</label>
-                                    <input type="email" class="form-control" id="subscribeNewsletter" placeholder="Enter email">
+                                    <input name="subemail" type="email" class="form-control" id="subscribeNewsletter" placeholder="Enter email">
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
                                 </fieldset>
 
