@@ -130,59 +130,59 @@
                             @endif
                         </span>
                     </div>
-                    <form class="form-horizontal">
+                    {!! Form::open(['url' => 'contactlog/create']) !!}
 
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="form-group">
-                                <label for="exampleInputName2">First Name</label>
-                                <input type="text" class="form-control" id="exampleInputName2" placeholder="First Name">
-                            </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 {{ $errors->has('first_name') ? ' has-error' : '' }}">
+                        <div class="form-group">
+                            <label for="exampleInputName2">First Name</label>
+                            <input type="text" name="first_name" class="form-control" id="exampleInputName2" placeholder="First Name">
                         </div>
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="form-group">
-                                <label for="exampleInputName2">Last Name</label>
-                                <input type="text" class="form-control" id="exampleInputName2" placeholder="Last Name">
-                            </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 {{ $errors->has('last_name') ? ' has-error' : '' }}">
+                        <div class="form-group">
+                            <label for="exampleInputName2">Last Name</label>
+                            <input type="text" name="last_name" class="form-control" id="exampleInputName2" placeholder="Last Name">
                         </div>
+                    </div>
 
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="form-group">
-                                <label for="exampleInputName2">Email</label>
-                                <input type="email" class="form-control" id="exampleInputName2" placeholder="Email">
-                            </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 {{ $errors->has('email') ? ' has-error' : '' }}">
+                        <div class="form-group">
+                            <label for="exampleInputName2">Email</label>
+                            <input type="email" name="email" class="form-control" id="exampleInputName2" placeholder="Email">
                         </div>
+                    </div>
 
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="form-group">
-                                <label for="exampleInputName2">Mobile Number</label>
-                                <input type="phone" class="form-control" id="exampleInputName2" placeholder="Mobile Number">
-                            </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 {{ $errors->has('mobile_number') ? ' has-error' : '' }}">
+                        <div class="form-group">
+                            <label for="exampleInputName2">Mobile Number</label>
+                            <input type="phone" name="mobile_number" class="form-control phone_number" id="exampleInputName2" placeholder="Mobile Number" value="00965">
                         </div>
+                    </div>
 
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="form-group">
-                                <label for="exampleInputName2">Phone Number</label>
-                                <input type="phone" class="form-control" id="exampleInputName2" placeholder="Phone Number">
-                            </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label for="exampleInputName2">Phone Number</label>
+                            <input type="phone" name="phone_number" class="form-control phone_number" id="exampleInputName2" placeholder="Phone Number" value="00965">
                         </div>
+                    </div>
 
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="form-group">
-                                <label for="exampleInputName2">Subject</label>
-                                <input type="text" class="form-control" id="exampleInputName2" placeholder="Subject">
-                            </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label for="exampleInputName2">Subject</label>
+                            <input type="text" name="subject" class="form-control" id="exampleInputName2" placeholder="Subject">
                         </div>
+                    </div>
 
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 {{ $errors->has('message') ? ' has-error' : '' }}">
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea name="message" class="form-control" rows="3"></textarea>
                         </div>
+                    </div>
 
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <button type="submit" class="btn btn-primary">Submit <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                        </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <button type="submit" class="btn btn-primary">Submit <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                    </div>
                     </form>
                 </div>
 
@@ -304,11 +304,22 @@
         <script src="{{ URL::asset('assets/js/jquery.min.js')}}"></script>
         <script type="text/javascript" src="{{ URL::asset('assets/js/bootstrap.js')}}"></script>
         <script>
-                            $('.carousel').carousel({
-                                interval: 5000 //changes the speed
-                            });
+                            $(document).ready(function () {
+                                $('.carousel').carousel({
+                                    interval: 5000 //changes the speed
+                                });
 
+                                var readOnlyLength = $('.phone_number').val().length;
+
+                                $('.phone_number').on('keypress, keydown', function (event) {
+                                    if ((event.which != 37 && (event.which != 39))
+                                            && ((this.selectionStart < readOnlyLength)
+                                                    || ((this.selectionStart == readOnlyLength) && (event.which == 8)))) {
+                                        return false;
+                                    }
+                                });
+                            });
         </script>
-        
+
     </body>
 </html>

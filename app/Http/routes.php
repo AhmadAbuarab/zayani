@@ -58,7 +58,10 @@ Route::get('/en', 'SiteController@index');
 
 Route::get('subscriber', 'HomeController@subscriberlog');
 Route::post('subscribelog/create', 'HomeController@addsubscribelog');
-
+//////
+Route::get('contactlog', 'HomeController@contactlog');
+Route::post('contactlog/create', 'SiteController@addcontactlog');
+/////
 
 //Route::get('/en/offers', 'SiteController@offers');
 //Route::get('/ar/offers', 'SiteController@offers');
@@ -81,6 +84,7 @@ Route::get('/ar/details/{id}', 'SiteController@details');
 
 Route::get('/en/enquiry/{id}', 'SiteController@enquiry');
 Route::get('/ar/enquiry/{id}', 'SiteController@enquiry');
+
 Route::get('/en/valuecar/{id}', 'SiteController@valuecar');
 Route::get('/ar/valuecar/{id}', 'SiteController@valuecar');
 

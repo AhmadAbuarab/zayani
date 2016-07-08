@@ -16,6 +16,7 @@ return array(
     'CreateCarsModelOtherDetailsTable' => $baseDir . '/database/migrations/2016_06_10_204244_create_cars_model_other_details_table.php',
     'CreateCarsModelTable' => $baseDir . '/database/migrations/2016_06_10_204230_create_cars_model_table.php',
     'CreateCarsTable' => $baseDir . '/database/migrations/2016_06_10_204212_create_cars_table.php',
+    'CreateContactLogTable' => $baseDir . '/database/migrations/2016_07_08_172729_create_contact_log_table.php',
     'CreateContactUsTable' => $baseDir . '/database/migrations/2016_06_10_204152_create_contact_us_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateSubscriberTable' => $baseDir . '/database/migrations/2016_07_08_000032_create_subscriber_table.php',

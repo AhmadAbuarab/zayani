@@ -148,6 +148,27 @@ class SiteController extends Controller {
         return json_encode($carBrandModel);
     }
 
+    public function addcontactlog(request $request) {
+        $this->validate($request, [
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required',
+            'mobile_number' => 'required',
+            'message' => 'required',
+        ]);
+
+        contact_log::create([
+            'first_name' => $request->input('first_name'),
+            'last_name' => $request->input('last_name'),
+            'email' => $request->input('email'),
+            'mobile_number' => $request->input('mobile_number'),
+            'phone_number' => $request->input('phone_number'),
+            'subject' => $request->input('subject'),
+            'message' => $request->input('message')
+        ]);
+        return back();
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -108,7 +108,7 @@
         </div>
         <!-- end slider -->
 
-        
+
 
         <!-- car section -->
         <div class="container">
@@ -128,53 +128,53 @@
 
                 <div class="col-md-8 col-sm-6 col-xs-12">
 
-                         {!! Form::open(['url' => 'testcaraddlog/create']) !!}
-                         <input name="id" type="hidden" value="{{$carsModelData[0]->id}}" >
-                        <div class="col-md-6 col-sm-12 col-xs-12">
-                            <div class="form-group">
-                                <label for="exampleInputName2">First Name</label>
-                                <input name="first_name" type="text" class="form-control" id="exampleInputName2" placeholder="First Name">
-                            </div>
+                    {!! Form::open(['url' => 'testcaraddlog/create']) !!}
+                    <input name="id" type="hidden" value="{{$carsModelData[0]->id}}" >
+                    <div class="col-md-6 col-sm-12 col-xs-12 {{ $errors->has('first_name') ? ' has-error' : '' }}">
+                        <div class="form-group">
+                            <label for="exampleInputName2">First Name</label>
+                            <input name="first_name" type="text" class="form-control" id="exampleInputName2" placeholder="First Name">
                         </div>
-                        <div class="col-md-6 col-sm-12 col-xs-12">
-                            <div class="form-group">
-                                <label for="exampleInputName2">Last Name</label>
-                                <input name="last_name" type="text" class="form-control" id="exampleInputName2" placeholder="Last Name">
-                            </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12 {{ $errors->has('last_name') ? ' has-error' : '' }}">
+                        <div class="form-group">
+                            <label for="exampleInputName2">Last Name</label>
+                            <input name="last_name" type="text" class="form-control" id="exampleInputName2" placeholder="Last Name">
                         </div>
+                    </div>
 
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="form-group">
-                                <label for="exampleInputName2">Email</label>
-                                <input name="email" type="email" class="form-control" id="exampleInputName2" placeholder="Email">
-                            </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 {{ $errors->has('email') ? ' has-error' : '' }}">
+                        <div class="form-group">
+                            <label for="exampleInputName2">Email</label>
+                            <input name="email" type="email" class="form-control" id="exampleInputName2" placeholder="Email">
                         </div>
+                    </div>
 
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="form-group">
-                                <label for="exampleInputName2">Phone Number</label>
-                                <input name="phone_number" type="phone" class="form-control" id="exampleInputName2" placeholder="Phone Number">
-                            </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 {{ $errors->has('phone_number') ? ' has-error' : '' }}">
+                        <div class="form-group">
+                            <label for="exampleInputName2">Phone Number</label>
+                            <input name="phone_number" type="phone" class="form-control phone_number" id="exampleInputName2" placeholder="Phone Number" value="00965">
                         </div>
+                    </div>
 
 
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="form-group">
-                                <label for="exampleInputName2">Best Time to Contact</label>
-                                <input name="best_time_to_contact" type="text" class="form-control" id="exampleInputName2" placeholder="Best Time to Contact">
-                            </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label for="exampleInputName2">Best Time to Contact</label>
+                            <input name="best_time_to_contact" type="text" class="form-control" id="exampleInputName2" placeholder="Best Time to Contact">
                         </div>
+                    </div>
 
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea name="message" class="form-control" rows="3"></textarea>
-                            </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 {{ $errors->has('message') ? ' has-error' : '' }}">
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea name="message" class="form-control" rows="3"></textarea>
                         </div>
+                    </div>
 
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <button type="submit" class="btn btn-primary">Submit <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                        </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <button type="submit" class="btn btn-primary">Submit <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                    </div>
                     </form>
                 </div>
                 <div class="col-md-4 col-sm-6 col-xs-12">
@@ -243,12 +243,12 @@
                     </div>
                     <div class=" col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="subscribe">
-                           {!! Form::open(['url' => 'subscribelog/create']) !!}
-                                <fieldset class="form-group">
-                                    <label for="subscribeNewsletter">Subscribe To Our Newsletter</label>
-                                    <input name="subemail" type="email" class="form-control" id="subscribeNewsletter" placeholder="Enter email">
-                                    <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                                </fieldset>
+                            {!! Form::open(['url' => 'subscribelog/create']) !!}
+                            <fieldset class="form-group">
+                                <label for="subscribeNewsletter">Subscribe To Our Newsletter</label>
+                                <input name="subemail" type="email" class="form-control" id="subscribeNewsletter" placeholder="Enter email">
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                            </fieldset>
 
                             </form>
 
@@ -265,8 +265,20 @@
         <script src="{{ URL::asset('assets/js/jquery.min.js')}}"></script>
         <script type="text/javascript" src="{{ URL::asset('assets/js/bootstrap.js')}}"></script>
         <script>
-$('.carousel').carousel({
-    interval: 5000 //changes the speed
+$(document).ready(function () {
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    });
+
+    var readOnlyLength = $('.phone_number').val().length;
+
+    $('.phone_number').on('keypress, keydown', function (event) {
+        if ((event.which != 37 && (event.which != 39))
+                && ((this.selectionStart < readOnlyLength)
+                        || ((this.selectionStart == readOnlyLength) && (event.which == 8)))) {
+            return false;
+        }
+    });
 });
 
         </script>

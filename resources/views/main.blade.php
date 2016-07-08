@@ -156,7 +156,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <div class="carModel">
                         <img src="{{URL::asset('assets/img/value_your_car_1.png')}}">
-                        <h1><a href="{{ URL::to("en/valuecar") }}"> VALUE YOUR CAR</a></h1>
+                        <h1><a href="{{ URL::to("en/valuecar/null") }}"> VALUE YOUR CAR</a></h1>
                     </div>
                 </div>
 

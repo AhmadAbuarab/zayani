@@ -103,6 +103,10 @@
                             <a href="{{url('subscriber')}}"><span>Subscribers </span> <i class="fa fa-angle-left pull-right"></i></a>
 
                         </li>
+                          <li class="treeview">
+                            <a href="{{url('contactlog')}}"><span>Received Contact </span> <i class="fa fa-angle-left pull-right"></i></a>
+
+                        </li>
                         
                         
                          

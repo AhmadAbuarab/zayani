@@ -114,66 +114,66 @@
             <div class="row">
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="selectCar">
-                                @if(isset($carsModelData[0]->img_slider))
-				<img src="{{URL::asset($carsModelData[0]->img_slider) }}" alt="">
-                                @endif
-                                @if(isset($carsModelData[0]->name_en))
-				<h1>{{$carsModelData[0]->name_en}}</h1>
-                                @endif
-			</div>
+                        @if(isset($carsModelData[0]->img_slider))
+                        <img src="{{URL::asset($carsModelData[0]->img_slider) }}" alt="">
+                        @endif
+                        @if(isset($carsModelData[0]->name_en))
+                        <h1>{{$carsModelData[0]->name_en}}</h1>
+                        @endif
+                    </div>
 
                 </div>
 
                 <div class="col-md-8 col-sm-6 col-xs-12">
 
-                        {!! Form::open(['url' => 'testcaraddlog/create']) !!}
-                        <input name="id" type="hidden" value="{{$carsModelData[0]->id}}" >
-                        <div class="col-md-6 col-sm-12 col-xs-12">
-                            <div class="form-group">
-                                <label for="exampleInputName2">الاسم الاخير</label>
-                                <input type="text" class="form-control" name="last_name" id="exampleInputName2" placeholder="الاسم الاخير">
-                            </div>
+                    {!! Form::open(['url' => 'testcaraddlog/create']) !!}
+                    <input name="id" type="hidden" value="{{$carsModelData[0]->id}}" >
+                    <div class="col-md-6 col-sm-12 col-xs-12 {{ $errors->has('last_name') ? ' has-error' : '' }}">
+                        <div class="form-group">
+                            <label for="exampleInputName2">الاسم الاخير</label>
+                            <input type="text" class="form-control" name="last_name" id="exampleInputName2" placeholder="الاسم الاخير">
                         </div>
+                    </div>
 
-                        <div class="col-md-6 col-sm-12 col-xs-12">
-                            <div class="form-group">
-                                <label for="exampleInputName2">الاسم الاول</label>
-                                <input type="text" name="first_name" class="form-control" id="exampleInputName2" placeholder="الاسم الاول">
-                            </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12 {{ $errors->has('first_name') ? ' has-error' : '' }}">
+                        <div class="form-group">
+                            <label for="exampleInputName2">الاسم الاول</label>
+                            <input type="text" name="first_name" class="form-control" id="exampleInputName2" placeholder="الاسم الاول">
                         </div>
+                    </div>
 
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="form-group">
-                                <label for="exampleInputName2">البريد الالكتروني</label>
-                                <input name="email" type="email" class="form-control" id="exampleInputName2" placeholder="البريد الالكتروني">
-                            </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 {{ $errors->has('email') ? ' has-error' : '' }}">
+                        <div class="form-group">
+                            <label for="exampleInputName2">البريد الالكتروني</label>
+                            <input name="email" type="email" class="form-control" id="exampleInputName2" placeholder="البريد الالكتروني">
                         </div>
+                    </div>
 
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="form-group">
-                                <label for="exampleInputName2">رقم الهاتف</label>
-                                <input name="phone_number" type="phone" class="form-control" id="exampleInputName2" placeholder="رقم الهاتف">
-                            </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 {{ $errors->has('phone_number') ? ' has-error' : '' }}">
+                        <div class="form-group">
+                            <label for="exampleInputName2">رقم الهاتف</label>
+                            <input name="phone_number" type="phone" class="form-control phone_number" id="exampleInputName2" placeholder="رقم الهاتف" value="00965">
                         </div>
+                    </div>
 
 
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="form-group">
-                                <label for="exampleInputName2">أفضل وقت للإتصال</label>
-                                <input type="text" name="best_time_to_contact" class="form-control" id="exampleInputName2" placeholder="أفضل وقت للإتصال">
-                            </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label for="exampleInputName2">أفضل وقت للإتصال</label>
+                            <input type="text" name="best_time_to_contact" class="form-control" id="exampleInputName2" placeholder="أفضل وقت للإتصال">
                         </div>
+                    </div>
 
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="form-group">
-                                <label for="message">الرسالة</label>
-                                <textarea name="message" class="form-control" rows="3"></textarea>
-                            </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 {{ $errors->has('message') ? ' has-error' : '' }}">
+                        <div class="form-group">
+                            <label for="message">الرسالة</label>
+                            <textarea name="message" class="form-control" rows="3"></textarea>
                         </div>
+                    </div>
 
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <button type="submit" class="btn btn-primary">إرسال <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                        </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <button type="submit" class="btn btn-primary">إرسال <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                    </div>
                     </form>
                 </div>
 
@@ -198,11 +198,11 @@
                     <div class=" col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="subscribe">
                             {!! Form::open(['url' => 'subscribelog/create']) !!}
-                                <fieldset class="form-group">
-                                    <label for="subscribeNewsletter">اشترك في نشرتنا الإخبارية</label>
-                                    <input name="subemail" type="email" class="form-control" id="subscribeNewsletter" placeholder="أدخل إيميلك">
-                                    <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                                </fieldset>
+                            <fieldset class="form-group">
+                                <label for="subscribeNewsletter">اشترك في نشرتنا الإخبارية</label>
+                                <input name="subemail" type="email" class="form-control" id="subscribeNewsletter" placeholder="أدخل إيميلك">
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                            </fieldset>
 
                             </form>
 
@@ -214,35 +214,35 @@
                         </div>
                     </div>
 
-                    		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-			<ul class="contactList">
-				<li><a href="" class="email"> 
-                                        @if(isset($contactUsData[0]->email))
-                                        {{$contactUsData[0]->email}}
-                                        @endif
-                                    </a> </li>
-				<li><a href="" class="phone">
-                                        @if(isset($contactUsData[0]->mobile))
-                                        {{$contactUsData[0]->mobile}}
-                                        @endif
-                                    </a> </li>
-			</ul>
-		</div>
-		<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-			<ul class="addressList">
-				<li>شركة الزياني التجارية</li>
-				<li><li>
-                                    @if(isset($contactUsData[0]->address_ar))
-                                    {{$contactUsData[0]->address_ar}}
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <ul class="contactList">
+                            <li><a href="" class="email"> 
+                                    @if(isset($contactUsData[0]->email))
+                                    {{$contactUsData[0]->email}}
                                     @endif
-                                </li>
-				<li>
-                                    @if(isset($contactUsData[0]->po_box_ar))
-                                    {{$contactUsData[0]->po_box_ar}}
+                                </a> </li>
+                            <li><a href="" class="phone">
+                                    @if(isset($contactUsData[0]->mobile))
+                                    {{$contactUsData[0]->mobile}}
                                     @endif
-                                </li>
-			</ul>
-		</div>
+                                </a> </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                        <ul class="addressList">
+                            <li>شركة الزياني التجارية</li>
+                            <li><li>
+                                @if(isset($contactUsData[0]->address_ar))
+                                {{$contactUsData[0]->address_ar}}
+                                @endif
+                            </li>
+                            <li>
+                                @if(isset($contactUsData[0]->po_box_ar))
+                                {{$contactUsData[0]->po_box_ar}}
+                                @endif
+                            </li>
+                        </ul>
+                    </div>
 
 
                 </div>
@@ -255,8 +255,20 @@
         <script src="{{ URL::asset('assets/js/jquery.min.js')}}"></script>
         <script type="text/javascript" src="{{ URL::asset('assets/js/bootstrap.js')}}"></script>
         <script>
-$('.carousel').carousel({
-    interval: 5000 //changes the speed
+$(document).ready(function () {
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    });
+
+    var readOnlyLength = $('.phone_number').val().length;
+
+    $('.phone_number').on('keypress, keydown', function (event) {
+        if ((event.which != 37 && (event.which != 39))
+                && ((this.selectionStart < readOnlyLength)
+                        || ((this.selectionStart == readOnlyLength) && (event.which == 8)))) {
+            return false;
+        }
+    });
 });
 
         </script>

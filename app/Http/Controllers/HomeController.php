@@ -16,6 +16,7 @@ use App\test_drive;
 use App\car_offers_images;
 use Illuminate\Support\Facades\DB;
 use App\subscriber;
+use App\contact_log;
 
 class HomeController extends Controller {
 
@@ -407,6 +408,14 @@ class HomeController extends Controller {
     }
 
     public function testcaraddlog(request $request) {
+        $this->validate($request, [
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required',
+            'phone_number' => 'required',
+            'message' => 'required',
+        ]);
+        
         test_drive::create([
             'car_model_offer_id' => $request->input('id'),
             'first_name' => $request->input('first_name'),
@@ -429,6 +438,11 @@ class HomeController extends Controller {
             'email' => $request->input('subemail')
         ]);
         return back();
+    }
+
+    public function contactlog() {
+        $contactLogData = contact_log::get();
+        return view('contactlog.contactlog', compact('contactLogData'));
     }
 
 }
