@@ -11,6 +11,7 @@ use App\value_car;
 use App\test_drive;
 use App\car_brand;
 use App\car_brand_model;
+use App\contact_log;
 
 class SiteController extends Controller {
 
