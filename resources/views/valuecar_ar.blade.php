@@ -123,7 +123,7 @@
                     <div class="col-md-4 col-sm-4 col-xs-12 {{ $errors->has('phone_number') ? ' has-error' : '' }}">
                         <div class="form-group">
                             <label for="exampleInputName2">رقم الهاتف</label>
-                            <input type="phone" name="phone_number" class="form-control phone_number" id="exampleInputName2" placeholder="رقم الهاتف">
+                            <input type="phone" name="phone_number" class="form-control phone_number" id="exampleInputName2" placeholder="رقم الهاتف" value="+965 ">
                         </div>
                     </div>
                     <div class="col-md-4 col-sm-4 col-xs-12 {{ $errors->has('last_name') ? ' has-error' : '' }}">
