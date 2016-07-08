@@ -133,6 +133,13 @@
                 <div class="col-md-9 col-sm-12 col-xs-12 col-md-offset-3">
                     <div class="details">
                         <h1>@if(isset($carsModelData[0]->name_ar)){{$carsModelData[0]->name_ar}} @endif</h1>
+                        
+                        <br>
+                        @if(isset($carsModelData[0]->transmission) && $carsModelData[0]->transmission!='') 
+                        {{$carsModelData[0]->transmission}} 
+                        @endif
+                        <br>
+                        
                         <ul>
                             @if(isset($carsModelData[0]->engine)&& $carsModelData[0]->engine!='')    <li><i class="fa fa-angle-left" aria-hidden="true"></i> Engine:<small>@if(isset($carsModelData[0]->engine)){{$carsModelData[0]->engine}} @endif</small></li> @endif
                             @if(isset($carsModelData[0]->fuel_type) && $carsModelData[0]->fuel_type!='')  <li><i class="fa fa-angle-left" aria-hidden="true"></i> Fuel Type:<small>@if(isset($carsModelData[0]->fuel_type)){{$carsModelData[0]->fuel_type}} @endif</small></li>@endif
@@ -147,8 +154,7 @@
                             @if(isset($carsModelData[0]->torque) && $carsModelData[0]->torque!='')   <li><i class="fa fa-angle-left" aria-hidden="true"></i> Torque:<small>@if(isset($carsModelData[0]->torque)){{$carsModelData[0]->torque}} @endif</small></li>@endif
                             @if(isset($carsModelData[0]->maximum_speed) && $carsModelData[0]->maximum_speed!='')    <li><i class="fa fa-angle-left" aria-hidden="true"></i> Maximum Speed:<small>@if(isset($carsModelData[0]->maximum_speed)){{$carsModelData[0]->maximum_speed}} @endif</small></li>@endif
                             @if(isset($carsModelData[0]->acceleration) && $carsModelData[0]->acceleration!='')    <li><i class="fa fa-angle-left" aria-hidden="true"></i> Acceleration:<small>@if(isset($carsModelData[0]->acceleration)){{$carsModelData[0]->acceleration}} @endif</small></li>@endif
-                            @if(isset($carsModelData[0]->transmission) && $carsModelData[0]->transmission!='')   <li><i class="fa fa-angle-left" aria-hidden="true"></i> Transmission:<small>@if(isset($carsModelData[0]->transmission)){{$carsModelData[0]->transmission}} @endif</small></li>@endif
-                            @if(isset($carsModelData[0]->price) && $carsModelData[0]->price) !='')    <li><i class="fa fa-angle-left" aria-hidden="true"></i> Price:<small>@if(isset($carsModelData[0]->price)){{$carsModelData[0]->price}} @endif</small></li>@endif
+                            @if(isset($carsModelData[0]->price) && $carsModelData[0]->price!='')   <li><i class="fa fa-angle-left" aria-hidden="true"></i> Price:<small>@if(isset($carsModelData[0]->price)){{$carsModelData[0]->price}} @endif</small></li>@endif
                         </ul>
                     </div>
                 </div>
@@ -185,11 +191,11 @@
                     <div class=" col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="subscribe">
                             {!! Form::open(['url' => 'subscribelog/create']) !!}
-                                <fieldset class="form-group">
-                                    <label for="subscribeNewsletter">اشترك في نشرتنا الإخبارية</label>
-                                    <input name="subemail" type="email" class="form-control" id="subscribeNewsletter" placeholder="أدخل إيميلك">
-                                    <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                                </fieldset>
+                            <fieldset class="form-group">
+                                <label for="subscribeNewsletter">اشترك في نشرتنا الإخبارية</label>
+                                <input name="subemail" type="email" class="form-control" id="subscribeNewsletter" placeholder="أدخل إيميلك">
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                            </fieldset>
 
                             </form>
 

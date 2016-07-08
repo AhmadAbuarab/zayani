@@ -273,11 +273,8 @@ $(document).ready(function () {
                     {!! Form::label('acceleration') !!} 
                     {!! Form::text('acceleration','',array('class' => 'form-control col-md-6')) !!}
                 </div>
-
-                <div class="form-group col-xs-6">
-                    {!! Form::label('transmission') !!} 
-                    {!! Form::text('transmission','',array('class' => 'form-control col-md-6 col-md-6')) !!}
-                </div>
+                <div class="form-group col-xs-12"></div>
+                
 
                 <div class="form-group col-xs-6">
                     {!! Form::label('price') !!} 
@@ -296,6 +293,11 @@ $(document).ready(function () {
                     {!! Form::file('upload_car_model_offer_image_slider') !!}
                 </div>
 
+                <div class="form-group col-xs-12">
+                    {!! Form::label('notes') !!} 
+                    {!! Form::textarea('transmission','',array('class' => 'form-control')) !!}
+                </div>
+                
 
                 <div class="form-group col-xs-12">
                     {!! Form::label('details_arabic') !!} 
