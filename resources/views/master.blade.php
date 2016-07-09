@@ -136,7 +136,7 @@
             </footer>
 
         </div>
-        <script src="{{ asset ("assets/js/jQuery-2.1.4.min.js") }}"></script>
+        <script src="https://code.jquery.com/jquery-1.12.3.js"></script>
         <script src="{{ asset ("assets/js/bootstrap.min.js") }}" type="text/javascript"></script>
         <script src="{{ asset ("assets/js/app.min.js") }}" type="text/javascript"></script>
         @yield('scripts')
