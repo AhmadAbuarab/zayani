@@ -101,7 +101,7 @@
             <div class="pagePath">
 
             </div>
-        <div class="container">
+            <div class="container" style="float: right !important;">
         <div class="row">
             <?php $count2 = 0; ?>
             @if(isset($offerImages))
