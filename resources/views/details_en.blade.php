@@ -124,7 +124,8 @@
             </div>
 
 
-
+        <div class="container">
+        <div class="row">
             <?php $count2 = 0; ?>
             @if(isset($offerImages))
             <div class="clearfix">
@@ -148,7 +149,8 @@
                 </div> <!-- /thumbcarousel -->
             </div><!-- /clearfix -->
             @endif
-
+    </div>
+    </div>
         </div>
         <!-- end slider -->
 

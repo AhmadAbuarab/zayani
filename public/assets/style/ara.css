@@ -562,6 +562,22 @@ small{
 			color: #124c8a;
 			line-height: normal;
 		}
+                
+                /* images height size css*/
+.carModel img {
+    max-height: 180px;
+}
+
+.offer img {
+    max-height: 270px;
+}
+.thumb img{
+	max-height: 194px;
+}
+.selectCar img{
+	max-height: 270px;
+}
+/* end images height size css*/
 
 /* end 404 page css*/
 
