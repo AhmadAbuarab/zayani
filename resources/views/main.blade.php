@@ -85,10 +85,7 @@
                         <!-- Set the first background image using inline CSS below. -->
                         <div class="fill" style="background-image:url({{URL::asset($car->slider_img)}});"></div>
                         <div class="carousel-caption">
-                            <!--                 	<div class="sliderTitle">
-                                                <h1>F-PACE</h1>
-                                                <span>ABOVE ALL, IT'S A JAGUAR</span>
-                                                </div> -->
+
                             <a href="{{ URL::to("en/offers/".$car->id) }}"><button class="btn btn-primary sliderButton">More <i class="fa fa-chevron-right" aria-hidden="true"></i></button></a>
 
                         </div>

@@ -91,7 +91,7 @@
 
                     <div class="item active">
                         <!-- Set the first background image using inline CSS below. -->
-                        <div class="fill_inner" style="background-image:url({{URL::asset($offerImage->path_slider) }});"></div>
+                        <div class="fill" style="background-image:url({{URL::asset($offerImage->path_slider) }});"></div>
                         <div class="carousel-caption">
                         </div>
                     </div>
@@ -99,7 +99,7 @@
 
                     <div class="item">
                         <!-- Set the second background image using inline CSS below. -->
-                        <div class="fill_inner" style="background-image:url({{URL::asset($offerImage->path_slider) }});"></div>
+                        <div class="fill" style="background-image:url({{URL::asset($offerImage->path_slider) }});"></div>
                         <div class="carousel-caption">
                         </div>
                     </div>

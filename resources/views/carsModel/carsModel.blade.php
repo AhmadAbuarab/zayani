@@ -269,10 +269,7 @@ $(document).ready(function () {
                     {!! Form::text('maximum_speed','',array('class' => 'form-control col-md-6')) !!}
                 </div>
 
-                <div class="form-group col-xs-6">
-                    {!! Form::label('acceleration') !!} 
-                    {!! Form::text('acceleration','',array('class' => 'form-control col-md-6')) !!}
-                </div>
+               
                 <div class="form-group col-xs-12"></div>
                 
 
@@ -291,10 +288,17 @@ $(document).ready(function () {
                 <div class="form-group col-xs-6">
                     {!! Form::label('upload_car_model_offer_image_slider') !!} 
                     {!! Form::file('upload_car_model_offer_image_slider') !!}
+                    <span style="font-weight: bold;">IMG size should be 1920px X 550px</span>
                 </div>
+                
+                 <div class="form-group col-xs-12">
+                    {!! Form::label('note_arabic') !!} 
+                    {!! Form::textarea('acceleration','',array('class' => 'form-control')) !!}
+                </div>
+                
 
                 <div class="form-group col-xs-12">
-                    {!! Form::label('notes') !!} 
+                    {!! Form::label('note_english') !!} 
                     {!! Form::textarea('transmission','',array('class' => 'form-control')) !!}
                 </div>
                 
@@ -340,8 +344,8 @@ $(document).ready(function () {
                 <th style="width: 120px !important;">Hand Of Drive</th>
                 <th>Torque</th>
                 <th style="width: 120px !important;">Maximum Speed</th>
-                <th>Acceleration</th>
-                <th>Transmission</th>
+                <th style="width: 200px !important;">note arabic</th>
+                <th style="width: 200px !important;">note english</th>
                 <th>Price</th>
                 <th>Edit</th>
                 <th>Delete</th>

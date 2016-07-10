@@ -67,6 +67,7 @@ $(document).ready(function () {
                 <div class="form-group">
                     {!! Form::label('upload_image_slider') !!} 
                     {!! Form::file('upload_image_slider') !!}
+                    <span style="font-weight: bold;">IMG size should be 1920px X 550px</span> 
                 </div>
 
             </div>

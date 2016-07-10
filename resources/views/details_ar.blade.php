@@ -71,7 +71,7 @@
 
                     <div class="item active">
                         <!-- Set the first background image using inline CSS below. -->
-                        <div class="fill_inner" style="background-image:url({{URL::asset($offerImage->path_slider) }});"></div>
+                        <div class="fill" style="background-image:url({{URL::asset($offerImage->path_slider) }});"></div>
                         <div class="carousel-caption">
                         </div>
                     </div>
@@ -79,7 +79,7 @@
 
                     <div class="item">
                         <!-- Set the second background image using inline CSS below. -->
-                        <div class="fill_inner" style="background-image:url({{URL::asset($offerImage->path_slider) }});"></div>
+                        <div class="fill" style="background-image:url({{URL::asset($offerImage->path_slider) }});"></div>
                         <div class="carousel-caption">
                         </div>
                     </div>
@@ -138,8 +138,8 @@
                         <h1>@if(isset($carsModelData[0]->name_ar)){{$carsModelData[0]->name_ar}} @endif</h1>
                         
                         <br>
-                        @if(isset($carsModelData[0]->transmission) && $carsModelData[0]->transmission!='') 
-                        {{$carsModelData[0]->transmission}} 
+                        @if(isset($carsModelData[0]->acceleration) && $carsModelData[0]->acceleration!='') 
+                        {{$carsModelData[0]->acceleration}} 
                         @endif
                         <br>
                         

@@ -118,6 +118,8 @@ class HomeController extends Controller {
 
     public function deleteCar(request $request) {
         $carModelId = DB::table('cars_model')->select('id')->where('car_id', '=', $request->input('carId'))->get();
+        if (isset($carModelId[0]->id))
+            test_drive::where('car_model_offer_id', $carModelId[0]->id)->delete();
         foreach ($carModelId as $car) {
             car_offers_images::where('car_offer_id', $car->id)->delete();
         }
@@ -129,11 +131,15 @@ class HomeController extends Controller {
     }
 
     public function deleteCarModelMain(request $request) {
+        $carModelOfferId = DB::table('cars_model')->select('id')->where('car_model_id', '=', $request->input('carId'))->get();
+        test_drive::where('car_model_offer_id', $carModelOfferId[0]->id)->delete();
+        cars_model::where('car_model_id', $request->input('carId'))->delete();
         car_model_main::where('id', $request->input('carId'))->delete();
         return json_decode('1');
     }
 
     public function deleteCarModelOffer(request $request) {
+        test_drive::where('car_model_offer_id', $request->input('carId'))->delete();
         car_offers_images::where('car_offer_id', $request->input('carId'))->delete();
         cars_model_other_details_mode::where('car_model_id', $request->input('carId'))->delete();
         cars_model::where('id', $request->input('carId'))->delete();
@@ -279,6 +285,29 @@ class HomeController extends Controller {
                         'price' => $request->input('price'),
                         'img_slider_slider' => 'carmodelofferimgslider/' . $imageName2
             ]);
+        } else {
+            
+            $carsModelinsert = cars_model::create([
+                        'car_id' => $request->input('carId'),
+                        'car_model_id' => $request->input('car_model'),
+                        'name_ar' => $request->input('name_arabic'),
+                        'name_en' => $request->input('name_english'),
+                        'engine' => $request->input('engine'),
+                        'fuel_type' => $request->input('fuel_type'),
+                        'model_year' => $request->input('model_year'),
+                        'paint_colour' => $request->input('paint_colour'),
+                        'interior_color' => $request->input('interior_color'),
+                        'body_style' => $request->input('body_style'),
+                        'mileage' => $request->input('mileage'),
+                        'num_of_doors' => $request->input('num_of_doors'),
+                        'power' => $request->input('power'),
+                        'hand_of_drive' => $request->input('hand_of_drive'),
+                        'torque' => $request->input('torque'),
+                        'maximum_speed' => $request->input('maximum_speed'),
+                        'acceleration' => $request->input('acceleration'),
+                        'transmission' => $request->input('transmission'),
+                        'price' => $request->input('price')
+            ]);
         }
 
 
@@ -334,6 +363,26 @@ class HomeController extends Controller {
         $carModel->transmission = $request->input('transmission');
         $carModel->price = $request->input('price');
         $carModel->save();
+        return back();
+    }
+
+    public function editCar(request $request) {
+        $car = new cars();
+        $car = cars::firstOrNew(array('id' => intval($request->input('id'))));
+        $id = $request->input('id');
+        $car->name_ar = $request->input('name_ar');
+        $car->name_en = $request->input('name_en');
+        $car->save();
+        return back();
+    }
+
+    public function editCarModelMain(request $request) {
+        $carModelMain = new car_model_main();
+        $carModelMain = car_model_main::firstOrNew(array('id' => intval($request->input('id'))));
+        $id = $request->input('id');
+        $carModelMain->car_model_main_name_ar = $request->input('name_ar');
+        $carModelMain->car_model_main_name_en = $request->input('name_en');
+        $carModelMain->save();
         return back();
     }
 
@@ -415,7 +464,7 @@ class HomeController extends Controller {
             'phone_number' => 'required',
             'message' => 'required',
         ]);
-        
+
         test_drive::create([
             'car_model_offer_id' => $request->input('id'),
             'first_name' => $request->input('first_name'),

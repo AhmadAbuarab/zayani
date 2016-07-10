@@ -33,8 +33,14 @@ Route::post('carbrand/create', 'HomeController@addcarbrand');
 Route::post('carbrandmodel/create', 'HomeController@addcarbrandmodel');
 
 Route::get('carsmodel', 'HomeController@carsModel');
+
+
 Route::post('carsmodel/create', 'HomeController@addCarModel');
-Route::post('editCarModel', 'HomeController@editCarModel');
+Route::post('editCarModel', 'HomeController@editCar');
+Route::post('editCarModelMain', 'HomeController@editCarModelMain');
+
+
+Route::post('editCar', 'HomeController@editCar');
 
 Route::get('carsmodelmain', 'HomeController@carsmodelmain');
 Route::post('carsmodelmain/create', 'HomeController@addCarModelMain');
