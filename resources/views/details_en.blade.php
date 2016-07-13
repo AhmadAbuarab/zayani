@@ -9,6 +9,7 @@
         <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/font-awesome-4.6.3/css/font-awesome.min.css')}}">
         <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/style/bootstrap.css')}}">
         <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/style/enu.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/bootstrap-lightbox.min.css')}}">
 
     </head>
     <body>
@@ -122,35 +123,32 @@
             <div class="pagePath">
 
             </div>
+        </div>
 
 
         <div class="container">
-        <div class="row">
-            <?php $count2 = 0; ?>
-            @if(isset($offerImages))
-            <div class="clearfix">
-                <div id="thumbcarousel" class="carousel slide" data-interval="false">
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            @foreach($offerImages as $offerImage)
-                            @if($offerImage->path_slider !='')
-                            <div  data-target="#carousel2" data-slide-to="{{$count2}}" class="col-md-3 col-sm-3 col-xs-3">
-
-                                <div   class="thumb">
-                                    <img src="{{URL::asset($offerImage->path)}}">
-                                </div>
-                            </div>
-
-                            <?php $count2++; ?>
-                            @endif
-                            @endforeach
-                        </div><!-- /item -->
-                    </div><!-- /carousel-inner -->
-                </div> <!-- /thumbcarousel -->
-            </div><!-- /clearfix -->
-            @endif
-    </div>
-    </div>
+            <div class="row" style="margin-top:30px; margin-bottom:10px;">
+                <?php $count2 = 1; ?>
+                @if(isset($offerImages))
+                @foreach($offerImages as $offerImage)
+                @if($offerImage->path_slider !='')
+                <div class="col-md-2 col-sm-6 col-xs-12">
+                    <a data-toggle="lightbox" href="#demoLightbox{{$count2}}" class="img-thumbnail">
+                        <img src="{{URL::asset($offerImage->path)}}" width="100%" alt="Click to view the lightbox">
+                    </a>
+                </div>
+                <div id="demoLightbox{{$count2}}" class="lightbox fade"  tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class='lightbox-dialog'>
+                        <div class='lightbox-content'>
+                            <img src="{{URL::asset($offerImage->path)}}">
+                        </div>
+                    </div>
+                </div>
+                <?php $count2++; ?>
+                @endif
+                @endforeach
+                @endif
+            </div>
         </div>
         <!-- end slider -->
 
@@ -169,8 +167,8 @@
                             @endif
                         </h1>
                         <br>
-                         @if(isset($carsModelData[0]->transmission) && $carsModelData[0]->transmission!='') 
-                          {{$carsModelData[0]->transmission}} 
+                        @if(isset($carsModelData[0]->transmission) && $carsModelData[0]->transmission!='') 
+                        {{$carsModelData[0]->transmission}} 
                         @endif
                         <br>
                         <ul>
@@ -255,11 +253,11 @@
                     <div class=" col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <div class="subscribe">
                             {!! Form::open(['url' => 'subscribelog/create']) !!}
-                                <fieldset class="form-group">
-                                    <label for="subscribeNewsletter">Subscribe To Our Newsletter</label>
-                                    <input name="subemail" type="email" class="form-control" id="subscribeNewsletter" placeholder="Enter email">
-                                    <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-                                </fieldset>
+                            <fieldset class="form-group">
+                                <label for="subscribeNewsletter">Subscribe To Our Newsletter</label>
+                                <input name="subemail" type="email" class="form-control" id="subscribeNewsletter" placeholder="Enter email">
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                            </fieldset>
 
                             </form>
 
@@ -275,7 +273,7 @@
         <!-- end footer -->
         <script src="{{ URL::asset('assets/js/jquery.min.js')}}"></script>
         <script type="text/javascript" src="{{ URL::asset('assets/js/bootstrap.js')}}"></script>
-
+        <script type="text/javascript" src="{{ URL::asset('assets/js/bootstrap-lightbox.js')}}"></script>
         <script>
 $('.carousel').carousel({
     interval: 5000 //changes the speed

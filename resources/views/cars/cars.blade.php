@@ -26,7 +26,6 @@ $(document).ready(function () {
             url: './deleteCar',
             beforeSend: function (xhr) {
                 var token = $('meta[name="csrf_token"]').attr('content');
-
                 if (token) {
                     return xhr.setRequestHeader('X-CSRF-TOKEN', token);
                 }
@@ -37,10 +36,6 @@ $(document).ready(function () {
             }
         })
     });
-
-
-
-
     function saveRow(table, nRow) {
         var jqInputs = $('input', nRow);
         table.fnUpdate(jqInputs[0].value, nRow, 0, false);
@@ -56,7 +51,6 @@ $(document).ready(function () {
         jqTds[1].innerHTML = '<input type="text" value="' + aData[1] + '">';
     }
     var nEditing = null;
-
     $('.save').click(function () {
         var id = $(this).parent().parent().children().eq(2).children().eq(0).val();
         var name_ar = $(this).parent().parent().children().eq(0).children().eq(0).val();
@@ -67,7 +61,6 @@ $(document).ready(function () {
             url: './editCar',
             beforeSend: function (xhr) {
                 var token = $('meta[name="csrf_token"]').attr('content');
-
                 if (token) {
                     return xhr.setRequestHeader('X-CSRF-TOKEN', token);
                 }
@@ -78,18 +71,17 @@ $(document).ready(function () {
             }
         })
     });
-
     $('#cars a.edit').on('click', function (e) {
         e.preventDefault();
-
         /* Get the row as a parent of the link that was clicked on */
         var nRow = $(this).parents('tr')[0];
-
         if (nEditing !== null && nEditing != nRow) {
             /* A different row is being edited - the edit should be cancelled and this row edited */
             restoreRow(table, nEditing);
             editRow(table, nRow);
             nEditing = nRow;
+        }
+
         }
         else if (nEditing == nRow && this.innerHTML == "Save") {
             /* This row is being edited and should be saved */
@@ -103,38 +95,8 @@ $(document).ready(function () {
         }
     });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
 </script>
-
-@stop
-
-
-
-
-
 @section('content')
 <div style="clear:both"></div><br/>
 <div class="row">
@@ -198,9 +160,9 @@ $(document).ready(function () {
                 <td>{{$car->name_en}}</td>
                 <td>
                     <input id="carId" type="hidden" value="{{$car->id}}">
-                    <img id="deleteCar" class="deleteCar" width="20" height="20" src="http://findicons.com/files/icons/753/gnome_desktop/64/gnome_edit_delete.png">
-                </td>
-                <td><a class="edit" href="">Edit</a></td>
+<img id="deleteCar" class="deleteCar" width="20" height="20" src="http://findicons.com/files/icons/753/gnome_desktop/64/gnome_edit_delete.png">
+                         </td>
+                         <td><a class="edit" href="">Edit</a></td>
                 <td><a class="save" href="./cars">save</a></td>
             </tr>
             ...
@@ -216,4 +178,5 @@ $(document).ready(function () {
 @section('footer')
 
 @stop
+
 

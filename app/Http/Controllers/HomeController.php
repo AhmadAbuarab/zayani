@@ -132,7 +132,8 @@ class HomeController extends Controller {
 
     public function deleteCarModelMain(request $request) {
         $carModelOfferId = DB::table('cars_model')->select('id')->where('car_model_id', '=', $request->input('carId'))->get();
-        test_drive::where('car_model_offer_id', $carModelOfferId[0]->id)->delete();
+        if (isset($carModelOfferId[0]->id))
+            test_drive::where('car_model_offer_id', $carModelOfferId[0]->id)->delete();
         cars_model::where('car_model_id', $request->input('carId'))->delete();
         car_model_main::where('id', $request->input('carId'))->delete();
         return json_decode('1');
@@ -286,7 +287,7 @@ class HomeController extends Controller {
                         'img_slider_slider' => 'carmodelofferimgslider/' . $imageName2
             ]);
         } else {
-            
+
             $carsModelinsert = cars_model::create([
                         'car_id' => $request->input('carId'),
                         'car_model_id' => $request->input('car_model'),
@@ -342,6 +343,11 @@ class HomeController extends Controller {
     }
 
     public function editCarModel(request $request) {
+        $imageName2 = $request->file('mainImg')->getClientOriginalName();
+        $request->file('mainImg')->move(
+                base_path() . '/public/carmodelofferimgslider/', $imageName2
+        );
+        var_dump($imageName2); die();
         $carModel = new cars_model();
         $carModel = cars_model::firstOrNew(array('id' => intval($request->input('id'))));
         $id = $request->input('id');
