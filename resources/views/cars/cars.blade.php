@@ -82,7 +82,7 @@ $(document).ready(function () {
             nEditing = nRow;
         }
 
-        }
+
         else if (nEditing == nRow && this.innerHTML == "Save") {
             /* This row is being edited and should be saved */
             saveRow(table, nEditing);
@@ -97,6 +97,8 @@ $(document).ready(function () {
 
 });
 </script>
+@stop
+
 @section('content')
 <div style="clear:both"></div><br/>
 <div class="row">
@@ -160,9 +162,9 @@ $(document).ready(function () {
                 <td>{{$car->name_en}}</td>
                 <td>
                     <input id="carId" type="hidden" value="{{$car->id}}">
-<img id="deleteCar" class="deleteCar" width="20" height="20" src="http://findicons.com/files/icons/753/gnome_desktop/64/gnome_edit_delete.png">
-                         </td>
-                         <td><a class="edit" href="">Edit</a></td>
+                    <img id="deleteCar" class="deleteCar" width="20" height="20" src="http://findicons.com/files/icons/753/gnome_desktop/64/gnome_edit_delete.png">
+                </td>
+                <td><a class="edit" href="">Edit</a></td>
                 <td><a class="save" href="./cars">save</a></td>
             </tr>
             ...
