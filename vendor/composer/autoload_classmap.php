@@ -18,6 +18,7 @@ return array(
     'CreateCarsTable' => $baseDir . '/database/migrations/2016_06_10_204212_create_cars_table.php',
     'CreateContactLogTable' => $baseDir . '/database/migrations/2016_07_08_172729_create_contact_log_table.php',
     'CreateContactUsTable' => $baseDir . '/database/migrations/2016_06_10_204152_create_contact_us_table.php',
+    'CreateContactValueImgsTable' => $baseDir . '/database/migrations/2016_07_16_212032_create_contact_value_imgs_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateSubscriberTable' => $baseDir . '/database/migrations/2016_07_08_000032_create_subscriber_table.php',
     'CreateTestDriveTable' => $baseDir . '/database/migrations/2016_06_29_192436_create_test_drive_table.php',

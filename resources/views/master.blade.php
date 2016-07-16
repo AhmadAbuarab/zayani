@@ -108,6 +108,11 @@
 
                         </li>
                         
+                          <li class="treeview">
+                            <a href="{{url('contvaluslider')}}"><span>contactus and valuecar slider</span> <i class="fa fa-angle-left pull-right"></i></a>
+
+                        </li>
+                        
                         
                          
                       

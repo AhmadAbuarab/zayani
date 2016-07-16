@@ -17,6 +17,7 @@ use App\car_offers_images;
 use Illuminate\Support\Facades\DB;
 use App\subscriber;
 use App\contact_log;
+use App\contact_value_imgs;
 
 class HomeController extends Controller {
 
@@ -242,6 +243,44 @@ class HomeController extends Controller {
         $carsModelOffers = cars_model::lists('name_en', 'id');
 //        $carsmodeldata = car_offers_images::get();
         return view('carsModelImg.carsModelImg', compact('carsModelOffers', 'carsmodeldata'));
+    }
+
+    public function contvaluslider() {
+        return view('contvaluslider.contvaluslider');
+    }
+
+    public function addcontvaluslider(request $request) {
+        if ($request->file('contact_us_arabic_slider') != '' && $request->file('contact_us_english_slider') != '' && $request->file('value_car_arabic_slider') != '' && $request->file('value_car_english_slider') != '') {
+
+            $contact_us_arabic_slider = $request->file('contact_us_arabic_slider')->getClientOriginalName();
+            $request->file('contact_us_arabic_slider')->move(
+                    base_path() . '/public/contact_value_imgs/', $contact_us_arabic_slider
+            );
+
+            $contact_us_english_slider = $request->file('contact_us_english_slider')->getClientOriginalName();
+            $request->file('contact_us_english_slider')->move(
+                    base_path() . '/public/contact_value_imgs/', $contact_us_english_slider
+            );
+
+            $value_car_arabic_slider = $request->file('value_car_arabic_slider')->getClientOriginalName();
+            $request->file('value_car_arabic_slider')->move(
+                    base_path() . '/public/contact_value_imgs/', $value_car_arabic_slider
+            );
+
+            $value_car_english_slider = $request->file('value_car_english_slider')->getClientOriginalName();
+            $request->file('value_car_english_slider')->move(
+                    base_path() . '/public/contact_value_imgs/', $value_car_english_slider
+            );
+
+            $contaValue = new contact_value_imgs();
+            $contaValue = contact_value_imgs::firstOrNew(array('id' => 1));
+            $contaValue->contact_slider_arabic = 'contact_value_imgs/' . $contact_us_arabic_slider;
+            $contaValue->contact_slider_english = 'contact_value_imgs/' . $contact_us_english_slider;
+            $contaValue->value_slider_arabic = 'contact_value_imgs/' . $value_car_arabic_slider;
+            $contaValue->value_slider_english = 'contact_value_imgs/' . $value_car_english_slider;
+            $contaValue->save();
+        }
+        return back();
     }
 
     public function caroffermodelimg(request $request) {

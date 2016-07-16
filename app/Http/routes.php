@@ -75,6 +75,8 @@ Route::post('subscribelog/create', 'HomeController@addsubscribelog');
 Route::get('contactlog', 'HomeController@contactlog');
 Route::post('contactlog/create', 'SiteController@addcontactlog');
 /////
+Route::get('contvaluslider', 'HomeController@contvaluslider');
+Route::post('contvaluslider/create', 'HomeController@addcontvaluslider');
 
 //Route::get('/en/offers', 'SiteController@offers');
 //Route::get('/ar/offers', 'SiteController@offers');
