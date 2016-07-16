@@ -64,7 +64,7 @@
                 <div class="carousel-inner">
                     <div class="item active">
                         <!-- Set the first background image using inline CSS below. -->
-                        <div class="fill_inner" style="background-image:url(URL::asset({{$contactUsSliders[0]->value_slider_english}}));"></div>
+                        <div class="fill_inner" style="background-image:url({{URL::asset($contactUsSliders[0]->value_slider_english)}});"></div>
                         <div class="carousel-caption">
                         </div>
                     </div>
