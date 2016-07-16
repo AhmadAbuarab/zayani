@@ -198,6 +198,37 @@ $(document).ready(function () {
         </tbody>
     </table>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+{!! Form::open(['url' => 'carsmodelmain/changeimgslider','files'=>true]) !!}
+<div class="row" style="border: 3px solid red; margin-top: 50px;">
+    <div class="box-header with-border" >
+        <h3 class="box-title" style="width: 100%; color:red;">Change car Model Slider</h3>
+    </div>
+    <div class="col-md-12">
+        <div class="form-group col-xs-12">
+            {!! Form::label('car_model') !!} 
+            {!! Form::select('car_model', $carsModelMainData , '' ,['class'=>'form-control col-xs-6']) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::label('change_car_model_slider') !!} 
+            {!! Form::file('change_car_model_slider') !!}
+        </div>
+        <div class="form-group">
+            {!! Form::submit('change',array('class'=>'class="btn btn-info pull-right"')) !!}
+        </div>
+        {!! Form::close() !!}
+    </div>
+</div>
 @stop
 
 

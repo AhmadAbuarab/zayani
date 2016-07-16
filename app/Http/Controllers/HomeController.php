@@ -63,7 +63,39 @@ class HomeController extends Controller {
 
     public function cars() {
         $cars = cars::get();
-        return view('cars.cars', compact('cars'));
+        $allCars = cars::lists('name_en', 'id');
+        return view('cars.cars', compact('cars', 'allCars'));
+    }
+
+    public function carchangeImg(request $request) {
+        if ($request->file('change_main_car_image') != '') {
+            $imageName = $request->file('change_main_car_image')->getClientOriginalName();
+            $request->file('change_main_car_image')->move(
+                    base_path() . '/public/carimages/', $imageName
+            );
+            $id = $request->input('carId_img');
+            $car = new cars();
+            $car = cars::firstOrNew(array('id' => $id));
+            $car->main_img = '/carimages/' . $imageName;
+            $car->save();
+        }
+        return back();
+    }
+
+    public function carmodelmainchangeImgSlider(request $request) {
+        if ($request->file('change_car_model_slider') != '') {
+            $imageName = $request->file('change_car_model_slider')->getClientOriginalName();
+            $request->file('change_car_model_slider')->move(
+                    base_path() . '/public/sliders/', $imageName
+            );
+//            var_dump($imageName); die();
+            $id = $request->input('car_model');
+            $carModelMain = new car_model_main();
+            $carModelMain = car_model_main::firstOrNew(array('id' => $id));
+            $carModelMain->slider_img = '/sliders/' . $imageName;
+            $carModelMain->save();
+        }
+        return back();
     }
 
     public function addCarModelMain(request $request) {
@@ -91,7 +123,8 @@ class HomeController extends Controller {
     public function carsmodelmain(request $request) {
         $carsModelMain = car_model_main::get();
         $cars = cars::lists('name_en', 'id');
-        return view('carsModelMain.carsModelMain', compact('carsModelMain', 'cars'));
+        $carsModelMainData = car_model_main::lists('car_model_main_name_en', 'id');
+        return view('carsModelMain.carsModelMain', compact('carsModelMain', 'cars', 'carsModelMainData'));
     }
 
     public function addCar(request $request) {
@@ -149,14 +182,65 @@ class HomeController extends Controller {
 
     public function carsModel() {
         $carsModel = cars_model::get();
+        $carsModelOffersList = cars_model::lists('name_en', 'id');
         $cars = cars::lists('name_en', 'id');
         $carsModelMain = car_model_main::lists('car_model_main_name_en', 'id');
-        return view('carsModel.carsModel', compact('cars', 'carsModel', 'carsModelMain'));
+        return view('carsModel.carsModel', compact('cars', 'carsModel', 'carsModelMain', 'carsModelOffersList'));
+    }
+
+    public function changecarmodelofferimgs(request $request) {
+
+        if ($request->file('change_img') != '' && $request->file('change_slider') != '') {
+            $imageName = $request->file('change_img')->getClientOriginalName();
+            $request->file('change_img')->move(
+                    base_path() . '/public/carmodelofferimg/', $imageName
+            );
+            $sliderName = $request->file('change_slider')->getClientOriginalName();
+            $request->file('change_slider')->move(
+                    base_path() . '/public/carmodelofferimgslider/', $sliderName
+            );
+            $id = $request->input('car_model_offer');
+            $car = new cars_model();
+            $car = cars_model::firstOrNew(array('id' => $id));
+            $car->img_slider = 'carmodelofferimg/' . $imageName;
+            $car->img_slider_slider = 'carmodelofferimgslider/' . $sliderName;
+            $car->save();
+        } else if ($request->file('change_img') != '') {
+            $imageName = $request->file('change_img')->getClientOriginalName();
+            $request->file('change_img')->move(
+                    base_path() . '/public/carmodelofferimg/', $imageName
+            );
+            $id = $request->input('car_model_offer');
+            $car = new cars_model();
+            $car = cars_model::firstOrNew(array('id' => $id));
+            $car->img_slider = 'carmodelofferimg/' . $imageName;
+            $car->save();
+        } else if ($request->file('change_slider') != '') {
+            $sliderName = $request->file('change_slider')->getClientOriginalName();
+            $request->file('change_slider')->move(
+                    base_path() . '/public/carmodelofferimgslider/', $sliderName
+            );
+            $id = $request->input('car_model_offer');
+            $car = new cars_model();
+            $car = cars_model::firstOrNew(array('id' => $id));
+            $car->img_slider_slider = 'carmodelofferimgslider/' . $sliderName;
+            $car->save();
+        }
+        return back();
     }
 
     public function carsModelImg() {
+        $carsmodeldata = DB::table('car_offers_images')
+                ->join('cars_model', 'car_offers_images.car_offer_id', '=', 'cars_model.id')
+                ->select('car_offers_images.*', 'cars_model.name_en')
+                ->get();
+
+
+
+
+
         $carsModelOffers = cars_model::lists('name_en', 'id');
-        $carsmodeldata = car_offers_images::get();
+//        $carsmodeldata = car_offers_images::get();
         return view('carsModelImg.carsModelImg', compact('carsModelOffers', 'carsmodeldata'));
     }
 
@@ -347,7 +431,8 @@ class HomeController extends Controller {
         $request->file('mainImg')->move(
                 base_path() . '/public/carmodelofferimgslider/', $imageName2
         );
-        var_dump($imageName2); die();
+        var_dump($imageName2);
+        die();
         $carModel = new cars_model();
         $carModel = cars_model::firstOrNew(array('id' => intval($request->input('id'))));
         $id = $request->input('id');

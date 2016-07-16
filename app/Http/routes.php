@@ -23,6 +23,13 @@ Route::post('contact/create', 'HomeController@contactPost');
 
 Route::get('cars', 'HomeController@cars');
 Route::post('cars/create', 'HomeController@addCar');
+Route::post('cars/changeImg', 'HomeController@carchangeImg');
+
+Route::post('carsmodelmain/changeimgslider', 'HomeController@carmodelmainchangeImgSlider');
+Route::post('carsmodeloffer/changeimgs', 'HomeController@changecarmodelofferimgs');
+
+
+
 Route::post('deleteCar', 'HomeController@deleteCar');
 Route::post('deleteCarModelMain', 'HomeController@deleteCarModelMain');
 Route::post('deleteCarBrand', 'HomeController@deleteCarBrand');

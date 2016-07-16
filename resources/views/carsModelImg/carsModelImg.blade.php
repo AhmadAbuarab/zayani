@@ -86,7 +86,7 @@ $(document).ready(function () {
     <table id="carsModelMain" class="display" cellspacing="0" width="100%">
         <thead>
             <tr>
-                <th>car id</th>
+                <th>car name</th>
                 <th>path</th>
                 <th></th>
             </tr>
@@ -95,7 +95,7 @@ $(document).ready(function () {
             @if(isset($carsmodeldata))
             @foreach($carsmodeldata as $carsModelMai)
             <tr>
-                <td>{{$carsModelMai->car_offer_id}}</td>
+                <td>{{$carsModelMai->name_en}}</td>
                 <td>{{$carsModelMai->path}}</td>
                 <td>
                     <input id="carModelMainId" type="hidden" value="{{$carsModelMai->id}}">

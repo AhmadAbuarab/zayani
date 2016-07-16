@@ -173,6 +173,30 @@ $(document).ready(function () {
         </tbody>
     </table>
 </div>
+
+
+
+
+{!! Form::open(['url' => 'cars/changeImg','files'=>true]) !!}
+<div class="row" style="border: 3px solid red; margin-top: 50px;">
+    <div class="box-header with-border" >
+        <h3 class="box-title" style="width: 100%; color:red;">Change car main Img</h3>
+    </div>
+    <div class="col-md-12">
+        <div class="form-group col-xs-12">
+            {!! Form::label('carId_img') !!} 
+            {!! Form::select('carId_img', $allCars , '' ,['class'=>'form-control col-xs-6']) !!}
+        </div>
+        <div class="form-group">
+            {!! Form::label('change_main_car_image') !!} 
+            {!! Form::file('change_main_car_image') !!}
+        </div>
+        <div class="form-group">
+            {!! Form::submit('change',array('class'=>'class="btn btn-info pull-right"')) !!}
+        </div>
+        {!! Form::close() !!}
+    </div>
+</div>
 @stop
 
 
