@@ -55,50 +55,30 @@
         </div>
 
 
-        <!-- end header -->
-        <!-- slider -->
+       @if(isset($contactUsSliders[0]->value_slider_arabic) && $contactUsSliders[0]->value_slider_arabic != '')
         <div class="container-fulid">
             <header id="myCarousel" class="carousel slide">
                 <!-- Indicators -->
 
                 <!-- Wrapper for Slides -->
                 <div class="carousel-inner">
-                    @if(isset($offerImages))
-                    <?php $count = 0; ?>
-                    @foreach($offerImages as $offerImage)
-                    @if($offerImage->path_slider !='')
-                    @if($count == 0)
-
                     <div class="item active">
                         <!-- Set the first background image using inline CSS below. -->
-                        <div class="fill_inner" style="background-image:url({{URL::asset($offerImage->path_slider) }});"></div>
+                        <div class="fill_inner" style="background-image:url(URL::asset({{$contactUsSliders[0]->value_slider_arabic}}));"></div>
                         <div class="carousel-caption">
                         </div>
                     </div>
-                    @else
-
-                    <div class="item">
-                        <!-- Set the second background image using inline CSS below. -->
-                        <div class="fill_inner" style="background-image:url({{URL::asset($offerImage->path_slider) }});"></div>
-                        <div class="carousel-caption">
-                        </div>
-                    </div>
-                    @endif
-                    <?php $count++; ?>
-                    @endif
-                    @endforeach
-                    @endif
-
                 </div>
 
                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                    <span class="icon-prev"></span>
+                    <span class="icon-next"></span>
                 </a>
                 <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                    <span class="icon-next"></span>
+                    <span class="icon-prev"></span>
                 </a>
             </header>	
         </div>
+        @endif
 
 
         <!-- car section -->

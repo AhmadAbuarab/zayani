@@ -60,7 +60,7 @@
 
 
 
-        @if(isset($contactUsSliders) && $contactUsSliders[0]->contact_slider_arabic != '')
+        @if(isset($contactUsSliders[0]->contact_slider_arabic) && $contactUsSliders[0]->contact_slider_arabic != '')
         <div class="container-fulid">
             <header id="myCarousel" class="carousel slide">
                 <!-- Indicators -->
@@ -69,7 +69,7 @@
                 <div class="carousel-inner">
                     <div class="item active">
                         <!-- Set the first background image using inline CSS below. -->
-                        <div class="fill_inner" style="background-image:url({{$contactUsSliders[0]->contact_slider_arabic}});"></div>
+                        <div class="fill_inner" style="background-image:url(URL::asset({{$contactUsSliders[0]->contact_slider_arabic}}));"></div>
                         <div class="carousel-caption">
                         </div>
                     </div>
