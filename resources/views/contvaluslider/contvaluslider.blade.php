@@ -11,32 +11,6 @@
 <script type="text/javascript" language="javascript" src="{{ asset ("assets/dataTables/media/js/jquery.dataTables.js") }}"></script>
 <script type="text/javascript" language="javascript" src="{{ asset ("assets/dataTables/examples/resources/syntax/shCore.js") }}"></script>
 <script type="text/javascript" language="javascript" src="{{ asset ("assets/dataTables/examples/resources/demo.js") }}"></script>
-<script>
-$(document).ready(function () {
-    var table = $('#carsModelMain').DataTable();
-    $('.deleteCarModelMain').click(function () {
-        var that = $(this);
-        var carId = $(this).parent().children().eq(0).val();
-        $.ajax({
-            type: "POST",
-            dataType: "json",
-            url: './deleteCarOffersImgs',
-            beforeSend: function (xhr) {
-                var token = $('meta[name="csrf_token"]').attr('content');
-
-                if (token) {
-                    return xhr.setRequestHeader('X-CSRF-TOKEN', token);
-                }
-            },
-            data: {carId: carId},
-            success: function (data) {
-                that.parent().parent().html('');
-            }
-        })
-    });
-});
-</script>
-
 @stop
 
 
@@ -92,29 +66,7 @@ $(document).ready(function () {
 
 
 
-    <table id="carsModelMain" class="display" cellspacing="0" width="100%">
-        <thead>
-            <tr>
-                <th>car name</th>
-                <th>path</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @if(isset($carsmodeldata))
-            @foreach($carsmodeldata as $carsModelMai)
-            <tr>
-                <td>{{$carsModelMai->name_en}}</td>
-                <td>{{$carsModelMai->path}}</td>
-                <td>
-                    <input id="carModelMainId" type="hidden" value="{{$carsModelMai->id}}">
-                    <img id="deleteCarModelMain" class="deleteCarModelMain" width="20" height="20" src="http://findicons.com/files/icons/753/gnome_desktop/64/gnome_edit_delete.png">
-                </td>
-            </tr>
-            @endforeach
-            @endif
-        </tbody>
-    </table>
+    
 </div>
 @stop
 
