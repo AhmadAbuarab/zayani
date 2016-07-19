@@ -95,7 +95,7 @@ $(document).ready(function () {
         var acceleration = $(this).parent().parent().children().closest('.acceleration').children().eq(0).val();
         var transmission = $(this).parent().parent().children().closest('.transmission').children().eq(0).val();
         var price = $(this).parent().parent().children().closest('.price').children().eq(0).val();
-
+        alert(id);
         $.ajax({
             type: "POST",
             dataType: "json",

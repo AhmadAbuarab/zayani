@@ -558,10 +558,6 @@ class HomeController extends Controller {
     }
 
     public function editCarModel(request $request) {
-        $imageName2 = $request->file('mainImg')->getClientOriginalName();
-        $request->file('mainImg')->move(
-                base_path() . '/public/carmodelofferimgslider/', $imageName2
-        );
         $carModel = new cars_model();
         $carModel = cars_model::firstOrNew(array('id' => intval($request->input('id'))));
         $id = $request->input('id');
