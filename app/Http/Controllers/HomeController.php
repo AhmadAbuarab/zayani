@@ -296,10 +296,13 @@ class HomeController extends Controller {
                 $request->file('change_slider_arabic')->move(
                         base_path() . '/public/carmodelofferimgslider/', $sliderName
                 );
-                $car = new cars_model();
-                $car = cars_model::firstOrNew(array('id' => $lastId));
-                $car->slider_ara = 'carmodelofferimgslider/' . $sliderName;
-                $car->save();
+                DB::table('cars_model')
+                        ->where('id', $lastId)
+                        ->update(['slider_ara' => 'carmodelofferimgslider/' . $sliderName]);
+//                $car = new cars_model();
+//                $car = cars_model::firstOrNew(array('id' => $lastId));
+//                $car->slider_ara = 'carmodelofferimgslider/' . $sliderName;
+//                $car->save();
             }
         }
         return back();
@@ -557,8 +560,6 @@ class HomeController extends Controller {
         $request->file('mainImg')->move(
                 base_path() . '/public/carmodelofferimgslider/', $imageName2
         );
-        var_dump($imageName2);
-        die();
         $carModel = new cars_model();
         $carModel = cars_model::firstOrNew(array('id' => intval($request->input('id'))));
         $id = $request->input('id');
