@@ -410,7 +410,7 @@ $(document).ready(function () {
             {!! Form::label('change_slider') !!} 
             {!! Form::file('change_slider') !!}
         </div>
-        <div class="form-group col-xs-6">
+        <div class="form-group">
             {!! Form::label('change_slider_arabic') !!} 
             {!! Form::file('change_slider_arabic') !!}
             <span style="font-weight: bold;">IMG size should be 1920px X 550px</span>
