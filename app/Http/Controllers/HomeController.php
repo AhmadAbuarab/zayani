@@ -307,7 +307,7 @@ class HomeController extends Controller {
 //                $car->save();
             }
         }
-//        return back();
+        return back();
     }
 
     public function carsModelImg() {
