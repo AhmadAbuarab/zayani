@@ -35,12 +35,12 @@ class SiteController extends Controller {
     public function index() {
         if ($this->lang == 'ar') {
             $cars = DB::table('cars')->select('*')->get();
-            $carsModelMan = DB::table('car_model_main')->select('id', 'car_id', 'car_model_main_name_ar', 'slider_img')->get();
+            $carsModelMan = DB::table('car_model_main')->select('*')->get();
             $contactUsData = DB::table('contact_us')->select('feed_back_ar', 'address_ar', 'po_box_ar', 'telephone', 'showroom_openning_hours', 'servuce_and_parts_openning_hours', 'email', 'mobile')->get();
             return view('main_ar', compact('contactUsData', 'cars', 'carsModelMan'));
         } else {
             $cars = DB::table('cars')->select('*')->get();
-            $carsModelMan = DB::table('car_model_main')->select('id', 'car_id', 'car_model_main_name_en', 'slider_img')->get();
+            $carsModelMan = DB::table('car_model_main')->select('*')->get();
             $contactUsData = DB::table('contact_us')->select('feed_back_en', 'address_en', 'po_box_en', 'telephone', 'showroom_openning_hours', 'servuce_and_parts_openning_hours', 'email', 'mobile')->get();
             return view('main', compact('contactUsData', 'cars', 'carsModelMan'));
         }
@@ -107,7 +107,7 @@ class SiteController extends Controller {
     }
 
     public function contact_us(request $request) {
-        $carsModelMan = DB::table('car_model_main')->select('id', 'car_id', 'car_model_main_name_ar', 'slider_img')->get();
+        $carsModelMan = DB::table('car_model_main')->select('*')->get();
 
         $contactUsSliders = DB::table('contact_value_imgs')->select('*')->get();
 
