@@ -84,23 +84,72 @@ class HomeController extends Controller {
     }
 
     public function carmodelmainchangeImgSlider(request $request) {
-        if ($request->file('change_car_model_slider') != '') {
+        if ($request->file('change_car_model_slider') != '' && $request->file('change_slider_arabic') != '') {
+
             $imageName = $request->file('change_car_model_slider')->getClientOriginalName();
             $request->file('change_car_model_slider')->move(
                     base_path() . '/public/sliders/', $imageName
+            );
+
+            $imageNameAra = $request->file('change_slider_arabic')->getClientOriginalName();
+            $request->file('change_slider_arabic')->move(
+                    base_path() . '/public/sliders/', $imageNameAra
             );
 //            var_dump($imageName); die();
             $id = $request->input('car_model');
             $carModelMain = new car_model_main();
             $carModelMain = car_model_main::firstOrNew(array('id' => $id));
             $carModelMain->slider_img = '/sliders/' . $imageName;
+            $carModelMain->slider_ara = '/sliders/' . $imageNameAra;
+            $carModelMain->save();
+        } else if ($request->file('change_car_model_slider') != '') {
+            $imageName = $request->file('change_car_model_slider')->getClientOriginalName();
+            $request->file('change_car_model_slider')->move(
+                    base_path() . '/public/sliders/', $imageName
+            );
+
+//            var_dump($imageName); die();
+            $id = $request->input('car_model');
+            $carModelMain = new car_model_main();
+            $carModelMain = car_model_main::firstOrNew(array('id' => $id));
+            $carModelMain->slider_img = '/sliders/' . $imageName;
+            $carModelMain->save();
+        } else if ($request->file('change_slider_arabic') != '') {
+
+
+            $imageNameAra = $request->file('change_slider_arabic')->getClientOriginalName();
+            $request->file('change_slider_arabic')->move(
+                    base_path() . '/public/sliders/', $imageNameAra
+            );
+//            var_dump($imageName); die();
+            $id = $request->input('car_model');
+            $carModelMain = new car_model_main();
+            $carModelMain = car_model_main::firstOrNew(array('id' => $id));
+            $carModelMain->slider_ara = '/sliders/' . $imageNameAra;
             $carModelMain->save();
         }
         return back();
     }
 
     public function addCarModelMain(request $request) {
-        if ($request->file('slider_img') != '') {
+        if ($request->file('slider_img') != '' && $request->file('slider_arabic') != '') {
+            $imageName = $request->file('slider_img')->getClientOriginalName();
+            $request->file('slider_img')->move(
+                    base_path() . '/public/sliders/', $imageName
+            );
+
+            $imageNameAra = $request->file('slider_arabic')->getClientOriginalName();
+            $request->file('slider_arabic')->move(
+                    base_path() . '/public/sliders/', $imageNameAra
+            );
+            car_model_main::create([
+                'car_id' => $request->input('carId'),
+                'car_model_main_name_en' => $request->input('name_english'),
+                'car_model_main_name_ar' => $request->input('name_arabic'),
+                'slider_img' => '/sliders/' . $imageName,
+                'slider_ara' => '/sliders/' . $imageNameAra
+            ]);
+        } else if ($request->file('slider_img') != '') {
             $imageName = $request->file('slider_img')->getClientOriginalName();
             $request->file('slider_img')->move(
                     base_path() . '/public/sliders/', $imageName
@@ -111,13 +160,25 @@ class HomeController extends Controller {
                 'car_model_main_name_ar' => $request->input('name_arabic'),
                 'slider_img' => '/sliders/' . $imageName
             ]);
-            return back();
+        } else if ($request->file('slider_arabic') != '') {
+            $imageNameAra = $request->file('slider_arabic')->getClientOriginalName();
+            $request->file('slider_arabic')->move(
+                    base_path() . '/public/sliders/', $imageNameAra
+            );
+            car_model_main::create([
+                'car_id' => $request->input('carId'),
+                'car_model_main_name_en' => $request->input('name_english'),
+                'car_model_main_name_ar' => $request->input('name_arabic'),
+                'slider_ara' => '/sliders/' . $imageNameAra
+            ]);
+        } else {
+
+            car_model_main::create([
+                'car_id' => $request->input('carId'),
+                'car_model_main_name_en' => $request->input('name_english'),
+                'car_model_main_name_ar' => $request->input('name_arabic')
+            ]);
         }
-        car_model_main::create([
-            'car_id' => $request->input('carId'),
-            'car_model_main_name_en' => $request->input('name_english'),
-            'car_model_main_name_ar' => $request->input('name_arabic')
-        ]);
         return back();
     }
 
@@ -189,6 +250,7 @@ class HomeController extends Controller {
         return view('carsModel.carsModel', compact('cars', 'carsModel', 'carsModelMain', 'carsModelOffersList'));
     }
 
+    // only this part
     public function changecarmodelofferimgs(request $request) {
 
         if ($request->file('change_img') != '' && $request->file('change_slider') != '') {
@@ -226,6 +288,19 @@ class HomeController extends Controller {
             $car = cars_model::firstOrNew(array('id' => $id));
             $car->img_slider_slider = 'carmodelofferimgslider/' . $sliderName;
             $car->save();
+        }
+        $lastId = $car->id;
+        if ($request->file('change_slider_arabic') != '') {
+            if (cars_model::where('id', '=', $lastId)) {
+                $sliderName = $request->file('change_slider_arabic')->getClientOriginalName();
+                $request->file('change_slider_arabic')->move(
+                        base_path() . '/public/carmodelofferimgslider/', $sliderName
+                );
+                $car = new cars_model();
+                $car = cars_model::firstOrNew(array('id' => $lastId));
+                $car->slider_ara = 'carmodelofferimgslider/' . $sliderName;
+                $car->save();
+            }
         }
         return back();
     }
@@ -434,10 +509,22 @@ class HomeController extends Controller {
             ]);
         }
 
-
-
-
         $lastId = $carsModelinsert->id;
+
+        if ($request->file('slider_arabic') != '') {
+            if (cars_model::where('id', '=', $lastId)) {
+
+                $imageNameAra = $request->file('slider_arabic')->getClientOriginalName();
+                $request->file('slider_arabic')->move(
+                        base_path() . '/public/carmodelofferimgslider/', $imageNameAra
+                );
+
+                $carModel = cars_model::firstOrNew(array('id' => $lastId));
+                $carModel->slider_ara = $imageNameAra;
+                $carModel->save();
+            }
+        }
+
 
         $details_arabic = explode(",", $request->input('details_arabic'));
         $details_english = explode(",", $request->input('details_english'));

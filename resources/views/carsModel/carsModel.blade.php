@@ -269,9 +269,9 @@ $(document).ready(function () {
                     {!! Form::text('maximum_speed','',array('class' => 'form-control col-md-6')) !!}
                 </div>
 
-               
+
                 <div class="form-group col-xs-12"></div>
-                
+
 
                 <div class="form-group col-xs-6">
                     {!! Form::label('price') !!} 
@@ -290,18 +290,24 @@ $(document).ready(function () {
                     {!! Form::file('upload_car_model_offer_image_slider') !!}
                     <span style="font-weight: bold;">IMG size should be 1920px X 550px</span>
                 </div>
-                
-                 <div class="form-group col-xs-12">
+
+                <div class="form-group col-xs-6">
+                    {!! Form::label('slider_arabic') !!} 
+                    {!! Form::file('slider_arabic') !!}
+                    <span style="font-weight: bold;">IMG size should be 1920px X 550px</span>
+                </div>
+
+                <div class="form-group col-xs-12">
                     {!! Form::label('note_arabic') !!} 
                     {!! Form::textarea('acceleration','',array('class' => 'form-control')) !!}
                 </div>
-                
+
 
                 <div class="form-group col-xs-12">
                     {!! Form::label('note_english') !!} 
                     {!! Form::textarea('transmission','',array('class' => 'form-control')) !!}
                 </div>
-                
+
 
                 <div class="form-group col-xs-12">
                     {!! Form::label('details_arabic') !!} 
@@ -403,6 +409,11 @@ $(document).ready(function () {
         <div class="form-group">
             {!! Form::label('change_slider') !!} 
             {!! Form::file('change_slider') !!}
+        </div>
+        <div class="form-group col-xs-6">
+            {!! Form::label('change_slider_arabic') !!} 
+            {!! Form::file('change_slider_arabic') !!}
+            <span style="font-weight: bold;">IMG size should be 1920px X 550px</span>
         </div>
         <div class="form-group">
             {!! Form::label('change_img') !!} 

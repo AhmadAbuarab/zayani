@@ -156,6 +156,12 @@ $(document).ready(function () {
                     <span style="font-weight: bold;">IMG size should be 1920px X 550px</span>
                 </div>
 
+                <div class="form-group col-xs-6">
+                    {!! Form::label('slider_arabic') !!} 
+                    {!! Form::file('slider_arabic') !!}
+                    <span style="font-weight: bold;">IMG size should be 1920px X 550px</span>
+                </div>
+
 
             </div>
 
@@ -223,6 +229,13 @@ $(document).ready(function () {
             {!! Form::label('change_car_model_slider') !!} 
             {!! Form::file('change_car_model_slider') !!}
         </div>
+
+        <div class="form-group col-xs-6">
+            {!! Form::label('change_slider_arabic') !!} 
+            {!! Form::file('change_slider_arabic') !!}
+            <span style="font-weight: bold;">IMG size should be 1920px X 550px</span>
+        </div>
+
         <div class="form-group">
             {!! Form::submit('change',array('class'=>'class="btn btn-info pull-right"')) !!}
         </div>

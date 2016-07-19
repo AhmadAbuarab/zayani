@@ -77,10 +77,10 @@
                     @if(isset($carsModelMan))
                     <?php $count = 0; ?>
                     @foreach($carsModelMan as $car)
-                    @if($count == 0 && $car->slider_img!='')
+                    @if($count == 0 && $car->slider_ara!='')
                     <div class="item active">
                         <!-- Set the first background image using inline CSS below. -->
-                        <div class="fill" style="background-image:url({{URL::asset($car->slider_img)}});"></div>
+                        <div class="fill" style="background-image:url({{URL::asset($car->slider_ara)}});"></div>
                         <div class="carousel-caption">
 
                             <a href="{{ URL::to("ar/offers/".$car->id) }}"><button class="btn btn-primary sliderButton">المزيد <i class="fa fa-chevron-right" aria-hidden="true"></i></button></a>
@@ -88,11 +88,11 @@
                         </div>
                     </div>
                     <?php $count++; ?>
-                    @elseif($count !=0 && $car->slider_img!='')
+                    @elseif($count !=0 && $car->slider_ara!='')
 
                     <div class="item">
                         <!-- Set the second background image using inline CSS below. -->
-                        <div class="fill" style="background-image:url({{URL::asset($car->slider_img)}});"></div>
+                        <div class="fill" style="background-image:url({{URL::asset($car->slider_ara)}});"></div>
                         <div class="carousel-caption">
                             <a href="{{ URL::to("ar/offers/".$car->id) }}"><button class="btn btn-primary sliderButton">المزيد <i class="fa fa-chevron-right" aria-hidden="true"></i></button></a>
                         </div>
