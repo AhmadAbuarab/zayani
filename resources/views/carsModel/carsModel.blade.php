@@ -402,7 +402,7 @@ $(document).ready(function () {
         <h3 class="box-title" style="width: 100%; color:red;">Change car Model offer imgs</h3>
     </div>
     <div class="col-md-12">
-        <div class="form-group col-xs-12">
+        <div class="form-group">
             {!! Form::label('car_model_offer') !!} 
             {!! Form::select('car_model_offer', $carsModelOffersList , '' ,['class'=>'form-control col-xs-6']) !!}
         </div>
