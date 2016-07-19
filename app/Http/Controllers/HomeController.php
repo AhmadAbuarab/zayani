@@ -268,6 +268,7 @@ class HomeController extends Controller {
             $car->img_slider = 'carmodelofferimg/' . $imageName;
             $car->img_slider_slider = 'carmodelofferimgslider/' . $sliderName;
             $car->save();
+            $lastId = $car->id;
         } else if ($request->file('change_img') != '') {
             $imageName = $request->file('change_img')->getClientOriginalName();
             $request->file('change_img')->move(
@@ -278,6 +279,7 @@ class HomeController extends Controller {
             $car = cars_model::firstOrNew(array('id' => $id));
             $car->img_slider = 'carmodelofferimg/' . $imageName;
             $car->save();
+            $lastId = $car->id;
         } else if ($request->file('change_slider') != '') {
             $sliderName = $request->file('change_slider')->getClientOriginalName();
             $request->file('change_slider')->move(
@@ -288,8 +290,8 @@ class HomeController extends Controller {
             $car = cars_model::firstOrNew(array('id' => $id));
             $car->img_slider_slider = 'carmodelofferimgslider/' . $sliderName;
             $car->save();
+            $lastId = $car->id;
         }
-        $lastId = $car->id;
         if ($request->file('change_slider_arabic') != '') {
             if (cars_model::where('id', '=', $lastId)) {
                 $sliderName = $request->file('change_slider_arabic')->getClientOriginalName();
@@ -305,7 +307,7 @@ class HomeController extends Controller {
 //                $car->save();
             }
         }
-        return back();
+//        return back();
     }
 
     public function carsModelImg() {
