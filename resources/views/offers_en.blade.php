@@ -29,7 +29,7 @@
                                     <span class="icon-bar"></span>
                                 </button>
 
-                                <a href="#" class="mainLogo"><img src="{{URL::asset('assets/img/logo.png') }}"></a>
+                                <a href="{{ URL::to("en") }}" class="mainLogo"><img src="{{URL::asset('assets/img/logo.png') }}"></a>
 
 
                             </div>
