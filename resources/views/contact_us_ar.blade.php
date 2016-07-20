@@ -182,7 +182,7 @@
 
                         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOeK-SPWVJsQ4Y2s5M2YD0Kbarhifg-44&callback=initMap">
                         </script><div style='overflow:hidden;height:200px;width:100%;'><div id='gmap_canvas' style='height:200px;width:100%;'></div><div><small><a href="http://embedgooglemaps.com">									embed google maps							</a></small></div><div><small><a href="https://privacypolicygenerator.info">privacy policy generator</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><script type='text/javascript'>function init_map() {
-                                var myOptions = {zoom: 10, center: new google.maps.LatLng(29.31166, 47.48176599999999), mapTypeId: google.maps.MapTypeId.ROADMAP};
+                                var myOptions = {zoom: 10, center: new google.maps.LatLng(29.314213, 47.939079), mapTypeId: google.maps.MapTypeId.ROADMAP};
                                 map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
                                 marker = new google.maps.Marker({map: map, position: new google.maps.LatLng(29.31166, 47.48176599999999)});
                                 infowindow = new google.maps.InfoWindow({content: '<strong>Al-ZYANI</strong><br>Kuwait<br>'});
