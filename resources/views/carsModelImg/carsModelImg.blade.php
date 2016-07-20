@@ -13,7 +13,12 @@
 <script type="text/javascript" language="javascript" src="{{ asset ("assets/dataTables/examples/resources/demo.js") }}"></script>
 <script>
 $(document).ready(function () {
-    var table = $('#carsModelMain').DataTable();
+//    var table = $('#carsModelMain').DataTable();
+    
+    $('#carsModelMain').dataTable({
+        paging: false
+    });
+    
     $('.deleteCarModelMain').click(function () {
         var that = $(this);
         var carId = $(this).parent().children().eq(0).val();
@@ -53,17 +58,17 @@ $(document).ready(function () {
             </div>
             {!! Form::open(['url' => 'caroffermodelimg/create','files'=>true]) !!}
             <div class="box-body">
-                
+
                 <div class="form-group col-xs-12">
                     {!! Form::label('carId') !!} 
                     {!! Form::select('carId', $carsModelOffers , '' ,['class'=>'form-control col-xs-6']) !!}
                 </div>
-                
+
                 <div class="form-group">
                     {!! Form::label('upload_image') !!} 
                     {!! Form::file('upload_image') !!}
                 </div>
-                
+
                 <div class="form-group">
                     {!! Form::label('upload_image_slider') !!} 
                     {!! Form::file('upload_image_slider') !!}
