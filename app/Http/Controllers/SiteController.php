@@ -13,7 +13,7 @@ use App\car_brand;
 use App\car_brand_model;
 use App\contact_log;
 use App\contact_value_imgs;
-
+use Mail;
 
 class SiteController extends Controller {
 
@@ -146,8 +146,13 @@ class SiteController extends Controller {
             'gear_condition' => $request->input('gear_condition'),
             'message' => $request->input('message')
         ]);
-        $msg='hello';
-        mail("dev.ahmad.abuarab@gmail.com","My subject",$msg);
+
+        $data = ['a' => 1, 'b' => 2];
+        $hrEmail = ['a' => 1, 'b' => 2];
+        Mail::send('emails.valuecar', $data, function($message) use ($hrEmail) {
+            $message->to('dev.ahmad.abuarab@gmail.com', 'employee')->subject('zayani');
+        });
+
         return back();
     }
 
