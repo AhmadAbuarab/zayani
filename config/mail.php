@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'info@al-zayani.com ', 'name' => 'zayani'],
+    'from' => ['address' => 'info@al-zayani.com', 'name' => 'zayani'],
 
     /*
     |--------------------------------------------------------------------------
