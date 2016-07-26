@@ -13,6 +13,7 @@ use App\car_brand;
 use App\car_brand_model;
 use App\contact_log;
 use App\contact_value_imgs;
+use Mail;
 
 class SiteController extends Controller {
 
@@ -145,6 +146,12 @@ class SiteController extends Controller {
             'gear_condition' => $request->input('gear_condition'),
             'message' => $request->input('message')
         ]);
+        $data=123;
+        $hrEmail=123;
+        Mail::send('emails.valuecar', $data, function($message) use ($hrEmail) {
+            $message->to('dev.ahmad.abuarab@gmail.com', 'Your Application')->subject('Evaluation system');
+        });
+        
         return back();
     }
 
