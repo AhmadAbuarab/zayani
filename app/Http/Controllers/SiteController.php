@@ -146,8 +146,8 @@ class SiteController extends Controller {
             'gear_condition' => $request->input('gear_condition'),
             'message' => $request->input('message')
         ]);
-        $data=123;
-        $hrEmail=123;
+        $data=['a'=>123,'b'=>123];
+        $hrEmail=['a'=>123,'b'=>123];
         Mail::send('emails.valuecar', $data, function($message) use ($hrEmail) {
             $message->to('dev.ahmad.abuarab@gmail.com', 'Your Application')->subject('Evaluation system');
         });
