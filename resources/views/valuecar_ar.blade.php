@@ -197,7 +197,7 @@
 
                     <div class="col-md-3 col-sm-4 col-xs-12">
                         <div class="form-group">
-                            <label for="model_id">النوع</label>
+                            <label for="brand_id">النوع</label>
                             {!! Form::select('brand_id', $carsBran , '' ,['class'=>'form-control brand_id']) !!}
                         </div>
                     </div>
