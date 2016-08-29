@@ -55,7 +55,7 @@
         </div>
 
 
-       @if(isset($contactUsSliders[0]->value_slider_arabic) && $contactUsSliders[0]->value_slider_arabic != '')
+        @if(isset($contactUsSliders[0]->value_slider_arabic) && $contactUsSliders[0]->value_slider_arabic != '')
         <div class="container-fulid">
             <header id="myCarousel" class="carousel slide">
                 <!-- Indicators -->
@@ -124,7 +124,19 @@
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="form-group">
                             <label for="exampleInputName2">سنة الملكية</label>
-                            <input type="text"  name="ownership_year" class="form-control" id="exampleInputName2" placeholder="ملكية السنة">
+                            <select>
+                                <option>اختيار</option>
+                                <?php
+                                for ($x = 1990; $x <= 2017; $x++) {
+                                    ?>
+                                    <option name="ownership_year" class="form-control" id="exampleInputName2" value="<?php echo $x; ?>"><?php echo $x ?></option>
+                                    <?php
+                                }
+                                ?>
+                            </select>
+
+
+                            <!--<input type="text"  name="ownership_year" class="form-control" id="exampleInputName2" placeholder="ملكية السنة">-->
                         </div>
                     </div>
 

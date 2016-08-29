@@ -16,7 +16,9 @@ $(document).ready(function () {
 
 
 
-    var table = $('#cars').dataTable();
+    var table = $('#cars').dataTable({
+        paging: false
+    });
     $('.deleteCar').click(function () {
         var that = $(this);
         var carId = $(this).parent().children().eq(0).val();

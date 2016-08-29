@@ -55,7 +55,7 @@
             </div>
         </div>
 
-         @if(isset($contactUsSliders[0]->value_slider_english) && $contactUsSliders[0]->value_slider_english != '')
+        @if(isset($contactUsSliders[0]->value_slider_english) && $contactUsSliders[0]->value_slider_english != '')
         <div class="container-fulid">
             <header id="myCarousel" class="carousel slide">
                 <!-- Indicators -->
@@ -133,7 +133,17 @@
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="form-group">
                             <label for="exampleInputName2">Ownership Year</label>
-                            <input type="text" name="ownership_year" class="form-control" id="exampleInputName2" placeholder="Ownership Year">
+                            <select>
+                                <option>Select Year</option>
+                                <?php
+                                for ($x = 1990; $x <= 2017; $x++) {
+                                    ?>
+                                    <option name="ownership_year" class="form-control" id="exampleInputName2" value="<?php echo $x; ?>"><?php echo $x ?></option>
+                                    <?php
+                                }
+                                ?>
+                            </select>
+                            <!--<input type="text" name="ownership_year" class="form-control" id="exampleInputName2" placeholder="Ownership Year">-->
                         </div>
                     </div>
 
@@ -232,7 +242,7 @@
 
                     <div class="col-md-3 col-sm-4 col-xs-12">
                         <div class="form-group">
-                            <label for="geer_condition">Geer Condition</label>
+                            <label for="geer_condition">Gear box Condition</label>
                             <select name="gear_condition" class="form-control">
                                 <option value="Excellent">Excellent</option>
                                 <option value="Very Good">Very Good</option>
