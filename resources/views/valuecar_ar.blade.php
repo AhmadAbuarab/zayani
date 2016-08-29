@@ -124,12 +124,12 @@
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="form-group">
                             <label for="exampleInputName2">سنة الملكية</label>
-                            <select>
+                            <select class="form-control" name="ownership_year"  id="exampleInputName2">
                                 <option>اختيار</option>
                                 <?php
                                 for ($x = 1990; $x <= 2017; $x++) {
                                     ?>
-                                    <option name="ownership_year" class="form-control" id="exampleInputName2" value="<?php echo $x; ?>"><?php echo $x ?></option>
+                                    <option  value="<?php echo $x; ?>"><?php echo $x ?></option>
                                     <?php
                                 }
                                 ?>
