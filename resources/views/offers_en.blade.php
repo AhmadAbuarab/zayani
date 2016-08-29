@@ -76,7 +76,7 @@
                     @if($count == 0)
                     <div class="item active">
                         <!-- Set the first background image using inline CSS below. -->
-                        <div class="fill fill2" style="background-image:url({{URL::asset($carMod->img_slider_slider)}});"></div>
+                        <div class="fill2" style="background-image:url({{URL::asset($carMod->img_slider_slider)}});"></div>
                         <div class="carousel-caption">
                             <!--                 	<div class="sliderTitle">
                                                 <h1>F-PACE</h1>
@@ -91,7 +91,7 @@
                     
                     <div class="item">
                         <!-- Set the third background image using inline CSS below. -->
-                        <div class="fill fill2" style="background-image:url({{URL::asset($carMod->img_slider_slider)}});"></div>
+                        <div class="fill2" style="background-image:url({{URL::asset($carMod->img_slider_slider)}});"></div>
                         <div class="carousel-caption">
                             <button class="btn btn-primary sliderButton">More <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
                         </div>
