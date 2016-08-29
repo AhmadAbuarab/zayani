@@ -118,6 +118,11 @@ body{
     -o-background-size: cover;
     border-bottom:2px solid #16599A;
 }
+
+.fill2 {
+    height: 380px !important;
+}
+
 .carousel-indicators {
     position: absolute;
     top: 22px;
