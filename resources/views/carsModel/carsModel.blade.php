@@ -69,7 +69,8 @@ $(document).ready(function () {
 
     }
     var oTable = $('#example').dataTable({
-        "scrollX": true
+        "scrollX": true,
+        paging: false
     });
     var nEditing = null;
 
