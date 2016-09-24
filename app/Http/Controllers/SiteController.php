@@ -49,7 +49,7 @@ class SiteController extends Controller {
 
     public function offers(request $request, $id) {
         $carsModel = DB::table('cars_model')->select('id', 'car_id', 'car_model_id', 'name_ar', 'name_en', 'img_slider', 'img_slider_slider')->where('car_model_id', '=', $id)->get();
-        $extraSliders = DB::table('cars_model')->select('id', 'car_model_id', 'slider_arabic', 'slider_english')->where('car_model_id', '=', $id)->get();
+        $extraSliders = DB::table('offers_more_slider')->select('id', 'car_model_id', 'slider_arabic', 'slider_english')->where('car_model_id', '=', $id)->get();
         if ($carsModel) {
             if ($this->lang == 'ar') {
                 $carsModelDetails = DB::table('cars_model_other_details_model')->select('id', 'car_id', 'car_model_id', 'detail_ar')->get();
