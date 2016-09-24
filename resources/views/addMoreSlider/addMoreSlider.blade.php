@@ -10,7 +10,7 @@
 
 <script type="text/javascript" language="javascript" src="{{ asset ("assets/dataTables/media/js/jquery.dataTables.js") }}"></script>
 <script type="text/javascript" language="javascript" src="{{ asset ("assets/dataTables/examples/resources/syntax/shCore.js") }}"></script>
-<script type="text/javascript" language="javascript" src="{{ ascarOffersset ("assets/dataTables/examples/resources/demo.js") }}"></script>
+<script type="text/javascript" language="javascript" src="{{ asset ("assets/dataTables/examples/resources/demo.js") }}"></script>
 <script>
 $(document).ready(function () {
 
