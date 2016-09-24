@@ -28,6 +28,8 @@ Route::post('cars/changeImg', 'HomeController@carchangeImg');
 Route::post('carsmodelmain/changeimgslider', 'HomeController@carmodelmainchangeImgSlider');
 Route::post('carsmodeloffer/changeimgs', 'HomeController@changecarmodelofferimgs');
 
+Route::get('carmodeldetails', 'HomeController@carmodeldetails');
+Route::get('addMoreSlider', 'HomeController@addMoreSlider');
 
 
 Route::post('deleteCar', 'HomeController@deleteCar');
@@ -36,6 +38,11 @@ Route::post('deleteCarBrand', 'HomeController@deleteCarBrand');
 Route::post('deleteCarBrandModel', 'HomeController@deleteCarBrandModel');
 Route::post('deleteCarOffersImgs', 'HomeController@deleteCarOffersImgs');
 Route::post('deleteCarModelOffer', 'HomeController@deleteCarModelOffer');
+Route::post('deleteExtraSlider', 'HomeController@deleteExtraSlider');
+
+Route::post('deleteDetails', 'HomeController@deleteDetails');
+Route::post('editDetails', 'HomeController@editDetails');
+
 Route::post('carbrand/create', 'HomeController@addcarbrand');
 Route::post('carbrandmodel/create', 'HomeController@addcarbrandmodel');
 

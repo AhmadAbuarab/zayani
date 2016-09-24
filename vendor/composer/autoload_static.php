@@ -285,6 +285,7 @@ class ComposerStaticInit73399e470fd523e247ce3dd7aa809333
         'CreateContactLogTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_08_172729_create_contact_log_table.php',
         'CreateContactUsTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_10_204152_create_contact_us_table.php',
         'CreateContactValueImgsTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_16_212032_create_contact_value_imgs_table.php',
+        'CreateOffersMoreSliderTable' => __DIR__ . '/../..' . '/database/migrations/2016_09_19_124612_create_offers_more_slider_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateSubscriberTable' => __DIR__ . '/../..' . '/database/migrations/2016_07_08_000032_create_subscriber_table.php',
         'CreateTestDriveTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_29_192436_create_test_drive_table.php',

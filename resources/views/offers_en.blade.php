@@ -101,6 +101,33 @@
                     @endif
                     @endforeach
                     @endif
+                    
+                    
+                    
+                    
+                    
+                    @if(isset($extraSliders))
+                    @foreach($$extraSliders as $extraSlider)
+                    @if(isset($extraSlider->slider_english) && $extraSlider->slider_english !='')
+                    
+                    
+                    
+                     <div class="item">
+                        <!-- Set the third background image using inline CSS below. -->
+                        <div class="fill" style="background-image:url({{URL::asset($extraSlider->slider_english)}});"></div>
+                        <div class="carousel-caption">
+                            <button class="btn btn-primary sliderButton">More <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    @endif
+                    @endforeach
+                    @endif
+                    
                 </div>
 
                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">

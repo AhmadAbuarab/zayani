@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\DB;
 use App\subscriber;
 use App\contact_log;
 use App\contact_value_imgs;
+use App\offers_more_slider;
 
 class HomeController extends Controller {
 
@@ -708,6 +709,86 @@ class HomeController extends Controller {
     public function contactlog() {
         $contactLogData = contact_log::get();
         return view('contactlog.contactlog', compact('contactLogData'));
+    }
+
+    public function carmodeldetails() {
+        $allDetails = DB::select(DB::raw("SELECT m.id ,c.name_ar as car, c.name_en as car_en , cm.name_en as car_model_en ,
+                                          cm.name_ar as car_model , m.detail_ar , m.detail_en
+                                          FROM
+                                          cars_model_other_details_model m join cars_model cm on (m.car_model_id = cm.id)
+                                          join cars c on (c.id = m.car_id);"));
+
+        return view('carmodeldetails.carmodeldetails', compact('allDetails'));
+    }
+
+    public function deleteDetails(request $request) {
+        cars_model_other_details_mode::where('id', $request->input('carId'))->delete();
+        return json_decode(1);
+    }
+
+    public function editDetails(request $request) {
+        $car = new cars_model_other_details_mode();
+        $car = cars_model_other_details_mode::firstOrNew(array('id' => intval($request->input('id'))));
+        $id = $request->input('id');
+        $car->detail_ar = $request->input('details_ar');
+        $car->detail_en = $request->input('details_en');
+        $car->save();
+        return back();
+    }
+
+    public function addMoreSlider() {
+        $carOffers = car_model_main::lists('car_model_main_name_en', 'id');
+        $allExtraSliders = DB::select(DB::raw("SELECT *
+                                               FROM
+                                               offers_more_slider o join car_model_main m on (o.car_model_id = m.id)"));
+
+        return view('addMoreSlider.addMoreSlider', compact('allExtraSliders', 'carOffers'));
+        return view('addMoreSlider.addMoreSlider');
+    }
+
+    public function addExtraSlider(request $request) {
+
+        if ($request->file('upload_arabic_slider') != '' && $request->file('upload_english_slider') != '') {
+            $imageName = $request->file('upload_arabic_slider')->getClientOriginalName();
+            $request->file('upload_arabic_slider')->move(
+                    base_path() . '/public/carmodelofferimg/', $imageName
+            );
+
+            $imageName2 = $request->file('upload_english_slider')->getClientOriginalName();
+            $request->file('upload_english_slider')->move(
+                    base_path() . '/public/carmodelofferimgslider/', $imageName2
+            );
+
+            offers_more_slider::create([
+                'car_model_id' => $request->input('carId'),
+                'slider_arabic' => 'carmodelofferimg/' . $imageName,
+                'slider_english' => 'carmodelofferimg/' . $imageName2,
+            ]);
+        } else if ($request->file('upload_arabic_slider') != '') {
+            $imageName = $request->file('upload_arabic_slider')->getClientOriginalName();
+            $request->file('upload_arabic_slider')->move(
+                    base_path() . '/public/carmodelofferimg/', $imageName
+            );
+            offers_more_slider::create([
+                'car_model_id' => $request->input('carId'),
+                'slider_arabic' => 'carmodelofferimg/' . $imageName,
+            ]);
+        } else if ($request->file('upload_english_slider') != '') {
+            $imageName2 = $request->file('upload_english_slider')->getClientOriginalName();
+            $request->file('upload_english_slider')->move(
+                    base_path() . '/public/carmodelofferimgslider/', $imageName2
+            );
+            offers_more_slider::create([
+                'car_model_id' => $request->input('carId'),
+                'slider_english' => 'carmodelofferimg/' . $imageName2,
+            ]);
+        }
+        return back();
+    }
+
+    public function deleteExtraSlider(request $request) {
+        offers_more_slider::where('id', $request->input('carId'))->delete();
+        return json_decode(1);
     }
 
 }

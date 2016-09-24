@@ -77,6 +77,14 @@
 
                         </li>
 
+                        <li class="treeview">
+                            <a href="{{url('addMoreSlider')}}"><span>Add More Slider to Car Offer</span> <i class="fa fa-angle-left pull-right"></i></a>
+
+                        </li>
+                        <li class="treeview">
+                            <a href="{{url('carmodeldetails')}}"><span>Edit car model details</span> <i class="fa fa-angle-left pull-right"></i></a>
+
+                        </li>
                         
                           <li class="treeview">
                             <a href="{{url('carsmodelimg')}}"><span>Upload Cars Model images</span> <i class="fa fa-angle-left pull-right"></i></a>
