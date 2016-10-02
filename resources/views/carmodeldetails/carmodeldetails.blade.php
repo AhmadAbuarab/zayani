@@ -54,13 +54,9 @@ $(document).ready(function () {
     }
     var nEditing = null;
     $('.save').click(function () {
-        var id = $(this).parent().parent().children().eq(4).children().eq(0).val();
+        var id = $(this).parent().parent().children().eq(6).children().eq(0).val();
         var details_ar = $(this).parent().parent().children().eq(0).children().eq(0).val();
         var details_en = $(this).parent().parent().children().eq(1).children().eq(0).val();
-        alert(id);
-        alert(details_ar);
-        alert(details_en);
-        
         $.ajax({
             type: "POST",
             dataType: "json",
@@ -71,7 +67,7 @@ $(document).ready(function () {
                     return xhr.setRequestHeader('X-CSRF-TOKEN', token);
                 }
             },
-            data: {id: id, details_ar: details_ar, details_en: details_en
+            data: {id: id, details_ar: details_ar, details_en: details_en,
             },
             success: function (data) {
             }
@@ -142,7 +138,7 @@ $(document).ready(function () {
                             <img id="deleteCar" class="deleteCar" width="20" height="20" src="http://findicons.com/files/icons/753/gnome_desktop/64/gnome_edit_delete.png">
                         </td>
                         <td><a class="edit" href="">Edit</a></td>
-                        <td><a class="save" >save</a></td>
+                        <td><a class="save" href="./carmodeldetails">save</a></td>
                     </tr>
 
                     @endforeach
