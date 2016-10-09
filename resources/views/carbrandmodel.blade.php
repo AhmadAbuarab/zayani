@@ -13,7 +13,10 @@
 <script type="text/javascript" language="javascript" src="{{ asset ("assets/dataTables/examples/resources/demo.js") }}"></script>
 <script>
 $(document).ready(function () {
-    var table = $('#carsModelMain').DataTable();
+//    var table = $('#carsModelMain').DataTable();
+        var table = $('#carsModelMain').dataTable({
+        paging: false
+    });
     $('.deleteCarModelMain').click(function () {
         var that = $(this);
         var carId = $(this).parent().children().eq(0).val();
