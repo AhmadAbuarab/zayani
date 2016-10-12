@@ -16,8 +16,8 @@ return [
     |
     */
 
-//    'driver' => env('MAIL_DRIVER', 'smtp'),
-    'driver' => 'sendmail',
+    'driver' => env('MAIL_DRIVER', 'smtp'),
+//    'driver' => 'sendmail',
 
     /*
     |--------------------------------------------------------------------------
@@ -30,7 +30,8 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+//    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,7 +57,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'info@al-zayani.com', 'name' => 'zayani'],
+    'from' => ['address' => 'dev.ahmad.abuarab@gmail.com', 'name' => 'zayani'],
 
     /*
     |--------------------------------------------------------------------------
