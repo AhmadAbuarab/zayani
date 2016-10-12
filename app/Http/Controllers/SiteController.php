@@ -167,6 +167,7 @@ class SiteController extends Controller {
         subscriber::create([
             'email' => $request->input('subemail')
         ]);
+        $data = '';
         Mail::send('emails.valuecar', $data, function($message) use ($hrEmail) {
             $message->to('ama91@live.com', 'employee')->subject('zayani');
         });
