@@ -1,1 +1,1 @@
-the user {{$data->name}} has requested to subscribe 
+the user {{$name}} has requested to subscribe 
