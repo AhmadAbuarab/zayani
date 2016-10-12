@@ -149,11 +149,27 @@ class SiteController extends Controller {
             'message' => $request->input('message')
         ]);
 
-        $data = ['a' => 1, 'b' => 2];
-        $hrEmail = ['a' => 1, 'b' => 2];
-//        Mail::send('emails.valuecar', $data, function($message) use ($hrEmail) {
-//            $message->to('dev.ahmad.abuarab@gmail.com', 'employee')->subject('zayani');
-//        });
+        $data = array(
+            'brand_id' => $request->text('brand_id'),
+            'model_id' => $request->input('model_id'),
+            'first_name' => $request->input('first_name'),
+            'last_name' => $request->input('last_name'),
+            'phone_number' => $request->input('phone_number'),
+            'email' => $request->input('email'),
+            'best_time_to_contact' => $request->input('best_time_to_contact'),
+            'ownership_year' => $request->input('ownership_year'),
+            'year' => $request->input('year'),
+            'body_condition' => $request->input('body_condition'),
+            'engine_condition' => $request->input('engine_condition'),
+            'ac_condition' => $request->input('ac_condition'),
+            'mileage' => $request->input('mileage'),
+            'gear_condition' => $request->input('gear_condition'),
+            'message' => $request->input('message')
+        );
+        var_dump($data); die();
+        Mail::send('emails.valuecar', $data, function($message) {
+            $message->to('ama91@live.com')->subject('This is test e-mail');
+        });
 
         return back();
     }
@@ -168,7 +184,7 @@ class SiteController extends Controller {
             'email' => $request->input('subemail')
         ]);
         $data = array('name' => $request->input('subemail'));
-        Mail::send('emails.valuecar', $data, function($message) {
+        Mail::send('emails.subscri', $data, function($message) {
             $message->to('ama91@live.com')->subject('This is test e-mail');
         });
         return back();

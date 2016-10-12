@@ -1,0 +1,1 @@
+the user {{$name}} has requested to subscribe 
