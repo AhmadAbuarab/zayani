@@ -14,6 +14,7 @@ use App\car_brand_model;
 use App\contact_log;
 use App\contact_value_imgs;
 use Mail;
+use App\subscriber;
 
 class SiteController extends Controller {
 
@@ -150,10 +151,25 @@ class SiteController extends Controller {
 
         $data = ['a' => 1, 'b' => 2];
         $hrEmail = ['a' => 1, 'b' => 2];
-        Mail::send('emails.valuecar', $data, function($message) use ($hrEmail) {
-            $message->to('dev.ahmad.abuarab@gmail.com', 'employee')->subject('zayani');
-        });
+//        Mail::send('emails.valuecar', $data, function($message) use ($hrEmail) {
+//            $message->to('dev.ahmad.abuarab@gmail.com', 'employee')->subject('zayani');
+//        });
 
+        return back();
+    }
+
+    public function subscriberlog() {
+        $subscriberData = subscriber::get();
+        return view('subscriber.subscriber', compact('subscriberData'));
+    }
+
+    public function addsubscribelog(request $request) {
+        subscriber::create([
+            'email' => $request->input('subemail')
+        ]);
+        Mail::send('emails.valuecar', $data, function($message) use ($hrEmail) {
+            $message->to('ama91@live.com', 'employee')->subject('zayani');
+        });
         return back();
     }
 

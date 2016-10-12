@@ -76,8 +76,8 @@ Route::post('caroffermodelimg/create', 'HomeController@caroffermodelimg');
 Route::get('/', 'SiteController@index');
 Route::get('/en', 'SiteController@index');
 
-Route::get('subscriber', 'HomeController@subscriberlog');
-Route::post('subscribelog/create', 'HomeController@addsubscribelog');
+Route::get('subscriber', 'SiteController@subscriberlog');
+Route::post('subscribelog/create', 'SiteController@addsubscribelog');
 //////
 Route::get('contactlog', 'HomeController@contactlog');
 Route::post('contactlog/create', 'SiteController@addcontactlog');
