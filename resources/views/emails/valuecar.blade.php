@@ -14,3 +14,7 @@
 @if(isset($engine_condition))engine condition:{{ $engine_condition }} <br>@endif
 @if(isset($ac_condition))ac condition:{{ $ac_condition }} <br>@endif
 
+@if(isset($mileage))mileage:{{ $mileage }} <br>@endif
+
+@if(isset($gear_condition))gear condition:{{ $gear_condition }} <br>@endif
+@if(isset($messagee))message:{{ $messagee }} <br>@endif

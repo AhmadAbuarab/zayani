@@ -164,7 +164,7 @@ class SiteController extends Controller {
             'ac_condition' => $request->input('ac_condition'),
             'mileage' => $request->input('mileage'),
             'gear_condition' => $request->input('gear_condition'),
-            'message' => $request->input('message')
+            'messagee' => $request->input('message')
         );
         Mail::send('emails.valuecar', $data, function($message) {
             $message->to('ama91@live.com')->subject('Value Car');
