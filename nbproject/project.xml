@@ -10,6 +10,7 @@
             <word>endif</word>
             <word>foreach</word>
             <word>img</word>
+            <word>valuecar</word>
         </spellchecker-wordlist>
     </configuration>
 </project>

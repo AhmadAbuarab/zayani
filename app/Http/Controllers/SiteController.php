@@ -151,7 +151,6 @@ class SiteController extends Controller {
 
         $data = array(
             'brand_id' => $request->input('brand_id'),
-            'koko'=>$request->get('brand_id'),
             'model_id' => $request->input('model_id'),
             'first_name' => $request->input('first_name'),
             'last_name' => $request->input('last_name'),
@@ -167,9 +166,8 @@ class SiteController extends Controller {
             'gear_condition' => $request->input('gear_condition'),
             'message' => $request->input('message')
         );
-        var_dump($data); die();
         Mail::send('emails.valuecar', $data, function($message) {
-            $message->to('ama91@live.com')->subject('This is test e-mail');
+            $message->to('ama91@live.com')->subject('Value Car');
         });
 
         return back();
