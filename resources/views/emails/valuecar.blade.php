@@ -1,1 +1,1 @@
-test
+the user {{$emailName}} has requested to subscribe 
