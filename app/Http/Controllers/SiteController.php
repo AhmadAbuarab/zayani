@@ -150,7 +150,8 @@ class SiteController extends Controller {
         ]);
 
         $data = array(
-            'brand_id' => $request->text('brand_id'),
+            'brand_id' => $request->input('brand_id'),
+            'koko'=>$request->get('brand_id'),
             'model_id' => $request->input('model_id'),
             'first_name' => $request->input('first_name'),
             'last_name' => $request->input('last_name'),
