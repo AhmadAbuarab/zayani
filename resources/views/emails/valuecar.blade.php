@@ -10,3 +10,7 @@
 @if(isset($ownership_year))ownership year:{{ $ownership_year }} <br>@endif
 @if(isset($year))year:{{ $year}} <br>@endif
 
+@if(isset($body_condition))body condition:{{ $body_condition }} <br>@endif
+@if(isset($engine_condition))engine condition:{{ $engine_condition }} <br>@endif
+@if(isset($ac_condition))ac condition:{{ $ac_condition }} <br>@endif
+
