@@ -161,10 +161,10 @@ $(document).ready(function () {
             @if(isset($allExtraSliders))
             @foreach($allExtraSliders as $car)
             <tr>
-                <td>{{$car->name_ar}}</td>
-                <td>{{$car->name_en}}</td>
-                <td>{{$car->slider_arabic}}</td>
-                <td>{{$car->slider_english}}</td>
+                <td>@if(isset($car->name_ar)){{$car->name_ar}}@endif</td>
+                <td>@if(isset($car->name_en)){{$car->name_en}}@endif</td>
+                <td>@if(isset($car->slider_arabic)){{$car->slider_arabic}}@endif</td>
+                <td>@if(isset($car->slider_english)){{$car->slider_english}}@endif</td>
                 <td>
                     <input id="carId" type="hidden" value="{{$car->id}}">
                     <img id="deleteCar" class="deleteCar" width="20" height="20" src="http://findicons.com/files/icons/753/gnome_desktop/64/gnome_edit_delete.png">
