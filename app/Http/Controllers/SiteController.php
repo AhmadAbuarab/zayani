@@ -150,16 +150,11 @@ class SiteController extends Controller {
         ]);
         
         $carBrand = DB::table('car_brand')->select('name_en')->where('id', $request->input('brand_id'))->get();
-        $carBrandModel = DB::table('car_brand_model')->select('*')->where('id', $request->input('model_id'))->get();
+        $carBrandModel = DB::table('car_brand_model')->select('name_en')->where('id', $request->input('model_id'))->get();
 
-
-
-        var_dump($carBrand);
-        var_dump($carBrandModel);
-        die();
         $data = array(
-            'brand_id' => $request->input('brand_id'),
-            'model_id' => $request->input('model_id'),
+            'brand_id' => $carBrand,
+            'model_id' => $carBrandModel,
             'first_name' => $request->input('first_name'),
             'last_name' => $request->input('last_name'),
             'phone_number' => $request->input('phone_number'),
