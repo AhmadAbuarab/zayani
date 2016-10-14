@@ -115,8 +115,8 @@ $(document).ready(function () {
 
 
                 <div class="form-group">
-                    {!! Form::label('name_english') !!}                    
-                    {!! Form::select('name_english', $carOffers , '' ,['class'=>'form-control col-xs-6']) !!}
+                    {!! Form::label('carId') !!}                    
+                    {!! Form::select('carId', $carOffers , '' ,['class'=>'form-control col-xs-6']) !!}
 
                 </div>
 

@@ -749,7 +749,6 @@ class HomeController extends Controller {
     public function addExtraSlider(request $request) {
         
         if ($request->file('upload_arabic_slider') != '' && $request->file('upload_english_slider') != '') {
-            var_dump('xxxxxxxxxx'); die();
             $imageName = $request->file('upload_arabic_slider')->getClientOriginalName();
             $request->file('upload_arabic_slider')->move(
                     base_path() . '/public/carmodelofferimg/', $imageName
@@ -766,7 +765,6 @@ class HomeController extends Controller {
                 'slider_english' => 'carmodelofferimg/' . $imageName2,
             ]);
         } else if ($request->file('upload_arabic_slider') != '') {
-            var_dump('yyyyyyyyyy'); die();
             $imageName = $request->file('upload_arabic_slider')->getClientOriginalName();
             $request->file('upload_arabic_slider')->move(
                     base_path() . '/public/carmodelofferimg/', $imageName
@@ -776,7 +774,6 @@ class HomeController extends Controller {
                 'slider_arabic' => 'carmodelofferimg/' . $imageName,
             ]);
         } else if ($request->file('upload_english_slider') != '') {
-            var_dump('zzzzzzz'); die();
             $imageName2 = $request->file('upload_english_slider')->getClientOriginalName();
             $request->file('upload_english_slider')->move(
                     base_path() . '/public/carmodelofferimgslider/', $imageName2
