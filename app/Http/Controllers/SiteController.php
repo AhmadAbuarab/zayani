@@ -197,7 +197,7 @@ class SiteController extends Controller {
 
         $carModel = DB::table('cars_model')->select('name_en')->where('id', $request->input('id'))->get();
         $data = array(
-            'car_model_offer_id' => $carModel,
+            'car_model_offer_id' => $carModel[0]->name_en,
             'first_name' => $request->input('first_name'),
             'last_name' => $request->input('last_name'),
             'email' => $request->input('email'),
