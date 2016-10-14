@@ -673,26 +673,26 @@ class HomeController extends Controller {
         return view('testdrivelog', compact('testdrivedata'));
     }
 
-    public function testcaraddlog(request $request) {
-        $this->validate($request, [
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'email' => 'required',
-            'phone_number' => 'required',
-            'message' => 'required',
-        ]);
-
-        test_drive::create([
-            'car_model_offer_id' => $request->input('id'),
-            'first_name' => $request->input('first_name'),
-            'last_name' => $request->input('last_name'),
-            'email' => $request->input('email'),
-            'phone_number' => $request->input('phone_number'),
-            'best_time_to_contact' => $request->input('best_time_to_contact'),
-            'message' => $request->input('message')
-        ]);
-        return back();
-    }
+//    public function testcaraddlog(request $request) {
+//        $this->validate($request, [
+//            'first_name' => 'required',
+//            'last_name' => 'required',
+//            'email' => 'required',
+//            'phone_number' => 'required',
+//            'message' => 'required',
+//        ]);
+//
+//        test_drive::create([
+//            'car_model_offer_id' => $request->input('id'),
+//            'first_name' => $request->input('first_name'),
+//            'last_name' => $request->input('last_name'),
+//            'email' => $request->input('email'),
+//            'phone_number' => $request->input('phone_number'),
+//            'best_time_to_contact' => $request->input('best_time_to_contact'),
+//            'message' => $request->input('message')
+//        ]);
+//        return back();
+//    }
 
     public function subscriberlog() {
         $subscriberData = subscriber::get();

@@ -176,6 +176,41 @@ class SiteController extends Controller {
         return back();
     }
 
+    public function testcaraddlog(request $request) {
+        $this->validate($request, [
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required',
+            'phone_number' => 'required',
+            'message' => 'required',
+        ]);
+
+        test_drive::create([
+            'car_model_offer_id' => $request->input('id'),
+            'first_name' => $request->input('first_name'),
+            'last_name' => $request->input('last_name'),
+            'email' => $request->input('email'),
+            'phone_number' => $request->input('phone_number'),
+            'best_time_to_contact' => $request->input('best_time_to_contact'),
+            'message' => $request->input('message')
+        ]);
+
+        $carModel = DB::table('cars_model')->select('name_en')->where('id', $request->input('id'))->get();
+        $data = array(
+            'car_model_offer_id' => $carModel,
+            'first_name' => $request->input('first_name'),
+            'last_name' => $request->input('last_name'),
+            'email' => $request->input('email'),
+            'phone_number' => $request->input('phone_number'),
+            'best_time_to_contact' => $request->input('best_time_to_contact'),
+            'messagee' => $request->input('message')
+        );
+        Mail::send('emails.testdrive', $data, function($message) {
+            $message->to('ama91@live.com')->subject('Test Drive');
+        });
+        return back();
+    }
+
     public function subscriberlog() {
         $subscriberData = subscriber::get();
         return view('subscriber.subscriber', compact('subscriberData'));
@@ -187,7 +222,7 @@ class SiteController extends Controller {
         ]);
         $data = array('name' => $request->input('subemail'));
         Mail::send('emails.subscri', $data, function($message) {
-            $message->to('ama91@live.com')->subject('This is test e-mail');
+            $message->to('ama91@live.com')->subject('Subscriper');
         });
         return back();
     }
