@@ -106,7 +106,7 @@
                     
                     
                     @if(isset($extraSliders))
-                    @foreach($$extraSliders as $extraSlider)
+                    @foreach($extraSliders as $extraSlider)
                     @if(isset($extraSlider->slider_arabic) && $extraSlider->slider_arabic !='')
                     
                     
