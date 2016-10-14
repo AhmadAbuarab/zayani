@@ -148,9 +148,12 @@ class SiteController extends Controller {
             'gear_condition' => $request->input('gear_condition'),
             'message' => $request->input('message')
         ]);
+        
+        $carBrand = DB::table('car_brand')->select('name_en')->where('id', $request->input('brand_id'))->get();
+        $carBrandModel = DB::table('car_brand_model')->select('name_en')->where('id', $request->input('model_id'))->get();
 
-        $carBrand = car_brand::where('id',$request->input('brand_id'))->get();
-        $carBrandModel = car_brand_model::where('id',$request->input('model_id'))->get();
+
+
         var_dump($carBrand);
         var_dump($carBrandModel);
         die();
