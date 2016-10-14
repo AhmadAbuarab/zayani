@@ -148,7 +148,7 @@ class SiteController extends Controller {
             'gear_condition' => $request->input('gear_condition'),
             'message' => $request->input('message')
         ]);
-        
+
         $carBrand = DB::table('car_brand')->select('name_en')->where('id', $request->input('brand_id'))->get();
         $carBrandModel = DB::table('car_brand_model')->select('name_en')->where('id', $request->input('model_id'))->get();
 
@@ -215,6 +215,18 @@ class SiteController extends Controller {
             'subject' => $request->input('subject'),
             'message' => $request->input('message')
         ]);
+        $data = array(
+            'first_name' => $request->input('first_name'),
+            'last_name' => $request->input('last_name'),
+            'email' => $request->input('email'),
+            'mobile_number' => $request->input('mobile_number'),
+            'phone_number' => $request->input('phone_number'),
+            'subject' => $request->input('subject'),
+            'messagee' => $request->input('message')
+        );
+        Mail::send('emails.contactus', $data, function($message) {
+            $message->to('ama91@live.com')->subject('Contact Us');
+        });
         return back();
     }
 
