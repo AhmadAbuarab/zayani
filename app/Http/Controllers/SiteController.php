@@ -55,11 +55,11 @@ class SiteController extends Controller {
             if ($this->lang == 'ar') {
                 $carsModelDetails = DB::table('cars_model_other_details_model')->select('id', 'car_id', 'car_model_id', 'detail_ar')->get();
                 $contactUsData = DB::table('contact_us')->select('feed_back_ar', 'address_ar', 'po_box_ar', 'telephone', 'showroom_openning_hours', 'servuce_and_parts_openning_hours', 'email', 'mobile')->get();
-                return view('offers_ar', compact('contactUsData', 'carsModel', 'carsModelDetails'));
+                return view('offers_ar', compact('contactUsData', 'carsModel', 'carsModelDetails','extraSliders'));
             } else {
                 $carsModelDetails = DB::table('cars_model_other_details_model')->select('id', 'car_id', 'car_model_id', 'detail_en')->get();
                 $contactUsData = DB::table('contact_us')->select('feed_back_en', 'address_en', 'po_box_en', 'telephone', 'showroom_openning_hours', 'servuce_and_parts_openning_hours', 'email', 'mobile')->get();
-                return view('offers_en', compact('contactUsData', 'carsModel', 'carsModelDetails'));
+                return view('offers_en', compact('contactUsData', 'carsModel', 'carsModelDetails','extraSliders'));
             }
         }
         return back();
