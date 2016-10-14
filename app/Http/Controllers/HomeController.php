@@ -747,7 +747,7 @@ class HomeController extends Controller {
     }
 
     public function addExtraSlider(request $request) {
-
+        var_dump('xxxxxxxxxx'); die();
         if ($request->file('upload_arabic_slider') != '' && $request->file('upload_english_slider') != '') {
             $imageName = $request->file('upload_arabic_slider')->getClientOriginalName();
             $request->file('upload_arabic_slider')->move(
