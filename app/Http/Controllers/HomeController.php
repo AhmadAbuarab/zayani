@@ -783,6 +783,7 @@ class HomeController extends Controller {
                 'slider_english' => 'carmodelofferimg/' . $imageName2,
             ]);
         }
+        die();
         return back();
     }
 
