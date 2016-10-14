@@ -109,7 +109,7 @@ $(document).ready(function () {
             <div class="box-header with-border">
                 <h3 class="box-title">Add More Car Offers Sliders</h3>
             </div>
-            {!! Form::open(['url' => 'cars/create','files'=>true]) !!}
+            {!! Form::open(['url' => 'sliders/more','files'=>true]) !!}
             <div class="box-body">
 
 

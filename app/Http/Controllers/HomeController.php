@@ -743,7 +743,7 @@ class HomeController extends Controller {
                                                offers_more_slider o join car_model_main m on (o.car_model_id = m.id)"));
 
         return view('addMoreSlider.addMoreSlider', compact('allExtraSliders', 'carOffers'));
-        return view('addMoreSlider.addMoreSlider');
+//        return view('addMoreSlider.addMoreSlider');
     }
 
     public function addExtraSlider(request $request) {

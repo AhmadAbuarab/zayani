@@ -29,8 +29,9 @@ Route::post('carsmodelmain/changeimgslider', 'HomeController@carmodelmainchangeI
 Route::post('carsmodeloffer/changeimgs', 'HomeController@changecarmodelofferimgs');
 
 Route::get('carmodeldetails', 'HomeController@carmodeldetails');
-Route::get('addMoreSlider', 'HomeController@addMoreSlider');
 
+Route::get('addMoreSlider', 'HomeController@addMoreSlider');
+Route::post('sliders/more', 'HomeController@addExtraSlider');
 
 Route::post('deleteCar', 'HomeController@deleteCar');
 Route::post('deleteCarModelMain', 'HomeController@deleteCarModelMain');
