@@ -151,7 +151,7 @@ class SiteController extends Controller {
 
         $carBrand = DB::table('car_brand')->select('name_en')->where('id', $request->input('brand_id'))->get();
         $carBrandModel = DB::table('car_brand_model')->select('name_en')->where('id', $request->input('model_id'))->
-                        andWhere('is_active', '=', 1)->get();
+                        where('is_active', '=', 1)->get();
 
         $data = array(
             'brand_id' => $carBrand[0]->name_en,
@@ -230,7 +230,7 @@ class SiteController extends Controller {
 
     public function getCarBrandModel(request $request) {
         $carBrandModel = DB::table('car_brand_model')->select('*')->where('brand_id', '=', $request->input('brandId'))->
-                        andWhere('is_active', '=', 1)->get();
+                        where('is_active', '=', 1)->get();
         return json_encode($carBrandModel);
     }
 
