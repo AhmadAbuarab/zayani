@@ -161,7 +161,7 @@ $(document).ready(function () {
                     <img id="deleteCar" class="deleteCar" width="20" height="20" src="http://findicons.com/files/icons/753/gnome_desktop/64/gnome_edit_delete.png">
                 </td>
                  <td><a class="edit" href="">Edit</a></td>
-                <td><a class="save" href="./cars">save</a></td>
+                <td><a class="save" href="./carsbrand">save</a></td>
             </tr>
             @endforeach
             @endif
