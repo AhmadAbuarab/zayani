@@ -23,7 +23,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             dataType: "json",
-            url: './deleteCarBrandModel',
+            url: './deleteCarBrand',
             beforeSend: function (xhr) {
                 var token = $('meta[name="csrf_token"]').attr('content');
 
