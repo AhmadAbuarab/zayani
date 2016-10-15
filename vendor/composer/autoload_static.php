@@ -271,6 +271,7 @@ class ComposerStaticInit73399e470fd523e247ce3dd7aa809333
 
     public static $classMap = array (
         'AddImgToCarmodeloffer' => __DIR__ . '/../..' . '/database/migrations/2016_07_02_214013_add_img_to_carmodeloffer.php',
+        'AddIsActiveToCarBrandModel' => __DIR__ . '/../..' . '/database/migrations/2016_10_15_143346_add_is_active_to_car_brand_model.php',
         'CarModelAddSliderAra' => __DIR__ . '/../..' . '/database/migrations/2016_07_18_202924_car_model_add_slider_ara.php',
         'CarModelMainAddSliderAra' => __DIR__ . '/../..' . '/database/migrations/2016_07_18_202850_car_model_main_add_slider_ara.php',
         'CarsModelImgsAddsliderMulti' => __DIR__ . '/../..' . '/database/migrations/2016_07_03_192118_cars_model_imgs_addslider_multi.php',

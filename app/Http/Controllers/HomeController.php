@@ -637,7 +637,7 @@ class HomeController extends Controller {
 
     public function carsbrandmodel() {
         $cars = car_brand::lists('name_en', 'id');
-        $carBrandModel = car_brand_model::get();
+        $carBrandModel = car_brand_model::where('is_active', '=', 1)->get();
         return view('carbrandmodel', compact('carBrandModel', 'cars'));
     }
 
@@ -652,7 +652,11 @@ class HomeController extends Controller {
     }
 
     public function deleteCarBrandModel(request $request) {
-        car_brand_model::where('id', $request->input('carId'))->delete();
+        $car = new car_brand_model();
+        $car = car_brand_model::firstOrNew(array('id' => intval($request->input('carId'))));
+        $id = $request->input('carId');
+        $car->is_active = 0;
+        $car->save();
         return json_decode(1);
     }
 
@@ -668,7 +672,8 @@ class HomeController extends Controller {
         car_brand_model::create([
             'brand_id' => $request->input('carId'),
             'name_en' => $request->input('name_english'),
-            'name_ar' => $request->input('name_arabic')
+            'name_ar' => $request->input('name_arabic'),
+            'is_active' => 1
         ]);
         return back();
     }
@@ -757,7 +762,7 @@ class HomeController extends Controller {
     }
 
     public function addExtraSlider(request $request) {
-        
+
         if ($request->file('upload_arabic_slider') != '' && $request->file('upload_english_slider') != '') {
             $imageName = $request->file('upload_arabic_slider')->getClientOriginalName();
             $request->file('upload_arabic_slider')->move(
