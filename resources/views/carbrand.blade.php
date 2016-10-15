@@ -146,6 +146,8 @@ $(document).ready(function () {
                 <th>Arbic Name</th>
                 <th>English Name</th>
                 <th></th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -158,6 +160,8 @@ $(document).ready(function () {
                     <input id="carId" type="hidden" value="{{$car->id}}">
                     <img id="deleteCar" class="deleteCar" width="20" height="20" src="http://findicons.com/files/icons/753/gnome_desktop/64/gnome_edit_delete.png">
                 </td>
+                 <td><a class="edit" href="">Edit</a></td>
+                <td><a class="save" href="./cars">save</a></td>
             </tr>
             @endforeach
             @endif
