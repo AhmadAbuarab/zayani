@@ -593,6 +593,16 @@ class HomeController extends Controller {
         return back();
     }
 
+    public function editCarBrand(request $request) {
+        $car = new car_brand();
+        $car = car_brand::firstOrNew(array('id' => intval($request->input('id'))));
+        $id = $request->input('id');
+        $car->name_ar = $request->input('name_ar');
+        $car->name_en = $request->input('name_en');
+        $car->save();
+        return back();
+    }
+
     public function editCarModelMain(request $request) {
         $carModelMain = new car_model_main();
         $carModelMain = car_model_main::firstOrNew(array('id' => intval($request->input('id'))));

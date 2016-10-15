@@ -57,6 +57,8 @@ Route::post('editCarModelMain', 'HomeController@editCarModelMain');
 
 Route::post('editCar', 'HomeController@editCar');
 
+Route::post('editCarBrand', 'HomeController@editCarBrand');
+
 Route::get('carsmodelmain', 'HomeController@carsmodelmain');
 Route::post('carsmodelmain/create', 'HomeController@addCarModelMain');
 

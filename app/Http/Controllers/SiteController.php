@@ -170,7 +170,7 @@ class SiteController extends Controller {
             'messagee' => $request->input('message')
         );
         Mail::send('emails.valuecar', $data, function($message) {
-            $message->to('ama91@live.com')->subject('Value Car');
+            $message->to('info@al-zayani.com')->subject('Value Car');
         });
 
         return back();
@@ -206,7 +206,7 @@ class SiteController extends Controller {
             'messagee' => $request->input('message')
         );
         Mail::send('emails.testdrive', $data, function($message) {
-            $message->to('ama91@live.com')->subject('Test Drive');
+            $message->to('info@al-zayani.com')->subject('Test Drive');
         });
         return back();
     }
@@ -222,7 +222,7 @@ class SiteController extends Controller {
         ]);
         $data = array('name' => $request->input('subemail'));
         Mail::send('emails.subscri', $data, function($message) {
-            $message->to('ama91@live.com')->subject('Subscriper');
+            $message->to('info@al-zayani.com')->subject('Subscriper');
         });
         return back();
     }
@@ -260,7 +260,7 @@ class SiteController extends Controller {
             'messagee' => $request->input('message')
         );
         Mail::send('emails.contactus', $data, function($message) {
-            $message->to('ama91@live.com')->subject('Contact Us');
+            $message->to('info@al-zayani.com')->subject('Contact Us');
         });
         return back();
     }
