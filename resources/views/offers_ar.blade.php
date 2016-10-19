@@ -95,10 +95,87 @@
                     </div>
                     @endif
                     <?php $count++; ?>
+                    @else
+                    @if(isset($carMod->img_slider_slider) && $carMod->img_slider_slider !='')
+                    @if($count == 0)
+                    <div class="item active">
+                        <!-- Set the first background image using inline CSS below. -->
+                        <div class="fill" style="background-image:url({{URL::asset($carMod->img_slider_slider)}});"></div>
+                        <div class="carousel-caption">
+                            <!--                 	<div class="sliderTitle">
+                                                <h1>F-PACE</h1>
+                                                <span>ABOVE ALL, IT'S A JAGUAR</span>
+                                                </div> -->
+                            <button class="btn btn-primary sliderButton">More <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            </button>
+
+                        </div>
+                    </div>
+                    @else
+                    
+                    <div class="item">
+                        <!-- Set the third background image using inline CSS below. -->
+                        <div class="fill" style="background-image:url({{URL::asset($carMod->img_slider_slider)}});"></div>
+                        <div class="carousel-caption">
+                            <button class="btn btn-primary sliderButton">More <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                    @endif
+                    <?php $count++; ?>
+                    @endif
+                    
                     @endif
                     @endforeach
                     @endif
-                   
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    @if(isset($extraSliders))
+                    @foreach($extraSliders as $extraSlider)
+                    @if(isset($extraSlider->slider_arabic) && $extraSlider->slider_arabic !='')
+                    
+                    
+                    
+                     <div class="item">
+                        <!-- Set the third background image using inline CSS below. -->
+                        <div class="fill" style="background-image:url({{URL::asset($extraSlider->slider_arabic)}});"></div>
+                        <div class="carousel-caption">
+                            <button class="btn btn-primary sliderButton">More <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                    
+                    
+                    @else
+                    
+                    @if(isset($extraSlider->slider_english) && $extraSlider->slider_english !='')
+                    
+                    
+                    
+                     <div class="item">
+                        <!-- Set the third background image using inline CSS below. -->
+                        <div class="fill" style="background-image:url({{URL::asset($extraSlider->slider_english)}});"></div>
+                        <div class="carousel-caption">
+                            <button class="btn btn-primary sliderButton">More <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    @endif
+                    
+                    
+                    @endif
+                    @endforeach
+                    @endif
+                    
+                    
+                    
                     
                     
                     
