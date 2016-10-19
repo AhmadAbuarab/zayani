@@ -63,19 +63,19 @@
                 <div class="carousel-inner">
                     <div class="item active">
                         <!-- Set the first background image using inline CSS below. -->
-                        <div class="fill_inner" style="background-image:url(img/slider_inner_1.png);"></div>
+                        <div class="fill" style="background-image:url(img/slider_inner_1.png);"></div>
                         <div class="carousel-caption">
                         </div>
                     </div>
                     <div class="item">
                         <!-- Set the second background image using inline CSS below. -->
-                        <div class="fill_inner" style="background-image:url(img/slider_inner_1.png);"></div>
+                        <div class="fill" style="background-image:url(img/slider_inner_1.png);"></div>
                         <div class="carousel-caption">
                         </div>
                     </div>
                     <div class="item">
                         <!-- Set the third background image using inline CSS below. -->
-                        <div class="fill_inner" style="background-image:url(img/slider_inner_1.png);"></div>
+                        <div class="fill" style="background-image:url(img/slider_inner_1.png);"></div>
                         <div class="carousel-caption">
                         </div>
                     </div>
