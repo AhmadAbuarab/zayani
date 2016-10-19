@@ -307,7 +307,7 @@
                                     {{$contactUsData[0]->email}}
                                     @endif
                                 </a> </li>
-                            <li><a href="tel:+965 180 8010" class="phone">
+                            <li dir="ltr"><a href="tel:+965 180 8010" class="phone">
                                     @if(isset($contactUsData[0]->mobile))
                                     {{$contactUsData[0]->mobile}}
                                     @endif

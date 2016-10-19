@@ -259,7 +259,7 @@
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                         <ul class="contactList">
                             <li><a href="mailto:info@al-zayani.com" class="email">@if(isset($contactUsData[0]->email)) {{$contactUsData[0]->email}} @endif</a> </li>
-                            <li><a href="tel:+965 180 8010" class="phone">@if(isset($contactUsData[0]->mobile)) {{$contactUsData[0]->mobile}} @endif</a> </li>
+                            <li dir="ltr"><a href="tel:+965 180 8010" class="phone">@if(isset($contactUsData[0]->mobile)) {{$contactUsData[0]->mobile}} @endif</a> </li>
                         </ul>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
