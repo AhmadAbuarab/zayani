@@ -101,8 +101,7 @@
                     <div class="item">
                         <!-- Set the second background image using inline CSS below. -->
                         <div class="fill" style="background-image:url({{URL::asset($offerImage->path_slider) }});"></div>
-                        <div class="carousel-caption">
-                        </div>
+                        
                     </div>
                     @endif
                     <?php $count++; ?>
