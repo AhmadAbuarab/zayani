@@ -79,8 +79,8 @@
                                                 <h1>F-PACE</h1>
                                                 <span>ABOVE ALL, IT'S A JAGUAR</span>
                                                 </div> -->
-                            <button class="btn btn-primary sliderButton">المزيد <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                            </button>
+<!--                            <button class="btn btn-primary sliderButton">المزيد <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            </button>-->
 
                         </div>
                     </div>
@@ -89,9 +89,9 @@
                     <div class="item">
                         <!-- Set the third background image using inline CSS below. -->
                         <div class=" fill" style="background-image:url({{URL::asset($carMod->slider_ara)}});"></div>
-                        <div class="carousel-caption">
+<!--                        <div class="carousel-caption">
                             <button class="btn btn-primary sliderButton">المزيد <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
-                        </div>
+                        </div>-->
                     </div>
                     @endif
                     <?php $count++; ?>
@@ -106,8 +106,8 @@
                                                 <h1>F-PACE</h1>
                                                 <span>ABOVE ALL, IT'S A JAGUAR</span>
                                                 </div> -->
-                            <button class="btn btn-primary sliderButton">المزيد <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                            </button>
+<!--                            <button class="btn btn-primary sliderButton">المزيد <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                            </button>-->
 
                         </div>
                     </div>
@@ -116,9 +116,9 @@
                     <div class="item">
                         <!-- Set the third background image using inline CSS below. -->
                         <div class="fill" style="background-image:url({{URL::asset($carMod->img_slider_slider)}});"></div>
-                        <div class="carousel-caption">
+<!--                        <div class="carousel-caption">
                             <button class="btn btn-primary sliderButton">المزيد <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
-                        </div>
+                        </div>-->
                     </div>
                     @endif
                     <?php $count++; ?>
@@ -143,9 +143,9 @@
                      <div class="item">
                         <!-- Set the third background image using inline CSS below. -->
                         <div class="fill" style="background-image:url({{URL::asset($extraSlider->slider_arabic)}});"></div>
-                        <div class="carousel-caption">
+<!--                        <div class="carousel-caption">
                             <button class="btn btn-primary sliderButton">المزيد <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
-                        </div>
+                        </div>-->
                     </div>
                     
                     
@@ -158,9 +158,9 @@
                      <div class="item">
                         <!-- Set the third background image using inline CSS below. -->
                         <div class="fill" style="background-image:url({{URL::asset($extraSlider->slider_english)}});"></div>
-                        <div class="carousel-caption">
+<!--                        <div class="carousel-caption">
                             <button class="btn btn-primary sliderButton">المزيد <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
-                        </div>
+                        </div>-->
                     </div>
                     
                     
